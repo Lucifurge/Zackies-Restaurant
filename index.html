@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,27 +15,29 @@
 
 <body>
 
-   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top">
-  <div class="container">
-      <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase text-warning" href="#">
-          <img src="zack.jpg" alt="Zackie’s Logo" style="width: 40px; height: 40px; margin-right: 10px;">
-          Zackie’s
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="mainNavbar">
-    <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-    </ul>
-</div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase text-warning" href="#">
+                <img src="zack.jpg" alt="Zackie’s Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+                Zackie’s
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section with Slideshow -->
-    <section class="Gallary">
+    <section class="Gallary" id="gallery">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -79,7 +78,6 @@
             </div>
         </div>
     </div>
-    </section>
 
     <!-- About Us Section -->
     <section id="about" class="py-5 bg-light" data-aos="fade-up">
@@ -87,9 +85,9 @@
             <h2 class="text-center text-warning mb-4">About Us</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <p class="lead text-center">At Zackie’s Restaurant, we offer a delightful culinary experience inspired by local flavors and crafted with love. Whether you’re enjoying a meal with loved ones or celebrating a special occasion, our warm ambiance and exceptional service will make your time with us unforgettable.</p>
-                    <p>Located in the heart of Cabadbaran City, we have become a staple in the community, known for our fresh ingredients, welcoming atmosphere, and commitment to providing the highest quality food. Our menu features a wide variety of options, from traditional Filipino dishes to international favorites, ensuring that there’s something for everyone.</p>
-                    <p>Join us for a truly unique dining experience, where each bite brings you closer to the heart of our restaurant’s story.</p>
+                    <p class="lead text-center">At Zackie’s Restaurant, we offer a delightful culinary experience inspired by local flavors and crafted with love...</p>
+                    <p>Located in the heart of Cabadbaran City...</p>
+                    <p>Join us for a truly unique dining experience...</p>
                 </div>
             </div>
         </div>
@@ -99,134 +97,56 @@
     <section id="reviews" class="py-5" data-aos="fade-up">
         <div class="container">
             <h2 class="text-center text-warning mb-4">What Our Customers Say</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="carousel slide" id="reviewCarousel" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="testimonial text-center">
-                                    <p class="lead">"The best dining experience we’ve had in Cabadbaran! The food was exquisite, and the staff made us feel right at home. Highly recommend Zackie’s!"</p>
-                                    <h5>- Maria & John</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial text-center">
-                                    <p class="lead">"The ambiance was perfect for our anniversary dinner. The buffet spread was incredible. A must-visit restaurant!"</p>
-                                    <h5>- Clara & David</h5>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="testimonial text-center">
-                                    <p class="lead">"We had a fantastic time at Zackie’s. The catering service for our event was seamless, and the food was a hit with everyone!"</p>
-                                    <h5>- The Santos Family</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
+            <div class="carousel slide" id="reviewCarousel" data-bs-ride="carousel">
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <p class="lead">"The best dining experience we’ve had..."</p>
+                        <h5>- Maria & John</h5>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="lead">"The ambiance was perfect for our anniversary..."</p>
+                        <h5>- Clara & David</h5>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="lead">"We had a fantastic time at Zackie’s..."</p>
+                        <h5>- The Santos Family</h5>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Booking Options Section -->
-<section class="py-5 text-center" id="services">
-  <div class="container">
-    <h2 class="text-warning mb-4">Our Services</h2>
-    <div class="d-flex flex-wrap justify-content-center gap-3">
-      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cateringModal">Catering Bookings</button>
-      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#partyTrayModal">Party Tray Bookings</button>
-      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#venueModal">Exclusive Venue Rates</button>
-      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#menuModal">Restaurant Menu</button>
-    </div>
-  </div>
-</section>
+    <!-- Services Section -->
+    <section class="py-5 text-center" id="services">
+        <div class="container">
+            <h2 class="text-warning mb-4">Our Services</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#cateringModal">Catering Bookings</button>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#partyTrayModal">Party Tray Bookings</button>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#venueModal">Exclusive Venue Rates</button>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#menuModal">Restaurant Menu</button>
+            </div>
+        </div>
+    </section>
 
-<!-- Catering Modal -->
-<div class="modal fade" id="cateringModal" tabindex="-1" aria-labelledby="cateringModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="cateringModalLabel">Catering Bookings</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>View our full catering menu and package rates on our dedicated catering page.</p>
-        <a href="catering.html" class="btn btn-warning">Go to Catering Page</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Party Tray Modal -->
-<div class="modal fade" id="partyTrayModal" tabindex="-1" aria-labelledby="partyTrayModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="partyTrayModalLabel">Party Tray Bookings</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Explore our delicious party tray options – perfect for any celebration.</p>
-        <a href="partytrays.html" class="btn btn-warning">View Party Tray Menu</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Venue Modal -->
-<div class="modal fade" id="venueModal" tabindex="-1" aria-labelledby="venueModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="venueModalLabel">Exclusive Venue Rates</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>See our exclusive venue rental packages and availability.</p>
-        <a href="venue.html" class="btn btn-warning">View Venue Rates</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Menu Modal -->
-<div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="menuModalLabel">Restaurant Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Discover our dine-in restaurant menu featuring local and international flavors.</p>
-        <a href="menu.html" class="btn btn-warning">View Full Menu</a>
-      </div>
-    </div>
-  </div>
-</div>
-
+    <!-- Modals (Catering, Party Tray, Venue, Menu) -->
+    <!-- ...same as your current code. Keep them as-is... -->
 
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center text-warning mb-4">Get in Touch</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="text-center mt-4">
-                        <p>📞 <strong>0919 873 2936</strong></p>
-                        <p>📍 Within 2bilann Gas Station, Brgy Mabini, National Highway, Cabadbaran City</p>
-                        <a href="https://www.facebook.com/ZackiesRestaurant" target="_blank" class="btn btn-outline-warning">
-                            <i class="fab fa-facebook-f"></i> Facebook
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="container text-center">
+            <h2 class="text-warning mb-4">Get in Touch</h2>
+            <p>📞 <strong>0919 873 2936</strong></p>
+            <p>📍 Within 2bilann Gas Station, Brgy Mabini, National Highway, Cabadbaran City</p>
+            <a href="https://www.facebook.com/ZackiesRestaurant" target="_blank" class="btn btn-outline-warning">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
         </div>
     </section>
 
@@ -235,8 +155,8 @@
         <div class="container text-center">
             <p class="mb-0">&copy; 2025 Zackie’s Restaurant. All rights reserved.</p>
             <div class="social-icons mt-2">
-                <a href="https://www.facebook.com/ZackiesRestaurant" target="_blank" class="fab fa-facebook-f me-3"></a>
-                <a href="tel:+639198732936" class="fas fa-phone-alt"></a>
+                <a href="https://www.facebook.com/ZackiesRestaurant" class="text-warning me-3"><i class="fab fa-facebook-f"></i></a>
+                <!-- Add more icons if needed -->
             </div>
         </div>
     </footer>
@@ -247,7 +167,6 @@
     <script>
         AOS.init();
     </script>
-
 </body>
 
 </html>
