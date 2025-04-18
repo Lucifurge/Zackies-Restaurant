@@ -8,7 +8,7 @@ function sendmail(event) {
     message: document.getElementById("message").value,
   };
 
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+  emailjs.send("service_c41ywsm", "template_2eewru7", params)
     .then(function(response) {
       console.log("Success!", response.status, response.text);
       alert("Your booking has been submitted! We will get back to you shortly.");
