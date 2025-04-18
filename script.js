@@ -1,5 +1,5 @@
 function sendmail(event) {
-  event.preventDefault(); // Prevent form refresh
+  event.preventDefault(); // Prevent form from refreshing the page
 
   let params = {
     name: document.getElementById("name").value,
@@ -10,11 +10,10 @@ function sendmail(event) {
 
   emailjs.send("service_c41ywsm", "template_2eewru7", params)
     .then(function(response) {
-      console.log("Success!", response.status, response.text);
-      alert("Your booking has been submitted! We will get back to you shortly.");
-    })
-    .catch(function(error) {
-      console.error("Failed to send email:", error);
-      alert("There was an error sending your message. Please try again later.");
+      alert("Email sent successfully!");
+      console.log("SUCCESS!", response.status, response.text);
+    }, function(error) {
+      alert("Failed to send email. Please try again.");
+      console.error("FAILED...", error);
     });
 }
