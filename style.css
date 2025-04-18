@@ -1,141 +1,48 @@
-/* Gallery Slideshow Section */
-.gallery-section {
-  padding: 80px 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.gallery-section h2 {
-  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-  font-weight: 600;
-  color: #F1A10A;
-  margin-bottom: 30px;
-}
-
-.gallery-carousel img {
-  max-height: 450px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-}
-
-/* Catering Card Slideshow */
-.catering-carousel .carousel-item {
-  padding: 40px 20px;
-}
-
-.catering-card {
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-.catering-card:hover {
-  transform: translateY(-5px);
-}
-
-.catering-card h4 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 600;
-  color: #F1A10A;
-  margin-bottom: 15px;
-}
-
-.catering-card p {
-  font-size: 1.05rem;
-  color: #555;
-}
-
-/* Menu Cards */
-.menu-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 50px;
-}
-
-.menu-card {
-  background-color: #fff;
-  border-radius: 14px;
-  width: 300px;
-  max-width: 90vw;
-  padding: 25px;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.menu-card:hover {
-  transform: translateY(-8px);
-}
-
-.menu-card h5 {
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-  font-weight: 600;
-  color: #F1A10A;
-  margin-bottom: 12px;
-}
-
-.menu-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.menu-card ul li {
-  font-size: 1rem;
-  color: #444;
-  padding: 6px 0;
-  border-bottom: 1px solid #eee;
-}
-
-/* Responsive Enhancements */
+/* Fixing the Navbar */
 @media (max-width: 768px) {
-  .gallery-carousel img {
-    max-height: 280px;
-  }
+    .navbar-toggler {
+        z-index: 1050; /* Ensures that the button appears above other elements */
+    }
 
-  .catering-card h4 {
-    font-size: 1.15rem;
-  }
+    /* Make the hero button visible on mobile devices */
+    .hero-overlay button {
+        width: 80%; /* Adjust button width for better visibility on mobile */
+        font-size: 1rem; /* Reduce button size slightly */
+    }
 
-  .menu-cards {
-    flex-direction: column;
-    align-items: center;
-  }
+    /* Adjust Carousel Image Height for Mobile */
+    #heroCarousel .carousel-item img {
+        height: 300px; /* Adjust to make the image fit better on small screens */
+        object-fit: cover;
+    }
 
-  .menu-card {
-    width: 95%;
-  }
+    /* Make sure the About section text is centered properly */
+    #about p {
+        font-size: 1rem; /* Reduce font size for smaller screens */
+    }
+
+    /* Reviews Section Text Adjustments */
+    #reviews .carousel-item p {
+        font-size: 1rem; /* Adjust text size */
+    }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  .catering-card {
-    padding: 25px;
-  }
+/* For portrait mode */
+@media (orientation: portrait) {
+    .hero-overlay button {
+        position: absolute; /* Ensures the button is always visible */
+        bottom: 20px; /* Keeps it at the bottom */
+        width: 80%;
+        font-size: 1rem;
+    }
 
-  .gallery-section {
-    padding: 60px 20px;
-  }
+    .carousel-item img {
+        height: 250px; /* Ensure images fit in smaller height on portrait */
+    }
 
-  .menu-card {
-    width: 280px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .gallery-carousel img {
-    max-height: 550px;
-  }
-
-  .catering-card {
-    padding: 35px;
-  }
-
-  .menu-card {
-    width: 320px;
-  }
+    /* Ensure navbar and footer items are not overlapping */
+    .navbar-nav {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
