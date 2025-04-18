@@ -1,58 +1,166 @@
-
-/* Mobile and Tablet Adjustments */
-@media (max-width: 768px) {
-  /* Shrink hero text and overlay */
-  .carousel-caption h1,
-  .carousel-caption h2 {
-      font-size: 1.5rem; /* Make hero text smaller */
-  }
-
-  .carousel-caption {
-      padding: 5x;
-      bottom: 9x;
-  }
-
-  /* Reduce size of "Find Us" Section */
-  #contact h2 {
-      font-size: 1.3rem;
-  }
-
-  #contact p {
-      font-size: 0.95rem;
-  }
-
-  /* Shrink footer logos and spacing */
-  footer img {
-      max-height: 30px;
-  }
-
-  .social-icons img {
-      height: 30px;
-  }
-
-  /* Adjust "Zackie's Restaurant" box size inside modal or hero if applicable */
-  .location-box, .modal-content {
-      padding: 15px;
-      font-size: 0.95rem;
-  }
+/* General Reset & Typography */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-/* Portrait-specific adjustments */
+/* Navbar Styling */
+.navbar {
+    z-index: 1050;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Hero Section Styling */
+.Gallary {
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 1rem;
+    color: #ffc107;
+    border-radius: 10px;
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.hero-overlay button {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    padding: 0.6rem 1.4rem;
+}
+
+/* Modal Map Responsive Fix */
+.modal-body iframe {
+    width: 100%;
+    height: 300px;
+}
+
+/* About Section */
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #111;
+    color: white;
+}
+
+footer .logo img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+footer .social-icons i {
+    font-size: 1.5rem;
+}
+
+footer .social-icons a:hover {
+    color: #ffc107;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+    .carousel-item img {
+        height: 400px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .hero-overlay p {
+        font-size: 1rem;
+    }
+
+    .hero-overlay button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .hero-overlay button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .navbar-nav {
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: white;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+}
+
 @media (orientation: portrait) {
-  .carousel-caption h1 {
-      font-size: 1.4rem;
-  }
+    .hero-overlay {
+        top: 55%;
+    }
+}
 
-  .carousel-caption {
-      bottom: 15px;
-  }
-
-  #contact {
-      padding: 20px 10px;
-  }
-
-  .modal-content {
-      max-height: 90vh;
-      overflow-y: auto;
-  }
+/* Ensure Toggler Works Without Manual JS */
+.navbar-collapse {
+    transition: all 0.3s ease-in-out;
 }
