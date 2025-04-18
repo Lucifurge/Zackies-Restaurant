@@ -616,12 +616,26 @@ Request: (e.g., extra table, extra cloth):`;
 </footer>
 
 <!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
     // Initialize AOS (Animate on Scroll)
     AOS.init();
 </script>
+    <script>
+  // Collapse navbar after clicking a link (on mobile)
+  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      const navbarCollapse = document.querySelector('#mainNavbar');
+
+      if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+        navbarToggler.click();
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
