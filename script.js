@@ -1,19 +1,27 @@
 function sendmail(event) {
-  event.preventDefault(); // Prevent form from refreshing the page
+  event.preventDefault(); // Prevent default form submission
 
-  let params = {
+  const params = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
     subject: document.getElementById("subject").value,
     message: document.getElementById("message").value,
   };
 
+  // Send booking details to your business email
   emailjs.send("service_c41ywsm", "template_2eewru7", params)
     .then(function(response) {
-      alert("Email sent successfully!");
-      console.log("SUCCESS!", response.status, response.text);
-    }, function(error) {
-      alert("Failed to send email. Please try again.");
-      console.error("FAILED...", error);
+      console.log("Main email sent!", response.status, response.text);
+
+      // Now send auto-reply to the customer
+      return emailjs.send("service_c41ywsm", "template_84wdzkd", params);
+    })
+    .then(function(replyResponse) {
+      console.log("Auto-reply sent!", replyResponse.status, replyResponse.text);
+      alert("Your booking has been submitted! We'll reply to you shortly.");
+    })
+    .catch(function(error) {
+      console.error("Error sending email(s):", error);
+      alert("Oops! Something went wrong. Please try again later.");
     });
 }
