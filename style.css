@@ -108,4 +108,80 @@
   .menu-card {
     width: 90%;
   }
+
+  /* Dropdown Styles for Mobile */
+  .navbar-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-nav.show {
+    display: flex;
+  }
+
+  .navbar-toggler {
+    display: block;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 10px;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 30px;
+    height: 20px;
+    background-color: #000;
+    position: relative;
+  }
+
+  .navbar-toggler-icon::before, 
+  .navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    left: 0;
+  }
+
+  .navbar-toggler-icon::before {
+    top: 0;
+  }
+
+  .navbar-toggler-icon::after {
+    bottom: 0;
+  }
+
+  /* When the nav bar is open */
+  .navbar-toggler.open .navbar-toggler-icon {
+    background: transparent;
+  }
+
+  .navbar-toggler.open .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 8px;
+  }
+
+  .navbar-toggler.open .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    bottom: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
 }
