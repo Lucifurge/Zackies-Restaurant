@@ -1,48 +1,57 @@
-/* Fixing the Navbar */
+/* Mobile and Tablet Adjustments */
 @media (max-width: 768px) {
-    .navbar-toggler {
-        z-index: 1050; /* Ensures that the button appears above other elements */
+    /* Shrink hero text and overlay */
+    .carousel-caption h1,
+    .carousel-caption h2 {
+        font-size: 1.5rem; /* Make hero text smaller */
     }
 
-    /* Make the hero button visible on mobile devices */
-    .hero-overlay button {
-        width: 80%; /* Adjust button width for better visibility on mobile */
-        font-size: 1rem; /* Reduce button size slightly */
+    .carousel-caption {
+        padding: 10px;
+        bottom: 20px;
     }
 
-    /* Adjust Carousel Image Height for Mobile */
-    #heroCarousel .carousel-item img {
-        height: 300px; /* Adjust to make the image fit better on small screens */
-        object-fit: cover;
+    /* Reduce size of "Find Us" Section */
+    #contact h2 {
+        font-size: 1.3rem;
     }
 
-    /* Make sure the About section text is centered properly */
-    #about p {
-        font-size: 1rem; /* Reduce font size for smaller screens */
+    #contact p {
+        font-size: 0.95rem;
     }
 
-    /* Reviews Section Text Adjustments */
-    #reviews .carousel-item p {
-        font-size: 1rem; /* Adjust text size */
+    /* Shrink footer logos and spacing */
+    footer img {
+        max-height: 30px;
+    }
+
+    .social-icons img {
+        height: 30px;
+    }
+
+    /* Adjust "Zackie's Restaurant" box size inside modal or hero if applicable */
+    .location-box, .modal-content {
+        padding: 15px;
+        font-size: 0.95rem;
     }
 }
 
-/* For portrait mode */
+/* Portrait-specific adjustments */
 @media (orientation: portrait) {
-    .hero-overlay button {
-        position: absolute; /* Ensures the button is always visible */
-        bottom: 20px; /* Keeps it at the bottom */
-        width: 80%;
-        font-size: 1rem;
+    .carousel-caption h1 {
+        font-size: 1.4rem;
     }
 
-    .carousel-item img {
-        height: 250px; /* Ensure images fit in smaller height on portrait */
+    .carousel-caption {
+        bottom: 15px;
     }
 
-    /* Ensure navbar and footer items are not overlapping */
-    .navbar-nav {
-        padding-left: 10px;
-        padding-right: 10px;
+    #contact {
+        padding: 20px 10px;
+    }
+
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
     }
 }
