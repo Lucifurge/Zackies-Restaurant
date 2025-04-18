@@ -48,29 +48,40 @@ body {
   color: white;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   padding: 1rem;
+  width: 100%;
 }
 
 .hero-overlay h1 {
-  font-size: 2rem; /* ↓ reduced from 3rem */
+  font-size: 2.5rem; /* Adjusted for better visibility */
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.4rem 0.8rem; /* ↓ less padding */
+  padding: 0.5rem 1rem;
   color: #ffc107;
   border-radius: 8px;
+  margin-bottom: 1rem; /* Add space below the title */
 }
 
 .hero-overlay p {
-  font-size: 1rem; /* ↓ slightly smaller */
-  margin-top: 0.2em;
+  font-size: 1.1rem; /* Adjusted size */
+  margin-top: 0.5em;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.2em 0.4m;
-  border-radius: 3x;
+  padding: 0.3em 0.6em;
+  border-radius: 3px;
 }
 
 .hero-overlay button {
-  margin-top: 0.8rem;
-  font-size: 0.95rem; /* ↓ smaller font */
-  padding: 0.4rem 0.9rem; /* ↓ tighter padding */
+  margin-top: 1rem;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-overlay button:hover {
+  background-color: #e0a800;
 }
 
 /* Modal Map Responsive Fix */
@@ -131,16 +142,16 @@ footer .social-icons a:hover {
   }
 
   .hero-overlay h1 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
   }
 
   .hero-overlay p {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
   }
 
   .hero-overlay button {
-      font-size: 0.85rem;
-      padding: 0.35rem 0.7rem;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
   }
 
   .navbar-nav {
