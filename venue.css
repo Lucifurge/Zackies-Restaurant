@@ -1,0 +1,76 @@
+/* Venue Section Styling */
+#booking {
+  padding: 80px 20px;
+  background-color: #ffffff; /* Clean white background */
+  text-align: center;
+}
+
+#booking h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #F1A10A; /* Golden Accent */
+  margin-bottom: 20px;
+}
+
+/* Card Styling */
+#booking .card {
+  border: 1px solid #F1A10A22; /* Subtle golden border */
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(241, 161, 10, 0.1); /* Soft golden shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#booking .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(241, 161, 10, 0.2); /* Stronger shadow on hover */
+}
+
+#booking .card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #F1A10A; /* Golden */
+  margin-bottom: 10px;
+}
+
+#booking .card-text {
+  font-size: 1rem;
+  color: #555; /* Darker text for contrast */
+  margin-bottom: 8px;
+}
+
+#booking .card-text strong {
+  color: #F1A10A;
+  font-size: 1.1rem;
+}
+
+/* Button Styling */
+#booking .btn-primary {
+  background-color: #F1A10A;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#booking .btn-primary:hover {
+  background-color: #d68b00;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #booking h2 {
+    font-size: 2rem;
+  }
+
+  #booking .card-title {
+    font-size: 1.2rem;
+  }
+
+  #booking .card-text {
+    font-size: 0.95rem;
+  }
+}
