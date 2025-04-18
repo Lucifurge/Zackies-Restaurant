@@ -1,57 +1,58 @@
+
 /* Mobile and Tablet Adjustments */
 @media (max-width: 768px) {
-    /* Shrink hero text and overlay */
-    .carousel-caption h1,
-    .carousel-caption h2 {
-        font-size: 1.5rem; /* Make hero text smaller */
-    }
+  /* Shrink hero text and overlay */
+  .carousel-caption h1,
+  .carousel-caption h2 {
+      font-size: 1.5rem; /* Make hero text smaller */
+  }
 
-    .carousel-caption {
-        padding: 10px;
-        bottom: 20px;
-    }
+  .carousel-caption {
+      padding: 5x;
+      bottom: 9x;
+  }
 
-    /* Reduce size of "Find Us" Section */
-    #contact h2 {
-        font-size: 1.3rem;
-    }
+  /* Reduce size of "Find Us" Section */
+  #contact h2 {
+      font-size: 1.3rem;
+  }
 
-    #contact p {
-        font-size: 0.95rem;
-    }
+  #contact p {
+      font-size: 0.95rem;
+  }
 
-    /* Shrink footer logos and spacing */
-    footer img {
-        max-height: 30px;
-    }
+  /* Shrink footer logos and spacing */
+  footer img {
+      max-height: 30px;
+  }
 
-    .social-icons img {
-        height: 30px;
-    }
+  .social-icons img {
+      height: 30px;
+  }
 
-    /* Adjust "Zackie's Restaurant" box size inside modal or hero if applicable */
-    .location-box, .modal-content {
-        padding: 15px;
-        font-size: 0.95rem;
-    }
+  /* Adjust "Zackie's Restaurant" box size inside modal or hero if applicable */
+  .location-box, .modal-content {
+      padding: 15px;
+      font-size: 0.95rem;
+  }
 }
 
 /* Portrait-specific adjustments */
 @media (orientation: portrait) {
-    .carousel-caption h1 {
-        font-size: 1.4rem;
-    }
+  .carousel-caption h1 {
+      font-size: 1.4rem;
+  }
 
-    .carousel-caption {
-        bottom: 15px;
-    }
+  .carousel-caption {
+      bottom: 15px;
+  }
 
-    #contact {
-        padding: 20px 10px;
-    }
+  #contact {
+      padding: 20px 10px;
+  }
 
-    .modal-content {
-        max-height: 90vh;
-        overflow-y: auto;
-    }
+  .modal-content {
+      max-height: 90vh;
+      overflow-y: auto;
+  }
 }
