@@ -175,3 +175,38 @@ footer .social-icons a:hover {
 .navbar-collapse {
   transition: all 0.3s ease-in-out;
 }
+
+/* Responsive Navbar Fixes */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-size: 100% 100%;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+}
