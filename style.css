@@ -27,6 +27,29 @@ body {
   color: #ffc107;
 }
 
+/* Fix navbar collapse on mobile */
+.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ensure menu collapses when clicking a link */
+.navbar-nav .nav-link {
+  font-weight: 600;
+  color: #333;
+  padding: 12px 16px;
+}
+
+.navbar-toggler {
+  padding: 12px;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
 /* Hero Section Styling */
 .Gallary {
   position: relative;
@@ -51,149 +74,18 @@ body {
   width: 100%;
 }
 
-.hero-overlay h1 {
-  font-size: 2.5rem; /* Adjusted for better visibility */
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.5rem 1rem;
-  color: #ffc107;
-  border-radius: 8px;
-  margin-bottom: 1rem; /* Add space below the title */
-}
-
-.hero-overlay p {
-  font-size: 1.1rem; /* Adjusted size */
-  margin-top: 0.5em;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.3em 0.6em;
-  border-radius: 3px;
-}
-
-.hero-overlay button {
-  margin-top: 1rem;
-  font-size: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #ffc107;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.hero-overlay button:hover {
-  background-color: #e0a800;
-}
-
-/* Modal Map Responsive Fix */
-.modal-body iframe {
-  width: 100%;
-  height: 300px;
-}
-
-/* About Section */
-#about p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Footer Styling */
-footer {
-  background-color: #111;
-  color: white;
-}
-
-footer .logo img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-footer .social-icons i {
-  font-size: 1.5rem;
-}
-
-footer .social-icons a:hover {
-  color: #ffc107;
-}
-
-/* Responsive Media Queries */
-@media (max-width: 992px) {
-  .carousel-item img {
-      height: 400px;
-  }
-
-  .hero-overlay h1 {
-      font-size: 2rem;
-  }
-
-  .hero-overlay p {
-      font-size: 1rem;
-  }
-
-  .hero-overlay button {
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-item img {
-      height: 300px;
-  }
-
-  .hero-overlay h1 {
-      font-size: 1.5rem;
-  }
-
-  .hero-overlay p {
-      font-size: 0.9rem;
-  }
-
-  .hero-overlay button {
-      font-size: 0.9rem;
-      padding: 0.4rem 0.8rem;
-  }
-
-  .navbar-nav {
-      padding-left: 10px;
-      padding-right: 10px;
-      background-color: white;
-  }
-
-  .navbar-collapse.show {
-      display: block;
-  }
-}
-
-@media (orientation: portrait) {
-  .hero-overlay {
-      top: 55%;
-  }
-}
-
-/* Ensure Toggler Works Without Manual JS */
-.navbar-collapse {
-  transition: all 0.3s ease-in-out;
-}
-
 /* Responsive Navbar Fixes */
-.navbar-toggler {
-  border: none;
-  outline: none;
-  padding: 0.25rem 0.5rem;
-}
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+    padding-top: 10px;
+    flex-direction: column;
+  }
+  
+  .nav-item {
+    margin-bottom: 10px;
+  }
 
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-.navbar-toggler-icon {
-  background-size: 100% 100%;
-  width: 1.5em;
-  height: 1.5em;
-}
-
-@media (max-width: 991.98px) {
   .navbar-collapse {
     background-color: white;
     padding: 1rem;
@@ -203,10 +95,24 @@ footer .social-icons a:hover {
 
   .navbar-nav .nav-link {
     padding: 0.5rem 0;
-    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
   }
 
-  .navbar-nav {
-    flex-direction: column;
+  .hero-overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .hero-overlay button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
   }
 }
