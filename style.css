@@ -69,10 +69,20 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgb(255, 174, 0);
-    text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
     padding: 1rem;
     width: 100%;
+  }
+  
+  /* Title styling */
+  .hero-overlay h1 {
+    color: rgb(255, 174, 0); /* Golden yellow */
+    text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
+  }
+  
+  /* Subtitle slogan styling */
+  .hero-overlay p {
+    color: white;
+    text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
   }
   
   /* Responsive Navbar Fixes */
