@@ -75,7 +75,7 @@ body {
   
   /* Title styling */
   .hero-overlay h1 {
-    color: rgb(255, 174, 0); /* Golden yellow */
+    color: rgb(255, 255, 255); /* Golden yellow */
     text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
   }
   
