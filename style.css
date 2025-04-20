@@ -70,7 +70,7 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: rgb(255, 174, 0);
-    text-shadow: 2px 2px 8px rgba(255, 252, 252, 0.7);
+    text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
     padding: 1rem;
     width: 100%;
   }
