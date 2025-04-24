@@ -581,21 +581,19 @@ emailjs.init("q-dVzKas8Z816VUWQ"); // Your public key
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll(".zoomable");
-    const modalImage = document.getElementById("modalImage");
-    const imageModal = new bootstrap.Modal(document.getElementById("imageModal"));
 
     images.forEach(image => {
       image.addEventListener("click", function () {
-        const imageUrl = this.getAttribute("data-bs-img");
-        modalImage.src = imageUrl; // Set the modal image source
-        modalImage.style.maxWidth = "100%";
-        modalImage.style.height = "auto";
-        imageModal.show(); // Open the modal
+        if (!this.classList.contains("fullscreen")) {
+          this.classList.add("fullscreen");
+        } else {
+          this.classList.remove("fullscreen");
+        }
       });
     });
   });
 </script>
-    
+
 
 <!-- Link your custom JavaScript file -->
 <script src="script.js"></script>
