@@ -108,9 +108,10 @@ footer .social-icons a:hover {
 
 /* ========== Menu Section ========== */
 .menu-image {
-  width: 100%;
-  max-width: 1000px; /* Bigger image */
-  height: auto;
+  width: 100%; /* Image takes the full width */
+  height: 100%; /* Image height adjusts to fit its container */
+  max-height: 600px; /* Limit the height so it doesn't stretch too much */
+  object-fit: contain; /* Ensure the image is not cut off, maintain aspect ratio */
   border-radius: 10px;
   margin-bottom: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
