@@ -593,14 +593,19 @@ emailjs.init("q-dVzKas8Z816VUWQ"); // Your public key
   });
 </script>
 <script>
-  // Get all the zoomable images and the modal image
-  const images = document.querySelectorAll('.zoomable');
-  const modalImage = document.getElementById('modalImage');
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".zoomable");
+    const modalImage = document.getElementById("modalImage");
+    const imageModal = new bootstrap.Modal(document.getElementById("imageModal"));
 
-  images.forEach(image => {
-    image.addEventListener('click', function () {
-      const imageUrl = this.getAttribute('data-bs-img');
-      modalImage.src = imageUrl; // Set the modal image source
+    images.forEach(image => {
+      image.addEventListener("click", function () {
+        const imageUrl = this.getAttribute("data-bs-img");
+        modalImage.src = imageUrl; // Set the modal image source
+        modalImage.style.maxWidth = "100%";
+        modalImage.style.height = "auto";
+        imageModal.show(); // Open the modal
+      });
     });
   });
 </script>
