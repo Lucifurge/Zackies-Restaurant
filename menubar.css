@@ -1,19 +1,52 @@
-/* Full-Screen Styling */
-.fullscreen {
+/* Full-Screen Container */
+.fullscreen-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: contain;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Full-Screen Image */
+.fullscreen {
+  max-width: 100%;
+  max-height: 100%;
   cursor: grab;
-  touch-action: none; /* Prevent unintended gestures */
+  touch-action: none; /* Prevent default gestures */
   transition: transform 0.1s ease;
 }
 
-/* Cursor feedback for dragging */
+/* Dragging Cursor */
 .fullscreen:active {
   cursor: grabbing;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 1);
 }
