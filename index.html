@@ -601,10 +601,14 @@ emailjs.init("q-dVzKas8Z816VUWQ"); // Your public key
     images.forEach(image => {
       image.addEventListener("click", function () {
         const imageUrl = this.getAttribute("data-bs-img");
-        modalImage.src = imageUrl; // Set the modal image source
-        modalImage.style.maxWidth = "100%";
-        modalImage.style.height = "auto";
-        imageModal.show(); // Open the modal
+
+        if (imageUrl) {
+          modalImage.src = imageUrl; // Ensure image source updates
+          modalImage.style.display = "block"; // Make sure the image is visible
+          imageModal.show(); // Open the modal
+        } else {
+          console.error("Image source is missing!");
+        }
       });
     });
   });
