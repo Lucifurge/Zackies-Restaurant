@@ -8,9 +8,10 @@ zoomableImages.forEach((image) => {
     if (image.classList.contains('zoomed')) {
       makeDraggable(image); // Make the image draggable when zoomed
     } else {
-      image.style.transform = 'scale(1)'; // Reset the image zoom
-      image.style.left = '0'; // Reset the position
-      image.style.top = '0'; // Reset the position
+      // Reset the image zoom and position
+      image.style.transform = 'scale(1)';
+      image.style.left = '0';
+      image.style.top = '0';
     }
   });
 });
@@ -22,7 +23,7 @@ function makeDraggable(image) {
 
   // Set the image to absolute positioning for drag to work
   image.style.position = 'absolute';
-  
+
   image.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.clientX - image.offsetLeft;
@@ -56,4 +57,18 @@ $('#menuModal').on('shown.bs.modal', function () {
     image.style.left = '0';
     image.style.top = '0';
   });
+
+  // Fix carousel for the case when only 2 images exist
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  if (carouselItems.length > 2) {
+    carouselItems[2].classList.add('d-none'); // Hide extra slides
+  }
+});
+
+// To ensure we don't show an empty third slide when there are only 2 images
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  if (carouselItems.length > 2) {
+    carouselItems[2].classList.add('d-none'); // Hide extra slides
+  }
 });
