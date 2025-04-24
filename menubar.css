@@ -22,7 +22,7 @@
   transition: transform 0.1s ease;
 }
 
-/* Dragging Cursor */
+/* Dragging Cursor Feedback */
 .fullscreen:active {
   cursor: grabbing;
 }
