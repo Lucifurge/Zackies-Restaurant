@@ -70,3 +70,20 @@ body {
     touch-action: manipulation; /* Improved touch handling */
   }
 }
+/* General Full-Screen Styling */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  cursor: grab;
+  transition: transform 0.3s ease;
+}
+
+.fullscreen:active {
+  cursor: grabbing;
+}
