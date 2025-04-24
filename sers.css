@@ -27,9 +27,39 @@
   line-height: 1.5;
 }
 
+/* Boxed Background for Each Service */
+.service-item {
+  background-color: #f9f9f9; /* Light grey background for each service */
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+  border: 1px solid #ddd; /* Subtle border */
+}
+
+.service-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
 /* Additional Responsive Styling */
 @media (max-width: 768px) {
   .service-box p {
     font-size: 0.85rem; /* Adjust font size for mobile devices */
+  }
+
+  .service-item {
+    padding: 15px; /* Slightly smaller padding for mobile screens */
+  }
+
+  .service-item p {
+    font-size: 0.85rem; /* Slightly smaller description for mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .service-btn {
+    width: 100%; /* Full width for smaller screens */
+  }
+  .service-item {
+    text-align: center; /* Center text on smaller screens */
   }
 }
