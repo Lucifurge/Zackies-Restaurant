@@ -1,3 +1,4 @@
+
 /* General Reset & Typography */
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -5,63 +6,63 @@ body {
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-/* Navbar Styling */
-.navbar {
+  }
+  
+  /* Navbar Styling */
+  .navbar {
     z-index: 1050;
-}
-
-.navbar-brand img {
+  }
+  
+  .navbar-brand img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
-}
-
-.navbar-nav .nav-link {
+  }
+  
+  .navbar-nav .nav-link {
     font-weight: 600;
     color: #ffffff;
-}
-
-.navbar-nav .nav-link:hover {
+  }
+  
+  .navbar-nav .nav-link:hover {
     color: #ffc107;
-}
-
-/* Fix navbar collapse on mobile */
-.navbar-collapse {
+  }
+  
+  /* Fix navbar collapse on mobile */
+  .navbar-collapse {
     transition: all 0.3s ease-in-out;
-}
-
-/* Ensure menu collapses when clicking a link */
-.navbar-nav .nav-link {
+  }
+  
+  /* Ensure menu collapses when clicking a link */
+  .navbar-nav .nav-link {
     font-weight: 600;
     color: #333;
     padding: 12px 16px;
-}
-
-.navbar-toggler {
+  }
+  
+  .navbar-toggler {
     padding: 12px;
     font-size: 1.25rem;
     border: none;
     outline: none;
-}
-
-.navbar-toggler:focus {
+  }
+  
+  .navbar-toggler:focus {
     box-shadow: none;
-}
-
-/* Hero Section Styling */
-.Gallary {
+  }
+  
+  /* Hero Section Styling */
+  .Gallary {
     position: relative;
     z-index: 1;
-}
-
-.carousel-item img {
+  }
+  
+  .carousel-item img {
     height: 600px;
     object-fit: cover;
-}
-
-.hero-overlay {
+  }
+  
+  .hero-overlay {
     z-index: 10;
     position: absolute;
     top: 50%;   
@@ -70,119 +71,60 @@ body {
     text-align: center;
     padding: 1rem;
     width: 100%;
-}
-
-/* Title styling */
-.hero-overlay h1 {
+  }
+  
+  /* Title styling */
+  .hero-overlay h1 {
     color: rgb(255, 255, 255); /* Golden yellow */
     text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
-}
-
-/* Subtitle slogan styling */
-.hero-overlay p {
+  }
+  
+  /* Subtitle slogan styling */
+  .hero-overlay p {
     color: white;
     text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
-}
-
-/* Responsive Navbar Fixes */
-@media (max-width: 992px) {
+  }
+  
+  /* Responsive Navbar Fixes */
+  @media (max-width: 992px) {
     .navbar-nav {
-        text-align: center;
-        padding-top: 10px;
-        flex-direction: column;
+      text-align: center;
+      padding-top: 10px;
+      flex-direction: column;
     }
-
+    
     .nav-item {
-        margin-bottom: 10px;
+      margin-bottom: 10px;
     }
-
+  
     .navbar-collapse {
-        background-color: white;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      background-color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
-
+  
     .navbar-nav .nav-link {
-        padding: 0.5rem 0;
+      padding: 0.5rem 0;
     }
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     .carousel-item img {
-        height: 300px;
+      height: 300px;
     }
-
+  
     .hero-overlay h1 {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
+  
     .hero-overlay p {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
-
+  
     .hero-overlay button {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
     }
-}
-
-/* Zoom effect for menu images */
-.zoomable {
-    transition: transform 0.3s ease;
-    cursor: zoom-in;
-}
-
-.zoomable:hover {
-    transform: scale(1.1);
-}
-
-/* === Responsive Menu Image Styling === */
-.menu-image {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 90vh;
-    padding: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    .menu-image {
-        max-height: 75vh;
-        padding: 0.25rem;
-    }
-}
-
-/* Footer Spacing to prevent overlap */
-.footer-spacing {
-    height: 100px; /* Adjust the height based on your footer size */
-}
-
-/* Ensure the modal image is responsive and fills the screen */ 
-.modal-body img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Fullscreen Modal Styling */
-.modal-dialog.modal-lg {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    height: 100%;
-}
-
-.modal-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 0;
-}
-
-.modal-body img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
+  }
+  
