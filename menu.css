@@ -269,3 +269,8 @@ footer .social-icons a:hover {
   object-fit: contain;
   background: #000;
 }
+.menu-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
