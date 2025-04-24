@@ -1,130 +1,136 @@
+/* General Reset & Typography */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-  /* General Reset & Typography */
-  body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    
-    /* Navbar Styling */
-    .navbar {
-      z-index: 1050;
-    }
-    
-    .navbar-brand img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
-    }
-    
-    .navbar-nav .nav-link {
-      font-weight: 600;
-      color: #000000;
-    }
-    
-    .navbar-nav .nav-link:hover {
-      color: #ffc107;
-    }
-    
-    /* Fix navbar collapse on mobile */
-    .navbar-collapse {
-      transition: all 0.3s ease-in-out;
-    }
-    
-    /* Ensure menu collapses when clicking a link */
-    .navbar-nav .nav-link {
-      font-weight: 600;
-      color: #fff5f5;
-      padding: 12px 16px;
-    }
-    
-    .navbar-toggler {
-      padding: 12px;
-      font-size: 1.25rem;
-      border: none;
-      outline: none;
-    }
-    
-    .navbar-toggler:focus {
-      box-shadow: none;
-    }
-    
-    /* Hero Section Styling */
-    .Gallary {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .carousel-item img {
-      height: 600px;
-      object-fit: cover;
-    }
-    
-    .hero-overlay {
-      z-index: 10;
-      position: absolute;
-      top: 50%;   
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      padding: 1rem;
-      width: 100%;
-    }
-    
-    /* Title styling */
-    .hero-overlay h1 {
-      color: rgb(255, 255, 255); /* Golden yellow */
-      text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
-    }
-    
-    /* Subtitle slogan styling */
-    .hero-overlay p {
-      color: white;
-      text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
-    }
-    
-    /* Responsive Navbar Fixes */
-    @media (max-width: 992px) {
-      .navbar-nav {
+/* Navbar Styling */
+.navbar {
+    z-index: 1050;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 600;
+    color: #000000;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+/* Smooth Navbar Collapse */
+.navbar-collapse {
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.navbar-collapse.collapse {
+    max-height: 0;
+}
+
+.navbar-collapse.show {
+    max-height: 500px; /* Adjust this based on your content */
+}
+
+/* Ensure menu collapses when clicking a link */
+.navbar-nav .nav-link {
+    padding: 12px 16px;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    padding: 12px;
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Hero Section Styling */
+.Gallary {
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-item img {
+    height: 600px;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    z-index: 10;
+    position: absolute;
+    top: 50%;   
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Title Styling */
+.hero-overlay h1 {
+    color: rgb(255, 255, 255); /* Golden yellow */
+    text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
+}
+
+/* Subtitle Slogan Styling */
+.hero-overlay p {
+    color: white;
+    text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
+}
+
+/* Responsive Navbar Fixes */
+@media (max-width: 992px) {
+    .navbar-nav {
         text-align: center;
         padding-top: 10px;
         flex-direction: column;
-      }
-      
-      .nav-item {
-        margin-bottom: 10px;
-      }
+    }
     
-      .navbar-collapse {
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .navbar-collapse {
         background-color: rgb(255, 255, 255);
         padding: 1rem;
         border-radius: 0.5rem;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-    
-      .navbar-nav .nav-link {
-        padding: 0.5rem 0;
-      }
     }
-    
-    @media (max-width: 768px) {
-      .carousel-item img {
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
         height: 300px;
-      }
-    
-      .hero-overlay h1 {
+    }
+
+    .hero-overlay h1 {
         font-size: 1.5rem;
-      }
-    
-      .hero-overlay p {
+    }
+
+    .hero-overlay p {
         font-size: 0.9rem;
-      }
-    
-      .hero-overlay button {
+    }
+
+    .hero-overlay button {
         font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
-      }
     }
-    
+}
