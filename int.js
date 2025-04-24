@@ -9,6 +9,8 @@ zoomableImages.forEach((image) => {
       makeDraggable(image); // Make the image draggable when zoomed
     } else {
       image.style.transform = 'scale(1)'; // Reset the image zoom
+      image.style.left = '0'; // Reset the position
+      image.style.top = '0'; // Reset the position
     }
   });
 });
@@ -18,6 +20,9 @@ function makeDraggable(image) {
   let isDragging = false;
   let startX, startY;
 
+  // Set the image to absolute positioning for drag to work
+  image.style.position = 'absolute';
+  
   image.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.clientX - image.offsetLeft;
@@ -39,3 +44,16 @@ function makeDraggable(image) {
     image.style.cursor = 'grab'; // Change back the cursor when not dragging
   });
 }
+
+// Adjust image size when modal is shown to ensure it fits properly
+$('#menuModal').on('shown.bs.modal', function () {
+  // Get all zoomable images
+  const zoomableImages = document.querySelectorAll('.zoomable');
+
+  zoomableImages.forEach(image => {
+    // Reset the image size and position when modal is shown
+    image.style.transform = 'scale(1)';
+    image.style.left = '0';
+    image.style.top = '0';
+  });
+});
