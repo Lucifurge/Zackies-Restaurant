@@ -244,3 +244,28 @@ footer .social-icons a:hover {
     font-size: 0.9rem;
   }
 }
+
+/* --- NEW MENU IMAGE ZOOM + FULLSCREEN --- */
+.menu-image {
+  max-width: 100%;
+  height: auto;
+  cursor: zoom-in;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Fullscreen Mode */
+.fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100vw !important;
+  height: 100vh !important;
+  object-fit: contain;
+  background: #000;
+}
