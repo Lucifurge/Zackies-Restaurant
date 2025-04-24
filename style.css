@@ -1,176 +1,111 @@
-/* General Reset & Typography */
+/* Global Reset & Typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 /* Navbar Styling */
 .navbar {
-    z-index: 1050;
+  z-index: 1050;
 }
 
 .navbar-brand img {
-    width: 40px;
-    height: auto; /* Ensures proper scaling */
-    margin-right: 10px;
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .navbar-nav .nav-link {
-    font-weight: 600;
-    color: #ffffff;
-    padding: 12px 16px; /* Better touch area for mobile */
+  font-weight: 600;
+  color: #ffffff;
+  padding: 12px 16px;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffc107;
+  color: #ffc107;
 }
 
 .navbar-toggler {
-    padding: 12px;
-    font-size: 1.25rem;
-    border: none;
-    outline: none;
+  padding: 12px;
+  font-size: 1.25rem;
+  border: none;
+  outline: none;
 }
 
 .navbar-toggler:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
-/* Fix navbar collapse on mobile */
 .navbar-collapse {
-    transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Hero Section Styling */
 .Gallary {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .carousel-item img {
-    height: 600px;
-    object-fit: cover;
+  height: 600px;
+  object-fit: cover;
 }
 
 .hero-overlay {
-    z-index: 10;
-    position: absolute;
-    top: 50%;   
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 1rem;
-    width: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
 }
 
-/* Title styling */
 .hero-overlay h1 {
-    font-size: 2.5rem;
-    color: rgb(255, 255, 255); /* Golden yellow */
-    text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
 }
 
 .hero-overlay p {
-    font-size: 1.1rem;
-    color: white;
-    text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
+  font-size: 1.1rem;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
 }
 
 /* Footer Styling */
 footer {
-    background-color: #111;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+  background-color: #111;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
 footer .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 footer .social-icons a {
-    font-size: 1.5rem;
-    color: white;
-    transition: color 0.3s ease-in-out;
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease-in-out;
 }
 
 footer .social-icons a:hover {
-    color: #ffc107;
+  color: #ffc107;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 992px) {
-    .navbar-nav {
-        text-align: center;
-        padding-top: 10px;
-        flex-direction: column;
-    }
-    
-    .nav-item {
-        margin-bottom: 10px;
-    }
-
-    .navbar-collapse {
-        background-color: #f8f9fa;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    .carousel-item img {
-        height: 400px; /* Adjust image height for tablets */
-    }
-
-    .hero-overlay h1 {
-        font-size: 2rem;
-    }
-
-    .hero-overlay p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel-item img {
-        height: 300px;
-    }
-
-    .hero-overlay h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-overlay p {
-        font-size: 0.9rem;
-    }
-
-    .hero-overlay button {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .navbar-brand img {
-        width: 30px; /* Smaller logo for small screens */
-    }
-
-    .hero-overlay h1 {
-        font-size: 1.2rem;
-    }
-
-    .hero-overlay p {
-        font-size: 0.8rem;
-    }
-
-    footer .social-icons a {
-        font-size: 1.25rem;
-    }
-}
 /* Image Fullscreen Effect */
 .fullscreen {
   position: fixed;
@@ -182,4 +117,104 @@ footer .social-icons a:hover {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1050;
   cursor: pointer;
+}
+
+/* Unified Menu Carousel Styling */
+.menu-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  max-width: 100%;
+  margin: auto;
+  padding: 10px;
+}
+
+/* Smooth Anchor Scroll Fix for Sticky Navbar */
+html {
+  scroll-padding-top: 70px; /* Adjust if navbar height changes */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+    padding-top: 10px;
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .navbar-collapse {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel-item img {
+    height: 400px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .hero-overlay button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .menu-image {
+    width: 90%;
+    margin: auto;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand img {
+    width: 30px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 0.8rem;
+  }
+
+  footer .social-icons a {
+    font-size: 1.25rem;
+  }
 }
