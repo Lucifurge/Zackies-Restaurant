@@ -22,7 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton = document.createElement("button");
     closeButton.textContent = "✕";
     closeButton.classList.add("close-button");
-    closeButton.addEventListener("click", closeFullScreen);
+    closeButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent conflicts with image events
+      closeFullScreen();
+    });
 
     // Append the image and the button to the body
     const fullScreenContainer = document.createElement("div");
