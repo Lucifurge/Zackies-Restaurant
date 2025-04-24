@@ -13,28 +13,31 @@ body, html {
 /* Navbar Styling */
 .navbar {
   z-index: 1050;
+  background-color: white; /* White background */
+  border-bottom: 2px solid #ffc107; /* Gold border */
+  box-shadow: 0px 4px 10px rgba(255, 193, 7, 0.5); /* Subtle glowing effect */
 }
 
+/* Navbar Brand */
 .navbar-brand img {
   width: 40px;
   height: 40px;
   margin-right: 10px;
 }
 
-.navbar-nav {
-  display: flex;
-  align-items: center;
-}
-
+/* Navbar Links */
 .navbar-nav .nav-link {
   font-weight: 600;
-  color: #ffffff;
+  color: #ffc107; /* Gold text */
   padding: 12px 16px;
   font-size: 1.1rem;
+  transition: color 0.3s ease-in-out;
 }
 
+/* Navbar Links Hover Effect */
 .navbar-nav .nav-link:hover {
-  color: #ffc107;
+  color: #ffffff; /* Change to white on hover */
+  text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107; /* Glowing text effect */
 }
 
 /* Fix for desktop navbar visibility */
