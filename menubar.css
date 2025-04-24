@@ -1,16 +1,55 @@
+/* General Reset & Typography */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Zoomable Image Styles */
 .zoomable {
   cursor: pointer;
-  transition: transform 0.3s ease-in-out; /* Smooth zoom animations */
+  transition: transform 0.3s ease-in-out;
   max-width: 100%;
   height: auto;
   touch-action: none; /* Prevent unintended gestures */
-  will-change: transform; /* Optimize for performance */
+  will-change: transform; /* Performance boost */
 }
 
+/* Zoomed State */
 .zoomable.zoomed {
-  cursor: grab; /* UX: Indicate draggable state */
+  cursor: grab;
+  transform: scale(2) translate(0px, 0px); /* Initial zoom */
 }
 
+/* When actively dragging */
+.zoomable:active {
+  cursor: grabbing;
+}
+
+/* Modal Image Handling */
+.modal-body {
+  position: relative;
+  overflow: hidden; /* Prevent overflow while zoomed */
+}
+
+.modal-body .zoomable {
+  max-width: none;
+  max-height: none;
+}
+
+.modal-body .zoomable.zoomed {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+/* Modal Footer Styling */
+.modal-footer {
+  border-top: 3px solid #ffb52d;
+}
+
+/* Prevent Swipe While Zoomed */
 .no-swipe {
-  touch-action: none; /* Disable swipe gestures in carousel */
+  touch-action: none;
 }
