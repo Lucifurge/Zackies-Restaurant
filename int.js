@@ -9,18 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
   let initialScale = 1; // Initial scale for pinch-to-zoom
 
   zoomableImages.forEach((img) => {
-    // Double-tap or pinch zoom to toggle zoom
-    let doubleTapTimeout = null;
+    // Double-tap for zoom (disable single-tap zoom)
+    let lastTapTime = 0;
     img.addEventListener("click", (e) => {
-      if (doubleTapTimeout) {
-        clearTimeout(doubleTapTimeout);
-        doubleTapTimeout = null;
-        toggleZoom(img);
-      } else {
-        doubleTapTimeout = setTimeout(() => {
-          doubleTapTimeout = null;
-        }, 300); // Time threshold for double-tap
+      const currentTime = new Date().getTime();
+      if (currentTime - lastTapTime < 300) {
+        toggleZoom(img); // Double-tap detected
       }
+      lastTapTime = currentTime;
     });
 
     // Pinch-to-zoom (touch gesture for zooming in/out)
@@ -63,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Handle mouse interactions for dragging
+    // Handle mouse dragging for desktop
     img.addEventListener("mousedown", (e) => {
       if (scale === 1) return; // No dragging if not zoomed
       isDragging = true;
@@ -89,11 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.cursor = "grab";
     });
 
-    // Toggle zoom (double-tap or pinch)
+    // Zoom toggle (double-tap or pinch)
     function toggleZoom(image) {
       if (activeImage && activeImage !== image) return; // Prevent zooming other images while one is active
       if (scale > 1) {
-        resetZoom(); // Zoom out if already zoomed in
+        resetZoom(); // Zoom out if already active
       } else {
         scale = 2; // Zoom level (adjust as needed)
         activeImage = image;
@@ -109,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lastX = 0;
       lastY = 0;
       if (activeImage) {
-        activeImage.style.transform = `scale(1) translate(0, 0)`;
+        activeImage.style.transform = `scale(1) translate(0px, 0px)`;
       }
       activeImage = null;
       isZoomed = false;
@@ -121,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const maxX = (image.offsetWidth * (scale - 1)) / 2;
       const maxY = (image.offsetHeight * (scale - 1)) / 2;
 
-      // Clamp dragging to boundaries
+      // Clamp dragging within boundaries
       lastX = Math.max(-maxX, Math.min(maxX, lastX));
       lastY = Math.max(-maxY, Math.min(maxY, lastY));
 
@@ -152,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".carousel").forEach((carousel) => {
     carousel.addEventListener("touchstart", (e) => {
       if (isZoomed) {
-        e.stopPropagation(); // Disable swipe gestures
+        e.stopPropagation(); // Stop swipe gestures
       }
     });
   });
