@@ -36,7 +36,7 @@
     /* Ensure menu collapses when clicking a link */
     .navbar-nav .nav-link {
       font-weight: 600;
-      color: #333;
+      color: #fff5f5;
       padding: 12px 16px;
     }
     
@@ -101,7 +101,7 @@
         background-color: white;
         padding: 1rem;
         border-radius: 0.5rem;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(216, 216, 216, 0.1);
       }
     
       .navbar-nav .nav-link {
