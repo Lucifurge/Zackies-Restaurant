@@ -1,89 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector("#menuUnifiedCarousel");
   const zoomableImages = document.querySelectorAll(".zoomable");
-  let activeImage = null; // Tracks the currently active image in full-screen
-  let scale = 1; // Default zoom level
-  let startX = 0; // Starting X position for dragging
-  let startY = 0; // Starting Y position for dragging
-  let translateX = 0; // X translation value
-  let translateY = 0; // Y translation value
-  let isDragging = false;
+  let activeImage = null; // Tracks the currently zoomed image
+  let scale = 1; // Default scale
+  let lastTapTime = 0; // To handle double-tap detection
 
-  // Add click event to open full-screen
+  // Initialize Bootstrap carousel instance
+  const carouselInstance = new bootstrap.Carousel(carousel, {
+    interval: false, // Disable auto-slide
+  });
+
+  // Double-tap zoom functionality
   zoomableImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      openFullScreen(img);
+    img.addEventListener("click", (e) => {
+      const currentTime = Date.now();
+      if (currentTime - lastTapTime < 300) {
+        scale > 1 ? resetZoom() : toggleZoom(img); // Toggle zoom based on scale
+      }
+      lastTapTime = currentTime;
     });
   });
 
-  // Open the image in full-screen
-  function openFullScreen(image) {
-    activeImage = image.cloneNode(); // Clone the image for full-screen mode
-    activeImage.classList.add("fullscreen");
-    activeImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-    document.body.appendChild(activeImage);
-
-    // Add gesture listeners for zoom and drag
-    activeImage.addEventListener("dblclick", toggleZoom); // Use double-click for zoom in/out
-    activeImage.addEventListener("mousedown", handleDragStart);
-    activeImage.addEventListener("mousemove", handleDragging);
-    activeImage.addEventListener("mouseup", handleDragEnd);
-    activeImage.addEventListener("touchstart", handleDragStart, { passive: false });
-    activeImage.addEventListener("touchmove", handleDragging, { passive: false });
-    activeImage.addEventListener("touchend", handleDragEnd);
-    activeImage.addEventListener("click", closeFullScreen); // Single click to exit full-screen
-  }
-
-  // Close full-screen mode
-  function closeFullScreen() {
-    if (activeImage) {
-      activeImage.remove();
-      activeImage = null;
-      scale = 1; // Reset zoom level
-      translateX = 0;
-      translateY = 0;
-    }
-  }
-
-  // Handle zoom toggling with double-click
-  function toggleZoom() {
+  // Function to zoom in
+  function toggleZoom(image) {
     if (scale === 1) {
-      scale = 2; // Zoom in
-    } else {
-      scale = 1; // Zoom out
-      translateX = 0; // Reset position when zooming out
-      translateY = 0;
+      scale = 2; // Zoom level
+      activeImage = image;
+      activeImage.style.transition = "transform 0.3s ease"; // Smooth transition
+      activeImage.style.transform = `scale(${scale})`; // Apply zoom
+      carouselInstance.pause(); // Pause carousel while zoomed
     }
-    updateTransform();
   }
 
-  // Start dragging
-  function handleDragStart(e) {
-    if (scale === 1) return; // Only allow dragging when zoomed in
-    isDragging = true;
-    const touch = e.touches ? e.touches[0] : e;
-    startX = touch.clientX - translateX;
-    startY = touch.clientY - translateY;
-    e.preventDefault(); // Prevent unintended gestures
+  // Function to reset zoom
+  function resetZoom() {
+    if (activeImage) {
+      scale = 1;
+      activeImage.style.transition = "transform 0.3s ease"; // Smooth transition
+      activeImage.style.transform = `scale(1)`; // Reset zoom
+      activeImage = null;
+      carouselInstance.cycle(); // Resume carousel
+    }
   }
 
-  // Drag the image
-  function handleDragging(e) {
-    if (!isDragging || scale === 1) return; // Only drag if zoomed in
-    const touch = e.touches ? e.touches[0] : e;
-    translateX = touch.clientX - startX;
-    translateY = touch.clientY - startY;
-    updateTransform();
-    e.preventDefault(); // Prevent unintended gestures
-  }
+  // Disable dragging while zoomed
+  zoomableImages.forEach((img) => {
+    img.addEventListener("mousedown", (e) => {
+      if (scale > 1) e.preventDefault();
+    });
+    img.addEventListener("touchstart", (e) => {
+      if (scale > 1) e.preventDefault(); // Prevent touch dragging
+    });
+  });
 
-  // End dragging
-  function handleDragEnd() {
-    isDragging = false;
-  }
-
-  // Update the transform property
-  function updateTransform() {
-    activeImage.style.transition = "transform 0.1s ease"; // Smooth transition
-    activeImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-  }
+  // Disable swipe gestures on carousel items when zoomed
+  const carouselItems = document.querySelectorAll(".carousel-item");
+  carouselItems.forEach((item) => {
+    item.addEventListener("touchstart", (e) => {
+      if (scale > 1) e.stopPropagation(); // Disable swipe during zoom
+    });
+  });
 });
