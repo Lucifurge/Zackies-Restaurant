@@ -370,73 +370,35 @@ Request: (e.g., extra table, extra cloth):`;
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-<!-- Unified Menu Carousel -->
-<div id="menuUnifiedCarousel" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner text-center">
-
-    <!-- MENU ITEM 1 -->
-    <div class="carousel-item active">
-      <img src="men1.jpg" class="menu-image zoomable rounded mx-auto d-block img-fluid"
-           alt="Menu 1"
-           data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="men1.jpg">
-    </div>
-
-    <!-- MENU ITEM 2 -->
-    <div class="carousel-item">
-      <img src="men2.jpg" class="menu-image zoomable rounded mx-auto d-block img-fluid"
-           alt="Menu 2"
-           data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="men2.jpg">
-    </div>
-
-  </div>
-
-  <!-- Carousel Controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<!-- Modal for Zoom -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-transparent border-0">
-      <div class="modal-body d-flex justify-content-center align-items-center">
-        <img src="" id="modalImage" class="img-fluid rounded shadow" alt="Zoomed Menu">
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Script for Modal Dynamic Image Load -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Select the modal and the image inside the modal
-    const imageModal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-
-    // Add click listeners to images with `data-bs-img` attributes
-    const zoomableImages = document.querySelectorAll("[data-bs-img]");
-
-    zoomableImages.forEach(image => {
-      image.addEventListener("click", function () {
-        const imgSrc = image.getAttribute("data-bs-img"); // Get the image source from the attribute
-        if (imgSrc) {
-          modalImage.src = imgSrc; // Set the image source for the modal
-          const bootstrapModal = new bootstrap.Modal(imageModal); // Initialize and show the modal
-          bootstrapModal.show();
-        } else {
-          console.error("Image source is missing!");
-        }
-      });
-    });
-  });
-</script>
-
+        <div id="menuUnifiedCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner text-center">
+        
+            <!-- MENU ITEM 1 -->
+            <div class="carousel-item active">
+              <img src="men1.jpg" class="menu-image rounded mx-auto d-block img-fluid"
+                   alt="Menu 1">
+            </div>
+        
+            <!-- MENU ITEM 2 -->
+            <div class="carousel-item">
+              <img src="men2.jpg" class="menu-image rounded mx-auto d-block img-fluid"
+                   alt="Menu 2">
+            </div>
+        
+          </div>
+        
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        
+      </section>
 
 
 
