@@ -1,25 +1,46 @@
-/* Ensures the image is responsive and fills the modal */
-.menu-image {
-  width: 100%;  /* Makes the image fill the width of the modal */
-  height: auto;  /* Maintain aspect ratio */
-  cursor: grab; /* Add a grabbing cursor for the draggable effect */
-  transition: transform 0.2s ease-in-out; /* Smooth transition for zoom effect */
+/* General Reset & Typography */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-/* Modal Image Zoom Effect */
-.menu-image.zoomed {
-  transform: scale(2); /* Adjust the scale value for zoom effect */
+/* Image Zoom */
+.zoomable {
+    cursor: pointer;
+    transition: transform 0.25s ease; /* Smooth zoom transition */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Limit image size within the modal */
+.zoomable.zoomed {
+    transform: scale(2); /* Zoom in */
+    cursor: move; /* Indicate dragging */
+}
+
+/* Make sure images do not overflow outside the modal */
 .modal-body {
-  max-width: 100%;
-  max-height: 80vh;  /* Ensures it doesn't overflow the modal */
-  overflow: hidden;  /* Hide the overflow */
+    position: relative;
+    overflow: hidden;
 }
 
-/* Optional: Draggable image container */
+/* Draggable Image */
+.draggable {
+    position: absolute;
+    cursor: grab;
+}
+
+.draggable:active {
+    cursor: grabbing;
+}
+
+/* Modal Fixes */
 .modal-body {
-  position: relative;
-  overflow: hidden;
+    overflow: hidden;
+}
+
+.modal-footer {
+    border-top: 3px solid #ffb52d;
 }
