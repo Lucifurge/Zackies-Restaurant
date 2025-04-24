@@ -20,7 +20,7 @@ body {
 /* Zoomed State */
 .zoomable.zoomed {
   cursor: grab;
-  transform: scale(2) translate(0px, 0px); /* Initial zoom */
+  transform: scale(2) translate(0px, 0px); /* Initial zoom state */
 }
 
 /* When actively dragging */
@@ -40,16 +40,27 @@ body {
 }
 
 .modal-body .zoomable.zoomed {
-  max-width: 100vw;
-  max-height: 100vh;
+  max-width: 100vw; /* Ensures zoomed image fits within the viewport */
+  max-height: 100vh; /* Ensures zoomed image fits within the viewport */
 }
 
 /* Modal Footer Styling */
 .modal-footer {
-  border-top: 3px solid #ffb52d;
+  border-top: 3px solid #ffb52d; /* Gold border for modal footer */
 }
 
-/* Prevent Swipe While Zoomed */
+/* Prevent Swipe While Zoomed (Carousel Items) */
 .no-swipe {
-  touch-action: none;
+  touch-action: none; /* Disable swipe gestures in carousel */
+}
+
+/* Additional Styling for Mobile Devices: */
+@media (max-width: 768px) {
+  .zoomable.zoomed {
+    transform: scale(1.5); /* Limit zoom on mobile for a better experience */
+  }
+  .modal-body .zoomable.zoomed {
+    max-width: 100%; /* Ensure the zoomed image stays within viewport width */
+    max-height: 100%; /* Ensure the zoomed image stays within viewport height */
+  }
 }
