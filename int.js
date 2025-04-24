@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const zoomableImages = document.querySelectorAll(".zoomable");
+  let activeImage = null; // Tracks the currently zoomed image
 
   zoomableImages.forEach((img) => {
     let scale = 1;
-    let lastX = 0,
-      lastY = 0;
-    let startX = 0,
-      startY = 0;
+    let lastX = 0, lastY = 0;
+    let startX = 0, startY = 0;
     let isDragging = false;
-    let isZoomed = false;
     let initialDistance = null;
     let initialScale = 1;
+    let isZoomed = false; // Tracks zoom state
 
     // Double Tap/Click for Zoom
     let lastTap = 0;
@@ -26,9 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (scale !== 1) {
         resetZoom();
       } else {
-        scale = 2; // Adjust this as needed
+        scale = 2; // Adjust zoom level as needed
+        activeImage = img; // Set the active zoomed image
         img.style.transform = `scale(${scale}) translate(0px, 0px)`;
-        isZoomed = true;
+        isZoomed = true; // Lock zoom state
+        lockCarouselNavigation(true); // Prevent carousel swipes while zoomed
       }
     }
 
@@ -38,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
       lastY = 0;
       img.style.transform = "scale(1) translate(0, 0)";
       isZoomed = false;
+      activeImage = null; // Reset active image
+      lockCarouselNavigation(false); // Re-enable carousel swipes
     }
 
     // Dragging Logic
@@ -114,12 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Clamp Position and Apply Transform
+    // Apply Transform Logic
     function applyTransform() {
       const maxX = (img.offsetWidth * (scale - 1)) / 2;
       const maxY = (img.offsetHeight * (scale - 1)) / 2;
 
-      // Clamp values to prevent dragging out of bounds
+      // Clamp translation values to prevent dragging out of bounds
       lastX = Math.max(-maxX, Math.min(maxX, lastX));
       lastY = Math.max(-maxY, Math.min(maxY, lastY));
 
@@ -131,12 +134,31 @@ document.addEventListener("DOMContentLoaded", () => {
       const dy = e.touches[0].clientY - e.touches[1].clientY;
       return Math.sqrt(dx * dx + dy * dy);
     }
+  });
 
-    // Reset Zoom on Escape Key or Double-Tap
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && isZoomed) {
-        resetZoom();
+  // Lock Carousel Navigation While Zoomed
+  function lockCarouselNavigation(lock) {
+    const carouselItems = document.querySelectorAll(".carousel-item");
+    carouselItems.forEach((item) => {
+      if (lock) {
+        item.classList.add("no-swipe");
+      } else {
+        item.classList.remove("no-swipe");
       }
     });
+  }
+
+  document.querySelectorAll(".carousel").forEach((carousel) => {
+    carousel.addEventListener("touchstart", (e) => {
+      if (e.target.closest(".zoomable")?.classList.contains("zoomed")) {
+        e.stopPropagation(); // Block swipe gestures while zoomed
+      }
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && activeImage) {
+      resetZoom(); // Reset zoom on Escape key
+    }
   });
 });
