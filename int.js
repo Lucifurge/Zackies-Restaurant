@@ -17,7 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
     activeImage = image.cloneNode(); // Clone the image for full-screen mode
     activeImage.classList.add("fullscreen");
     activeImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-    document.body.appendChild(activeImage);
+
+    // Create the X (close) button
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "✕";
+    closeButton.classList.add("close-button");
+    closeButton.addEventListener("click", closeFullScreen);
+
+    // Append the image and the button to the body
+    const fullScreenContainer = document.createElement("div");
+    fullScreenContainer.classList.add("fullscreen-container");
+    fullScreenContainer.appendChild(activeImage);
+    fullScreenContainer.appendChild(closeButton);
+    document.body.appendChild(fullScreenContainer);
 
     // Add zoom and drag functionality
     activeImage.addEventListener("touchstart", handleTouchStart, { passive: false });
@@ -26,14 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
     activeImage.addEventListener("mousedown", handleDragStart);
     activeImage.addEventListener("mousemove", handleDragging);
     activeImage.addEventListener("mouseup", handleDragEnd);
-    activeImage.addEventListener("click", closeFullScreen); // Single click to exit
   }
 
   // Close full-screen mode
   function closeFullScreen() {
-    if (activeImage) {
-      activeImage.remove(); // Remove the full-screen element
-      activeImage = null;
+    const fullScreenContainer = document.querySelector(".fullscreen-container");
+    if (fullScreenContainer) {
+      fullScreenContainer.remove(); // Remove the full-screen container
+      activeImage = null; // Clear active image reference
       scale = 1; // Reset zoom level
       translateX = 0;
       translateY = 0;
@@ -43,10 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle pinch-to-zoom start
   function handleTouchStart(e) {
     if (e.touches.length === 2) {
-      // Pinch gesture: Track initial distance between fingers
       initialDistance = getDistance(e.touches[0], e.touches[1]);
     } else if (e.touches.length === 1 && scale > 1) {
-      // Drag gesture: Track starting touch coordinates
       startX = e.touches[0].clientX - translateX;
       startY = e.touches[0].clientY - translateY;
       isDragging = true;
@@ -57,15 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleTouchMove(e) {
     e.preventDefault(); // Prevent default touch behavior
     if (e.touches.length === 2) {
-      // Pinch gesture: Calculate zoom scale
       const currentDistance = getDistance(e.touches[0], e.touches[1]);
       const zoomIntensity = 0.01; // Zoom sensitivity
       scale += (currentDistance - initialDistance) * zoomIntensity;
-      scale = Math.min(Math.max(scale, 1), 4); // Limit zoom between 1x and 4x
-      initialDistance = currentDistance; // Update initial distance for continuous zoom
+      scale = Math.min(Math.max(scale, 1), 4); // Limit zoom
+      initialDistance = currentDistance; // Update reference distance
       updateTransform();
     } else if (isDragging) {
-      // Drag gesture: Update translations based on touch movement
       translateX = e.touches[0].clientX - startX;
       translateY = e.touches[0].clientY - startY;
       updateTransform();
