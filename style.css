@@ -55,8 +55,10 @@ body {
 }
 
 .carousel-item img {
-  height: 600px;
-  object-fit: cover;
+  width: 100%; /* Ensure the image stretches to full width */
+  height: 500px; /* Set a fixed height to keep consistency */
+  object-fit: cover; /* Make sure the image covers the area */
+  object-position: center; /* Center the image */
 }
 
 .hero-overlay {
@@ -108,10 +110,10 @@ footer .social-icons a:hover {
 
 /* ========== Menu Section ========== */
 .menu-image {
-  width: 100%; /* Image takes the full width */
-  height: 100%; /* Image height adjusts to fit its container */
-  max-height: 600px; /* Limit the height so it doesn't stretch too much */
-  object-fit: contain; /* Ensure the image is not cut off, maintain aspect ratio */
+  width: 100%; /* Take up the full width */
+  height: auto; /* Allow the height to adjust to maintain the aspect ratio */
+  object-fit: contain; /* Keep the entire image visible */
+  max-height: 500px; /* Set a max height to prevent it from becoming too large */
   border-radius: 10px;
   margin-bottom: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
