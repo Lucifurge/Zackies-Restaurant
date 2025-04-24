@@ -1,0 +1,25 @@
+/* Ensures the image is responsive and fills the modal */
+.menu-image {
+  width: 100%;  /* Makes the image fill the width of the modal */
+  height: auto;  /* Maintain aspect ratio */
+  cursor: grab; /* Add a grabbing cursor for the draggable effect */
+  transition: transform 0.2s ease-in-out; /* Smooth transition for zoom effect */
+}
+
+/* Modal Image Zoom Effect */
+.menu-image.zoomed {
+  transform: scale(2); /* Adjust the scale value for zoom effect */
+}
+
+/* Limit image size within the modal */
+.modal-body {
+  max-width: 100%;
+  max-height: 80vh;  /* Ensures it doesn't overflow the modal */
+  overflow: hidden;  /* Hide the overflow */
+}
+
+/* Optional: Draggable image container */
+.modal-body {
+  position: relative;
+  overflow: hidden;
+}
