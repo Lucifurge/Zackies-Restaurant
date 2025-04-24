@@ -53,3 +53,19 @@ body {
 .zoomable:active {
     cursor: grabbing;
 }
+.zoomable {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Smooth zoom animations */
+  max-width: 100%;
+  height: auto;
+  touch-action: none; /* Prevent unintended gestures */
+  will-change: transform; /* Optimize for performance */
+}
+
+.zoomable.zoomed {
+  cursor: grab; /* UX: Indicate draggable state */
+}
+
+.no-swipe {
+  touch-action: none; /* Disable swipe gestures in carousel */
+}
