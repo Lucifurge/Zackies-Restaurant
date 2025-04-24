@@ -82,9 +82,15 @@ body {
 
 /* Glowing Text Effect */
 .glowing-text {
+    font-family: 'Dancing Script', cursive; /* Handwritten font */
     color: white; /* White text color */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.5),
-                 0 0 20px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 255, 0, 0.6), 0 0 40px rgba(255, 255, 0, 0.4);
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.7), 
+        0 0 10px rgba(255, 255, 255, 0.6), 
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 0, 0.8), /* Yellow glow */
+        0 0 30px rgba(255, 255, 0, 0.6), 
+        0 0 40px rgba(255, 255, 0, 0.4); /* Yellow glow */
     border: 2px solid yellow; /* Yellow border */
     padding: 10px; /* Add padding for the border effect */
     border-radius: 10px; /* Rounded corners */
