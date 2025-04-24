@@ -373,56 +373,27 @@ Request: (e.g., extra table, extra cloth):`;
 <!-- Unified Menu Carousel -->
 <div id="menuUnifiedCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner text-center">
-
-    <!-- MENU ITEM 1 -->
-    <div class="carousel-item active">
-      <img src="men1.jpg" class="menu-image zoomable rounded mx-auto d-block img-fluid"
-           alt="Menu 1"
-           data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="men1.jpg">
-    </div>
-
-    <!-- MENU ITEM 2 -->
-    <div class="carousel-item">
-      <img src="men2.jpg" class="menu-image zoomable rounded mx-auto d-block img-fluid"
-           alt="Menu 2"
-           data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-img="men2.jpg">
-    </div>
-
-  </div>
-
-  <!-- Carousel Controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<!-- Modal for Zoom -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-transparent border-0">
-      <div class="modal-body d-flex justify-content-center align-items-center">
-        <img src="" id="modalImage" class="img-fluid rounded shadow" alt="Zoomed Menu">
+    <section class="py-5 bg-white">
+      <div class="container" data-aos="fade-up">
+      <h2 class="text-center text-warning mb-4">Menu Cards</h2>
+      <div id="menuCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded shadow">
+          <div class="carousel-item active">
+            <img src="men1.jpg" class="d-block w-100" alt="Menu Card 1">
+          </div>
+          <div class="carousel-item">
+            <img src="men2.jpg" class="d-block w-100" alt="Menu Card 2">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- Script for Modal Dynamic Image Load -->
-<script>
-  const imageModal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
-
-  imageModal.addEventListener('show.bs.modal', function (event) {
-    const triggerImg = event.relatedTarget;
-    const imgSrc = triggerImg.getAttribute('data-bs-img');
-    modalImage.src = imgSrc;
-  });
-</script>
+      </div>
+      </section>
 
 
 
@@ -605,6 +576,7 @@ emailjs.init("q-dVzKas8Z816VUWQ"); // Your public key
     });
   });
 </script>
+
 
 
 <!-- Link your custom JavaScript file -->
