@@ -44,3 +44,15 @@ body {
 .modal-footer {
     border-top: 3px solid #ffb52d;
 }
+
+/* Ensure zoomed images do not go out of the modal boundaries */
+.modal-body .zoomable {
+    max-width: none; /* Allow images to grow bigger than the modal's width */
+    max-height: none; /* Allow images to grow bigger than the modal's height */
+}
+
+/* Prevent the image from overflowing outside the modal */
+.modal-body .zoomable.zoomed {
+    max-width: 100vw; /* Ensure the image doesn't overflow the viewport width */
+    max-height: 100vh; /* Ensure the image doesn't overflow the viewport height */
+}
