@@ -414,13 +414,26 @@ Request: (e.g., extra table, extra cloth):`;
 
 <!-- Script for Modal Dynamic Image Load -->
 <script>
-  const imageModal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select the modal and the image inside the modal
+    const imageModal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
 
-  imageModal.addEventListener('show.bs.modal', function (event) {
-    const triggerImg = event.relatedTarget;
-    const imgSrc = triggerImg.getAttribute('data-bs-img');
-    modalImage.src = imgSrc;
+    // Add click listeners to images with `data-bs-img` attributes
+    const zoomableImages = document.querySelectorAll("[data-bs-img]");
+
+    zoomableImages.forEach(image => {
+      image.addEventListener("click", function () {
+        const imgSrc = image.getAttribute("data-bs-img"); // Get the image source from the attribute
+        if (imgSrc) {
+          modalImage.src = imgSrc; // Set the image source for the modal
+          const bootstrapModal = new bootstrap.Modal(imageModal); // Initialize and show the modal
+          bootstrapModal.show();
+        } else {
+          console.error("Image source is missing!");
+        }
+      });
+    });
   });
 </script>
 
