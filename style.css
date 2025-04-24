@@ -106,19 +106,6 @@ footer .social-icons a:hover {
   color: #ffc107;
 }
 
-/* Image Fullscreen Effect */
-.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1050;
-  cursor: pointer;
-}
-
 /* Unified Menu Carousel Styling */
 .menu-image {
   max-width: 100%;
