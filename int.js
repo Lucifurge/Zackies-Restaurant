@@ -1,38 +1,41 @@
-// Draggable image
-let image = document.querySelector('.menu-image');
+// Get all zoomable images
+const zoomableImages = document.querySelectorAll('.zoomable');
 
-image.addEventListener('mousedown', function(e) {
-  let shiftX = e.clientX - image.getBoundingClientRect().left;
-  let shiftY = e.clientY - image.getBoundingClientRect().top;
-
-  image.style.position = 'absolute';
-  image.style.zIndex = 1000;
-
-  function moveAt(pageX, pageY) {
-    image.style.left = pageX - shiftX + 'px';
-    image.style.top = pageY - shiftY + 'px';
-  }
-
-  // Move the image on mouse move
-  document.addEventListener('mousemove', onMouseMove);
-
-  // Drop the image on mouse up
-  image.onmouseup = function() {
-    document.removeEventListener('mousemove', onMouseMove);
-    image.onmouseup = null;
-  };
-
-  function onMouseMove(e) {
-    moveAt(e.pageX, e.pageY);
-  }
-
-  // Prevent image from being dragged out of the modal bounds
-  image.ondragstart = function() {
-    return false;
-  };
+// Add click event listener to enable zoom
+zoomableImages.forEach((image) => {
+  image.addEventListener('click', () => {
+    image.classList.toggle('zoomed'); // Toggle zoom class
+    if (image.classList.contains('zoomed')) {
+      makeDraggable(image); // Make the image draggable when zoomed
+    } else {
+      image.style.transform = 'scale(1)'; // Reset the image zoom
+    }
+  });
 });
 
-// Zoom effect (toggle zoom)
-image.addEventListener('click', function() {
-  image.classList.toggle('zoomed');
-});
+// Function to make the image draggable
+function makeDraggable(image) {
+  let isDragging = false;
+  let startX, startY;
+
+  image.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX - image.offsetLeft;
+    startY = e.clientY - image.offsetTop;
+    image.style.cursor = 'grabbing'; // Change cursor when dragging
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      let x = e.clientX - startX;
+      let y = e.clientY - startY;
+      image.style.left = x + 'px';
+      image.style.top = y + 'px';
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    image.style.cursor = 'grab'; // Change back the cursor when not dragging
+  });
+}
