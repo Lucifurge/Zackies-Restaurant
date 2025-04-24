@@ -12,16 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Double-tap zoom logic
   zoomableImages.forEach((img) => {
-    img.addEventListener("click", (e) => {
-      const currentTime = new Date().getTime();
-      if (currentTime - lastTapTime < 300) {
-        if (scale > 1) {
-          resetZoom(); // Zoom out on double-tap
-        } else {
-          toggleZoom(img); // Zoom in on double-tap
-        }
+    img.addEventListener("dblclick", (e) => { // Changed to double-click (dblclick)
+      if (scale > 1) {
+        resetZoom(); // Zoom out on double-tap
+      } else {
+        toggleZoom(img); // Zoom in on double-tap
       }
-      lastTapTime = currentTime;
     });
   });
 
@@ -51,17 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   zoomableImages.forEach((img) => {
     img.addEventListener("mousedown", (e) => {
       if (scale > 1) {
-        // Prevent dragging when zoomed in
-        e.preventDefault();
-      }
-    });
-  });
-
-  // Touch Events for Mobile Devices
-  zoomableImages.forEach((img) => {
-    img.addEventListener("touchstart", (e) => {
-      if (scale > 1) {
-        e.preventDefault(); // Disable dragging when zoomed
+        e.preventDefault(); // Prevent dragging when zoomed in
       }
     });
   });
