@@ -1,12 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarCollapse = document.querySelector('.navbar-collapse');
+// Custom JavaScript to toggle the collapse class
+    document.addEventListener('DOMContentLoaded', function () {
+      const navbarToggler = document.getElementById('navbarTogglerButton');
+      const navbarCollapse = document.getElementById('mainNavbar');
 
-  navbarToggler.addEventListener('click', function () {
-    if (navbarCollapse.classList.contains('show')) {
-      navbarCollapse.classList.remove('show');
-    } else {
-      navbarCollapse.classList.add('show');
-    }
-  });
-});
+      navbarToggler.addEventListener('click', function () {
+        // Toggle the 'collapse' class to show or hide the navbar
+        navbarCollapse.classList.toggle('show');
+      });
+    });
+  
