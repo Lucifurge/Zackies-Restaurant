@@ -1,0 +1,15 @@
+/* Add specific styling for the Find Us button */
+.find-us-btn {
+  font-size: 1.1rem;
+  padding: 12px 20px; /* Standard padding */
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* Make the Find Us button smaller for mobile devices */
+@media (max-width: 576px) {
+  .find-us-btn {
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 8px 16px;  /* Reduced padding for a smaller button */
+  }
+}
