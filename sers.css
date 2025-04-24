@@ -1,0 +1,51 @@
+/* Services Section Background Box */
+.service-box {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 193, 7, 0.1)), #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+  border: 1px solid #ffc107; /* Gold border around the box */
+  text-align: center;
+}
+
+.service-box h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc107; /* Yellow text */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for h2 */
+}
+
+/* Service Buttons with Enhanced Box Design */
+.service-btn {
+  background-color: #ffc107;
+  border: none;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.service-btn:hover {
+  background-color: #ffca2c; /* Slightly lighter yellow */
+  box-shadow: 0 4px 20px rgba(255, 193, 7, 0.5); /* Glowing effect on hover */
+}
+
+.service-btn:focus {
+  outline: none;
+}
+
+/* Additional Responsive Styling for Better Design */
+@media (max-width: 992px) {
+  .service-box {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-btn {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
