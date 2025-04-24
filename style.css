@@ -1,4 +1,3 @@
-
 /* General Reset & Typography */
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -6,63 +5,57 @@ body {
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-  }
-  
-  /* Navbar Styling */
-  .navbar {
+}
+
+/* Navbar Styling */
+.navbar {
     z-index: 1050;
-  }
-  
-  .navbar-brand img {
+}
+
+.navbar-brand img {
     width: 40px;
-    height: 40px;
+    height: auto; /* Ensures proper scaling */
     margin-right: 10px;
-  }
-  
-  .navbar-nav .nav-link {
+}
+
+.navbar-nav .nav-link {
     font-weight: 600;
     color: #ffffff;
-  }
-  
-  .navbar-nav .nav-link:hover {
+    padding: 12px 16px; /* Better touch area for mobile */
+}
+
+.navbar-nav .nav-link:hover {
     color: #ffc107;
-  }
-  
-  /* Fix navbar collapse on mobile */
-  .navbar-collapse {
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Ensure menu collapses when clicking a link */
-  .navbar-nav .nav-link {
-    font-weight: 600;
-    color: #333;
-    padding: 12px 16px;
-  }
-  
-  .navbar-toggler {
+}
+
+.navbar-toggler {
     padding: 12px;
     font-size: 1.25rem;
     border: none;
     outline: none;
-  }
-  
-  .navbar-toggler:focus {
+}
+
+.navbar-toggler:focus {
     box-shadow: none;
-  }
-  
-  /* Hero Section Styling */
-  .Gallary {
+}
+
+/* Fix navbar collapse on mobile */
+.navbar-collapse {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section Styling */
+.Gallary {
     position: relative;
     z-index: 1;
-  }
-  
-  .carousel-item img {
+}
+
+.carousel-item img {
     height: 600px;
     object-fit: cover;
-  }
-  
-  .hero-overlay {
+}
+
+.hero-overlay {
     z-index: 10;
     position: absolute;
     top: 50%;   
@@ -71,60 +64,110 @@ body {
     text-align: center;
     padding: 1rem;
     width: 100%;
-  }
-  
-  /* Title styling */
-  .hero-overlay h1 {
+}
+
+/* Title styling */
+.hero-overlay h1 {
+    font-size: 2.5rem;
     color: rgb(255, 255, 255); /* Golden yellow */
     text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
-  }
-  
-  /* Subtitle slogan styling */
-  .hero-overlay p {
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
     color: white;
     text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
-  }
-  
-  /* Responsive Navbar Fixes */
-  @media (max-width: 992px) {
+}
+
+/* Footer Styling */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer .social-icons a {
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .social-icons a:hover {
+    color: #ffc107;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
     .navbar-nav {
-      text-align: center;
-      padding-top: 10px;
-      flex-direction: column;
+        text-align: center;
+        padding-top: 10px;
+        flex-direction: column;
     }
     
     .nav-item {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
     }
-  
+
     .navbar-collapse {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
-  
-    .navbar-nav .nav-link {
-      padding: 0.5rem 0;
-    }
-  }
-  
-  @media (max-width: 768px) {
+
     .carousel-item img {
-      height: 300px;
+        height: 400px; /* Adjust image height for tablets */
     }
-  
+
     .hero-overlay h1 {
-      font-size: 1.5rem;
+        font-size: 2rem;
     }
-  
+
     .hero-overlay p {
-      font-size: 0.9rem;
+        font-size: 1rem;
     }
-  
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-overlay p {
+        font-size: 0.9rem;
+    }
+
     .hero-overlay button {
-      font-size: 0.9rem;
-      padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
     }
-  }
-  
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        width: 30px; /* Smaller logo for small screens */
+    }
+
+    .hero-overlay h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero-overlay p {
+        font-size: 0.8rem;
+    }
+
+    footer .social-icons a {
+        font-size: 1.25rem;
+    }
+}
