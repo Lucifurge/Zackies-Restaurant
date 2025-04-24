@@ -10,14 +10,16 @@ body {
 /* Image Zoom */
 .zoomable {
     cursor: pointer;
-    transition: transform 0.25s ease; /* Smooth zoom transition */
+    transition: transform 0.3s ease;
     max-width: 100%;
     height: auto;
+    touch-action: none; /* prevent double-tap zoom on mobile */
+    will-change: transform; /* performance optimization */
 }
 
 .zoomable.zoomed {
-    transform: scale(2); /* Zoom in */
-    cursor: move; /* Indicate dragging */
+    cursor: grab; /* Better UX for draggable zoomed state */
+    transform: scale(2) translate(0px, 0px); /* initial zoom state */
 }
 
 /* Make sure images do not overflow outside the modal */
@@ -26,21 +28,7 @@ body {
     overflow: hidden;
 }
 
-/* Draggable Image */
-.draggable {
-    position: absolute;
-    cursor: grab;
-}
-
-.draggable:active {
-    cursor: grabbing;
-}
-
 /* Modal Fixes */
-.modal-body {
-    overflow: hidden;
-}
-
 .modal-footer {
     border-top: 3px solid #ffb52d;
 }
@@ -51,9 +39,7 @@ body {
     max-height: none; /* Allow images to grow bigger than the modal's height */
 }
 
-/* Prevent the image from overflowing outside the modal */
 .modal-body .zoomable.zoomed {
     max-width: 100vw; /* Ensure the image doesn't overflow the viewport width */
     max-height: 100vh; /* Ensure the image doesn't overflow the viewport height */
 }
- 
