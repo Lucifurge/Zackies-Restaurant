@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let translateY = 0; // Y translation value
   let isDragging = false;
 
-  // Add event to open full-screen
+  // Add click event to open full-screen
   zoomableImages.forEach((img) => {
     img.addEventListener("click", () => {
       openFullScreen(img);
