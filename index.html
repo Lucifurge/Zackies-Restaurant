@@ -139,17 +139,42 @@
 <!-- Services Section -->
 <section class="py-5 text-center" id="services">
   <div class="container">
-      <div class="service-box"> <!-- Add the service-box class to this div -->
-          <h2 class="text-warning mb-4">Our Services</h2>
-          <div class="d-flex flex-wrap justify-content-center gap-3">
-              <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#cateringModal">Catering Bookings</button>
-              <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#partyTrayModal">Party Tray Bookings</button>
-              <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#venueModal">Exclusive Venue Rates</button>
-              <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#menuModal">Restaurant Menu</button>
+    <div class="service-box"> <!-- Add the service-box class to this div -->
+      <h2 class="text-warning mb-4">Our Services</h2>
+      <div class="row">
+        <!-- First Service - Left Side -->
+        <div class="col-md-6 mb-4 d-flex align-items-center justify-content-end">
+          <div class="text-right">
+            <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#cateringModal">Catering Bookings</button>
+            <p class="mt-2">A full-service catering experience for your events, with delicious food and professional service.</p>
           </div>
+        </div>
+        <!-- Second Service - Right Side -->
+        <div class="col-md-6 mb-4 d-flex align-items-center justify-content-start">
+          <div class="text-left">
+            <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#partyTrayModal">Party Tray Bookings</button>
+            <p class="mt-2">Order our delicious party trays for your next celebration or gathering. Customizable options available.</p>
+          </div>
+        </div>
+        <!-- Third Service - Left Side -->
+        <div class="col-md-6 mb-4 d-flex align-items-center justify-content-end">
+          <div class="text-right">
+            <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#venueModal">Exclusive Venue Rates</button>
+            <p class="mt-2">Exclusive venue options for your events with special pricing. Get in touch for a quote!</p>
+          </div>
+        </div>
+        <!-- Fourth Service - Left Side (Mobile Friendly Description) -->
+        <div class="col-md-6 mb-4 d-flex align-items-center justify-content-end">
+          <div class="text-right">
+            <button class="btn service-btn" data-bs-toggle="modal" data-bs-target="#menuModal">Restaurant Menu</button>
+            <p class="mt-2 d-sm-block d-md-none">Explore our menu with a wide variety of delicious dishes. Available for dine-in and takeout.</p>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </section>
+
 
 <!-- Catering Modal -->
 <div class="modal fade" id="cateringModal" tabindex="-1" aria-labelledby="cateringModalLabel" aria-hidden="true">
