@@ -1,74 +1,100 @@
 // Get all zoomable images
 const zoomableImages = document.querySelectorAll('.zoomable');
 
-// Add click event listener to enable zoom
 zoomableImages.forEach((image) => {
-  image.addEventListener('click', () => {
-    image.classList.toggle('zoomed'); // Toggle zoom class
-    if (image.classList.contains('zoomed')) {
-      makeDraggable(image); // Make the image draggable when zoomed
-    } else {
-      // Reset the image zoom and position
-      image.style.transform = 'scale(1)';
-      image.style.left = '0';
-      image.style.top = '0';
-    }
-  });
-});
-
-// Function to make the image draggable
-function makeDraggable(image) {
   let isDragging = false;
-  let startX, startY;
+  let lastX = 0;
+  let lastY = 0;
+  let startX = 0;
+  let startY = 0;
+  let scale = 1;
+  let doubleTapTimeout;
 
-  // Set the image to absolute positioning for drag to work
-  image.style.position = 'absolute';
-
-  image.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX - image.offsetLeft;
-    startY = e.clientY - image.offsetTop;
-    image.style.cursor = 'grabbing'; // Change cursor when dragging
-  });
-
-  document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-      let x = e.clientX - startX;
-      let y = e.clientY - startY;
-      image.style.left = x + 'px';
-      image.style.top = y + 'px';
+  // Zoom toggle on click or double tap
+  image.addEventListener('click', (e) => {
+    if (doubleTapTimeout) {
+      clearTimeout(doubleTapTimeout);
+      doubleTapTimeout = null;
+      toggleZoom(image);
+    } else {
+      doubleTapTimeout = setTimeout(() => {
+        doubleTapTimeout = null;
+      }, 300);
     }
   });
 
-  document.addEventListener('mouseup', () => {
+  // Drag start (mouse and touch)
+  const dragStart = (e) => {
+    isDragging = true;
+    image.style.cursor = 'grabbing';
+
+    const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+
+    startX = clientX - lastX;
+    startY = clientY - lastY;
+  };
+
+  // Drag move
+  const dragMove = (e) => {
+    if (!isDragging || !image.classList.contains('zoomed')) return;
+
+    e.preventDefault();
+
+    const clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+    const clientY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+
+    lastX = clientX - startX;
+    lastY = clientY - startY;
+
+    image.style.transform = `scale(${scale}) translate(${lastX / scale}px, ${lastY / scale}px)`;
+  };
+
+  // Drag end
+  const dragEnd = () => {
     isDragging = false;
-    image.style.cursor = 'grab'; // Change back the cursor when not dragging
-  });
-}
+    image.style.cursor = 'grab';
+  };
 
-// Adjust image size when modal is shown to ensure it fits properly
-$('#menuModal').on('shown.bs.modal', function () {
-  // Get all zoomable images
-  const zoomableImages = document.querySelectorAll('.zoomable');
+  // Attach mouse and touch events
+  image.addEventListener('mousedown', dragStart);
+  image.addEventListener('mousemove', dragMove);
+  image.addEventListener('mouseup', dragEnd);
+  image.addEventListener('mouseleave', dragEnd);
+  image.addEventListener('touchstart', dragStart, { passive: false });
+  image.addEventListener('touchmove', dragMove, { passive: false });
+  image.addEventListener('touchend', dragEnd);
 
-  zoomableImages.forEach(image => {
-    // Reset the image size and position when modal is shown
-    image.style.transform = 'scale(1)';
-    image.style.left = '0';
-    image.style.top = '0';
-  });
-
-  // Fix carousel for the case when only 2 images exist
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  if (carouselItems.length > 2) {
-    carouselItems[2].classList.add('d-none'); // Hide extra slides
+  function toggleZoom(img) {
+    img.classList.toggle('zoomed');
+    if (img.classList.contains('zoomed')) {
+      scale = 2;
+      lastX = 0;
+      lastY = 0;
+      img.style.cursor = 'grab';
+      img.style.transform = `scale(${scale}) translate(0px, 0px)`;
+    } else {
+      scale = 1;
+      lastX = 0;
+      lastY = 0;
+      img.style.cursor = 'pointer';
+      img.style.transform = 'scale(1)';
+    }
   }
 });
 
-// To ensure we don't show an empty third slide when there are only 2 images
-document.addEventListener('DOMContentLoaded', () => {
+// Reset image zoom when modal is shown
+$('#menuModal').on('shown.bs.modal', function () {
+  document.querySelectorAll('.zoomable').forEach(image => {
+    image.classList.remove('zoomed');
+    image.style.transform = 'scale(1)';
+    image.style.cursor = 'pointer';
+  });
+
+  // Hide extra slides
   const carouselItems = document.querySelectorAll('.carousel-item');
-  if (carouselItems.length > 2) {
-    carouselItems[2].classList.add('d-none'); // Hide extra slides
-  }
+  carouselItems.forEach((item, index) => {
+    item.classList.remove('d-none');
+    if (index > 1) item.classList.add('d-none');
+  });
 });
