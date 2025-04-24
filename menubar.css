@@ -9,10 +9,11 @@
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 9999;
   cursor: grab;
+  touch-action: none; /* Prevent unintended gestures */
   transition: transform 0.1s ease;
-  touch-action: none; /* Prevent default gestures on touch devices */
 }
 
+/* Cursor feedback for dragging */
 .fullscreen:active {
   cursor: grabbing;
 }
