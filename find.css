@@ -1,15 +1,23 @@
-/* Add specific styling for the Find Us button */
-.find-us-btn {
-  font-size: 1.1rem;
-  padding: 5px 7px; /* Standard padding */
-  border-radius: 3px;
-  text-transform: uppercase;
+.map-btn {
+  background-color: #ffc107;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-/* Make the Find Us button smaller for mobile devices */
+.map-btn:hover {
+  background-color: #ffca2c;
+  box-shadow: 0 4px 20px rgba(255, 193, 7, 0.5);
+}
+
 @media (max-width: 576px) {
-  .find-us-btn {
-    font-size: 0.9rem; /* Smaller font size */
-    padding: 5px 7px;  /* Reduced padding for a smaller button */
+  .map-btn {
+    width: 100%;
+    display: block;
+    font-size: 0.9rem;
   }
 }
