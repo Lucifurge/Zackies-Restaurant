@@ -1,92 +1,3 @@
-/* General Reset & Typography */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  overscroll-behavior: contain; /* Prevent bounce-back effects */
-}
-
-/* Zoomable Image Styles */
-.zoomable {
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  max-width: 100%;
-  height: auto;
-  touch-action: none; /* Prevent unintended gestures */
-  will-change: transform; /* Performance boost */
-}
-
-/* Zoomed State */
-.zoomable.zoomed {
-  cursor: grab;
-  transform: scale(2) translate(0px, 0px); /* Initial zoom state */
-}
-
-/* When actively dragging */
-.zoomable:active {
-  cursor: grabbing;
-}
-
-/* Modal Image Handling */
-.modal-body {
-  position: relative;
-  overflow: hidden; /* Prevent overflow while zoomed */
-  -webkit-overflow-scrolling: touch; /* Better mobile scrolling */
-}
-
-.modal-body .zoomable {
-  max-width: none;
-  max-height: none;
-}
-
-.modal-body .zoomable.zoomed {
-  max-width: 100vw; /* Ensures zoomed image fits within the viewport */
-  max-height: 100vh; /* Ensures zoomed image fits within the viewport */
-  overflow: hidden; /* Prevent overflow glitches */
-}
-
-/* Modal Footer Styling */
-.modal-footer {
-  border-top: 3px solid #ffb52d; /* Gold border for modal footer */
-  padding: 10px; /* Better spacing */
-}
-
-/* Prevent Swipe While Zoomed (Carousel Items) */
-.no-swipe {
-  touch-action: none; /* Disable swipe gestures in carousel */
-}
-
-/* Additional Styling for Mobile Devices */
-@media (max-width: 768px) {
-  .zoomable.zoomed {
-    transform: scale(1.5); /* Limit zoom on mobile for a better experience */
-    overflow: hidden; /* Prevent overflow during zoom */
-  }
-  .modal-body .zoomable.zoomed {
-    max-width: 100%; /* Ensure the zoomed image stays within viewport width */
-    max-height: 100%; /* Ensure the zoomed image stays within viewport height */
-    touch-action: manipulation; /* Improved touch handling */
-  }
-}
-/* General Full-Screen Styling */
-.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: contain;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 9999;
-  cursor: grab;
-  transition: transform 0.3s ease;
-}
-
-.fullscreen:active {
-  cursor: grabbing;
-}
 /* Full-Screen Styling */
 .fullscreen {
   position: fixed;
@@ -97,10 +8,11 @@ body {
   object-fit: contain;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 9999;
-  transition: transform 0.3s ease;
+  cursor: grab;
+  transition: transform 0.1s ease;
+  touch-action: none; /* Prevent default gestures on touch devices */
 }
 
-/* Prevent dragging during zoom */
-.fullscreen {
-  touch-action: none; /* Disables all dragging gestures */
+.fullscreen:active {
+  cursor: grabbing;
 }
