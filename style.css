@@ -152,3 +152,8 @@ body {
         padding: 0.25rem;
     }
 }
+
+/* Footer Spacing to prevent overlap */
+.footer-spacing {
+    height: 100px; /* Adjust the height based on your footer size */
+}
