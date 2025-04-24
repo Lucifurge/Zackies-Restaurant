@@ -98,10 +98,10 @@
       }
     
       .navbar-collapse {
-        background-color: white;
+        background-color: rgb(255, 255, 255);
         padding: 1rem;
         border-radius: 0.5rem;
-        box-shadow: 0 10px 20px rgba(216, 216, 216, 0.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
     
       .navbar-nav .nav-link {
