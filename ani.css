@@ -5,19 +5,33 @@
   transition: opacity 1s ease, transform 1s ease;
 }
 
+/* For mobile responsiveness */
+@media (max-width: 767px) {
+  /* On mobile, use translateY (vertical) instead of translateX (horizontal) */
+  .animated-section {
+    transform: translateY(100px);
+  }
+
+  .from-left {
+    transform: translateY(100px);
+  }
+
+  .from-right {
+    transform: translateY(-100px);
+  }
+}
+
 /* When the section is in view, it will move to its original position */
-.from-left {
-  transform: translateX(-100px);
-}
-
-.from-right {
-  transform: translateX(100px);
-}
-
-/* Make the section fade in */
 .animated-section.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0); /* or translateY(0) for mobile */
+}
+
+/* For mobile, adjust the section's appearance */
+@media (max-width: 767px) {
+  .animated-section.visible {
+    transform: translateY(0);
+  }
 }
 
 /* Apply glow effect for titles */
