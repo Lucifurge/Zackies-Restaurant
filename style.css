@@ -214,3 +214,8 @@ p, span, li, strong, b {
     font-size: 1rem;
   }
 }
+
+/* Make specific list item gold */
+.gold-text {
+  color: #ffc107 !important;
+}
