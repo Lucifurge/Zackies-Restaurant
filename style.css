@@ -219,3 +219,12 @@ p, span, li, strong, b {
 .gold-text {
   color: #ffc107 !important;
 }
+/* Contact Info Section */
+.email-link {
+  color: white !important; /* Ensures email text is white */
+  text-decoration: none; /* Optional: Removes underline */
+}
+
+.email-link:hover {
+  color: #ffc107; /* Change color on hover (optional) */
+}
