@@ -232,3 +232,8 @@ p, span, li, strong, b {
 .email-link:hover {
   color: #ffc107; /* Change color on hover (optional) */
 }
+/* Gold color for phone number */
+.phone-number {
+  color: #ffc107 !important;
+}
+
