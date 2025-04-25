@@ -41,29 +41,30 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow" style="background-color: white; border-bottom: 2px solid #ffc107;">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase text-warning" href="#" onclick="location.reload(); return false;">
-        <img src="zack.jpg" alt="Zackie’s Logo" style="width: 40px; height: 40px; margin-right: 10px;">
-        Zackie’s
-      </a>
-      <button class="navbar-toggler" type="button" id="navbarTogglerButton" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <!-- Navbar links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto text-center">
-          <li class="nav-item"><a class="nav-link text-warning" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link text-warning" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link text-warning" href="#gallery">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link text-warning" href="#schedule">Schedules</a></li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow" style="background-color: white; border-bottom: 2px solid #ffc107;">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase text-warning" href="#" onclick="location.reload(); return false;">
+          <img src="zack.jpg" alt="Zackie’s Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+          Zackie’s
+        </a>
+        <button class="navbar-toggler" type="button" id="navbarTogglerButton" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto text-center">
+            <li class="nav-item"><a class="nav-link text-warning" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link text-warning" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link text-warning" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link text-warning" href="#schedule">schedules</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-</body>
+    </nav>
+
+  </body>
+
 
 <!-- Hero Section with Slideshow -->
 <section class="Gallary" id="gallery">
@@ -718,21 +719,22 @@ menuItems.forEach(item => {
     </div>
 
   <!-- Contact Info Section -->
-<div class="row mb-5">
-  <div class="col-md-12 text-center">
-    <h5>Contact Information</h5>
-    <ul class="list-unstyled">
-      <li><i class="fas fa-phone-alt"></i> 📞 <strong class="phone-number">0919 873 2936</strong></li>
-      <li class="gold-text">
-        <i class="fas fa-map-marker-alt"></i> 📍 We're located beside 2bilann Gas Station at Mabini, National Highway, 8605 Cabadbaran, Philippines.
-      </li>
-      <li>
-        <i class="fas fa-envelope"></i> 
-        <a href="mailto:contact@zackiesrestaurant2020gmail.com" class="email-link">contact@zackiesrestaurant2020gmail.com</a>
-      </li>
-    </ul>
+  <div class="row mb-5">
+    <div class="col-md-12 text-center">
+      <h5 class="contact-title">Contact Information</h5> <!-- Add the class here -->
+      <ul class="list-unstyled">
+        <li><i class="fas fa-phone-alt"></i> 📞 <strong class="phone-number">0919 873 2936</strong></li>
+        <li class="gold-text">
+          <i class="fas fa-map-marker-alt"></i> 📍 We're located beside 2bilann Gas Station at Mabini, National Highway, 8605 Cabadbaran, Philippines.
+        </li>
+        <li>
+          <i class="fas fa-envelope"></i> 
+          <a href="mailto:contact@zackiesrestaurant2020gmail.com" class="email-link">contact@zackiesrestaurant2020gmail.com</a>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+  
 
 
     <!-- Social Media Section -->
