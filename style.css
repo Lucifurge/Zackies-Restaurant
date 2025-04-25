@@ -43,13 +43,15 @@ p, span, li, strong, b {
   margin-right: 10px;
 }
 
-/* Navbar Links */
+/* Navbar Links - Apply the 'Dancing Script' font here */
 .navbar-nav .nav-link {
+  font-family: 'Dancing Script', cursive !important; /* Use handwritten font */
   font-weight: 600;
   color: #ffc107;
   padding: 12px 16px;
   font-size: 1.1rem;
   transition: color 0.3s ease-in-out;
+  text-shadow: 2px 2px 3px rgba(255, 193, 7, 0.4); /* Add slight text-shadow for the wavy effect */
 }
 
 .navbar-nav .nav-link:hover {
@@ -57,6 +59,7 @@ p, span, li, strong, b {
   text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107;
 }
 
+/* Responsive Navbar */
 @media (min-width: 993px) {
   .navbar-collapse {
     display: flex !important;
@@ -219,6 +222,7 @@ p, span, li, strong, b {
 .gold-text {
   color: #ffc107 !important;
 }
+
 /* Contact Info Section */
 .email-link {
   color: white !important; /* Ensures email text is white */
