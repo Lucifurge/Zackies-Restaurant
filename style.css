@@ -1,22 +1,39 @@
-
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 /* General Reset & Typography */
 body, html {
-  font-family: 'Dancing Script', cursive !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: Arial, sans-serif !important; /* Set default font for all non-title content */
+}
+
+/* Section Titles - Auto-detect (h1 to h6) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Dancing Script', cursive !important;
+  font-weight: 700;
+  color: #000;
+  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+/* Section Descriptions - Paragraphs, spans, list items */
+p, span, li, strong, b {
+  font-family: Arial, sans-serif !important;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* Navbar Styling */
 .navbar {
   z-index: 1050;
-  background-color: white; /* White background */
-  border-bottom: 2px solid #ffc107; /* Gold border */
-  box-shadow: 0px 4px 10px rgba(255, 193, 7, 0.5); /* Subtle glowing effect */
+  background-color: white;
+  border-bottom: 2px solid #ffc107;
+  box-shadow: 0px 4px 10px rgba(255, 193, 7, 0.5);
 }
 
 /* Navbar Brand */
@@ -29,19 +46,17 @@ body, html {
 /* Navbar Links */
 .navbar-nav .nav-link {
   font-weight: 600;
-  color: #ffc107; /* Gold text */
+  color: #ffc107;
   padding: 12px 16px;
   font-size: 1.1rem;
   transition: color 0.3s ease-in-out;
 }
 
-/* Navbar Links Hover Effect */
 .navbar-nav .nav-link:hover {
-  color: #ffffff; /* Change to white on hover */
-  text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107; /* Glowing text effect */
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107, 0 0 15px #ffc107;
 }
 
-/* Fix for desktop navbar visibility */
 @media (min-width: 993px) {
   .navbar-collapse {
     display: flex !important;
@@ -50,13 +65,11 @@ body, html {
   }
 }
 
-/* Smooth Navbar Collapse for mobile */
 .navbar-collapse {
   transition: max-height 0.3s ease-in-out;
   overflow: hidden;
 }
 
-/* Collapsed menu height control for mobile */
 .navbar-collapse.collapse {
   max-height: 0;
 }
@@ -65,7 +78,6 @@ body, html {
   max-height: 500px;
 }
 
-/* Navbar Toggler */
 .navbar-toggler {
   padding: 12px;
   font-size: 1.25rem;
@@ -99,7 +111,6 @@ body, html {
   width: 100%;
 }
 
-/* Glowing Text Effect */
 .glowing-text {
   font-family: 'Dancing Script', cursive;
   color: white;
@@ -115,19 +126,17 @@ body, html {
   border-radius: 10px;
 }
 
-/* Title Styling */
 .hero-overlay h1 {
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 8px rgba(255, 182, 25, 0.7);
 }
 
-/* Subtitle Slogan Styling */
 .hero-overlay p {
   color: white;
   text-shadow: 2px 2px 6px rgba(255, 208, 0, 0.6);
 }
 
-/* Responsive Navbar Fixes for tablets and below */
+/* Responsive Fixes */
 @media (max-width: 992px) {
   .navbar-collapse {
     display: none;
@@ -158,7 +167,6 @@ body, html {
   }
 }
 
-/* Responsive Fixes */
 @media (max-width: 768px) {
   .carousel-item img {
     height: 300px;
@@ -178,7 +186,6 @@ body, html {
   }
 }
 
-/* Additional fixes for phones */
 @media (max-width: 576px) {
   .navbar-brand img {
     width: 30px;
@@ -206,20 +213,4 @@ body, html {
     padding: 10px;
     font-size: 1rem;
   }
-/* Section Titles - Auto-detect (h1 to h6) */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Dancing Script', cursive !important;
-  font-weight: 700;
-  color: #000;
-  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.3);
-  margin-bottom: 0.5rem;
-}
-
-/* Section Descriptions - Paragraphs, spans, list items */
-p, span, li, strong, b {
-  font-family: Arial, sans-serif !important;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
 }
