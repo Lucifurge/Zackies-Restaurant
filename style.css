@@ -3,7 +3,7 @@
 
 /* ========== Base Reset & Typography ========== */
 * {
-  margin: 0; 
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -11,7 +11,7 @@
 html, body {
   scroll-behavior: smooth;
   font-family: Arial, sans-serif !important;
-  background-color: #fffaf0;
+  background-color: #fffdf5; /* Softer cream background */
   color: #333;
 }
 
@@ -19,8 +19,8 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Dancing Script', cursive !important;
   font-weight: 700;
-  color: #000;
-  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.4);
+  color: #222;
+  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.5);
   transition: all 0.3s ease;
 }
 
@@ -29,15 +29,15 @@ p, li, span, strong {
   font-weight: 600;
   line-height: 1.7;
   font-size: 1rem;
-  color: #444;
+  color: #555;
 }
 
 /* ========== Navbar ========== */
 .navbar {
   z-index: 1050;
-  background-color: #fff;
+  background-color: #fffef7;
   border-bottom: 2px solid #ffc107;
-  box-shadow: 0 6px 12px rgba(255, 193, 7, 0.25);
+  box-shadow: 0 6px 12px rgba(255, 193, 7, 0.2);
   transition: background-color 0.4s ease;
 }
 
@@ -45,7 +45,7 @@ p, li, span, strong {
   width: 45px;
   height: 45px;
   margin-right: 12px;
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
 }
 
 .navbar-nav .nav-link {
@@ -54,13 +54,16 @@ p, li, span, strong {
   font-weight: bold;
   padding: 12px 18px;
   color: #ffc107;
-  text-shadow: 2px 2px 4px rgba(255, 193, 7, 0.5);
+  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.4);
   transition: all 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link:hover {
   color: #fff;
-  text-shadow: 0 0 8px #ffc107, 0 0 12px #ffeb3b;
+  background-color: #ffc107;
+  border-radius: 20px;
+  padding: 12px 20px;
+  text-shadow: 0 0 10px #fff, 0 0 15px #ffc107;
 }
 
 /* ========== Hero Section ========== */
@@ -73,10 +76,11 @@ p, li, span, strong {
   height: 600px;
   object-fit: cover;
   filter: brightness(90%);
-  border-bottom: 5px solid #ffc107;
+  border-bottom: 6px solid #ffc107;
   border-radius: 0 0 30px 30px;
 }
 
+/* Overlay & Title */
 .hero-overlay {
   position: absolute;
   top: 50%;
@@ -88,14 +92,66 @@ p, li, span, strong {
   color: white;
 }
 
+.hero-overlay h1.zackies-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4.2rem;
+  color: #ffc107;
+  text-shadow: 0 0 15px #fff, 0 0 25px #ffc107;
+  animation: glowUp 2s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glowing Animation */
+@keyframes glowUp {
+  from {
+    text-shadow: 0 0 8px #fff, 0 0 15px #ffc107;
+  }
+  to {
+    text-shadow: 0 0 15px #fff, 0 0 30px #ffc107;
+  }
+}
+
+/* Glowing Text Box */
 .glowing-text {
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
-  padding: 10px 20px;
-  border-radius: 12px;
+  padding: 10px 24px;
+  border-radius: 15px;
   border: 2px solid #ffc107;
-  background-color: rgba(0, 0, 0, 0.3);
-  text-shadow: 0 0 8px white, 0 0 15px #ffc107;
+  background-color: rgba(0, 0, 0, 0.25);
+  text-shadow: 0 0 10px white, 0 0 15px #ffc107;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  color: #ffc107;
+  animation: bounce 2s infinite;
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroll-arrow:hover {
+  transform: translateX(-50%) scale(1.2);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-12px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-6px);
+  }
 }
 
 /* ========== Button Styling ========== */
@@ -112,10 +168,11 @@ p, li, span, strong {
 
 .btn-gold:hover {
   background-color: #ffb300;
-  box-shadow: 0 6px 18px rgba(255, 193, 7, 0.6);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
 }
 
-/* ========== Contact Styling ========== */
+/* ========== Contact Section ========== */
 .contact-title {
   font-size: 1.8rem;
   text-align: center;
@@ -126,7 +183,7 @@ p, li, span, strong {
 
 .phone-number,
 .email-link {
-  color: #fff !important;
+  color: #222 !important;
   font-weight: bold;
 }
 
@@ -149,23 +206,23 @@ p, li, span, strong {
   }
 }
 
-/* ========== Responsive ========== */
+/* ========== Responsive Design ========== */
 @media (max-width: 768px) {
-  .hero-overlay h1 {
-    font-size: 1.5rem;
+  .hero-overlay h1.zackies-title {
+    font-size: 2.5rem;
   }
 
   .carousel-item img {
-    height: 300px;
-  }
-
-  .btn-gold {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    height: 320px;
   }
 
   .glowing-text {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+
+  .btn-gold {
+    padding: 10px 22px;
+    font-size: 0.95rem;
   }
 }
 
@@ -182,54 +239,12 @@ p, li, span, strong {
   .hero-overlay p {
     font-size: 0.85rem;
   }
-  /* Zackie's Restaurant Title */
-.hero-overlay h1.zackies-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 4rem;
-  color: #ffc107;
-  text-shadow: 0 0 10px #fff, 0 0 15px #ffc107;
-  animation: glowUp 2s ease-in-out infinite alternate;
-  position: relative;
-  z-index: 2;
-}
 
-/* Glowing Animation */
-@keyframes glowUp {
-  from {
-    text-shadow: 0 0 8px #fff, 0 0 15px #ffc107;
+  .hero-overlay h1.zackies-title {
+    font-size: 2rem;
   }
-  to {
-    text-shadow: 0 0 15px #fff, 0 0 25px #ffc107;
-  }
-}
 
-/* Scroll Down Arrow (Chevron) */
-.scroll-arrow {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.5rem;
-  color: #ffc107;
-  animation: bounce 2s infinite;
-  z-index: 2;
-  text-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  40% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-  60% {
-    transform: translateX(-50%) translateY(-5px);
-  }
-}
-
-
-  .hero-overlay h1 {
-    font-size: 1.2rem;
+  .scroll-arrow {
+    font-size: 2rem;
   }
 }
