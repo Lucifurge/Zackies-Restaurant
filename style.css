@@ -12,14 +12,14 @@ html, body {
   scroll-behavior: smooth;
   font-family: Arial, sans-serif !important;
   background-color: #fffdf5; /* Softer cream background */
-  color: #333;
+  color: #ffffff;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Dancing Script', cursive !important;
   font-weight: 700;
-  color: #222;
+  color: #ffffff;
   text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.5);
   transition: all 0.3s ease;
 }
@@ -29,7 +29,7 @@ p, li, span, strong {
   font-weight: 600;
   line-height: 1.7;
   font-size: 1rem;
-  color: #555;
+  color: #ffffff;
 }
 
 /* ========== Navbar ========== */
@@ -183,7 +183,7 @@ p, li, span, strong {
 
 .phone-number,
 .email-link {
-  color: #222 !important;
+  color: #fffdfd !important;
   font-weight: bold;
 }
 
