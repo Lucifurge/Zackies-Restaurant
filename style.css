@@ -1,250 +1,250 @@
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+  /* Import Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-/* ========== Base Reset & Typography ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  scroll-behavior: smooth;
-  font-family: Arial, sans-serif !important;
-  background-color: #fffdf5; /* Softer cream background */
-  color: #ffffff;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Dancing Script', cursive !important;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.5);
-  transition: all 0.3s ease;
-}
-
-/* Paragraphs & Text */
-p, li, span, strong {
-  font-weight: 600;
-  line-height: 1.7;
-  font-size: 1rem;
-  color: #ffffff;
-}
-
-/* ========== Navbar ========== */
-.navbar {
-  z-index: 1050;
-  background-color: #fffef7;
-  border-bottom: 2px solid #ffc107;
-  box-shadow: 0 6px 12px rgba(255, 193, 7, 0.2);
-  transition: background-color 0.4s ease;
-}
-
-.navbar-brand img {
-  width: 45px;
-  height: 45px;
-  margin-right: 12px;
-  filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.2));
-}
-
-.navbar-nav .nav-link {
-  font-family: 'Dancing Script', cursive !important;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 12px 18px;
-  color: #ffc107;
-  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.4);
-  transition: all 0.3s ease-in-out;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #fff;
-  background-color: #ffc107;
-  border-radius: 20px;
-  padding: 12px 20px;
-  text-shadow: 0 0 10px #fff, 0 0 15px #ffc107;
-}
-
-/* ========== Hero Section ========== */
-.Gallary {
-  position: relative;
-  z-index: 1;
-}
-
-.carousel-item img {
-  height: 600px;
-  object-fit: cover;
-  filter: brightness(90%);
-  border-bottom: 6px solid #ffc107;
-  border-radius: 0 0 30px 30px;
-}
-
-/* Overlay & Title */
-.hero-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 2rem;
-  text-align: center;
-  z-index: 2;
-  color: white;
-}
-
-.hero-overlay h1.zackies-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 4.2rem;
-  color: #ffc107;
-  text-shadow: 0 0 15px #fff, 0 0 25px #ffc107;
-  animation: glowUp 2s ease-in-out infinite alternate;
-  position: relative;
-  z-index: 2;
-}
-
-/* Glowing Animation */
-@keyframes glowUp {
-  from {
-    text-shadow: 0 0 8px #fff, 0 0 15px #ffc107;
-  }
-  to {
-    text-shadow: 0 0 15px #fff, 0 0 30px #ffc107;
-  }
-}
-
-/* Glowing Text Box */
-.glowing-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
-  padding: 10px 24px;
-  border-radius: 15px;
-  border: 2px solid #ffc107;
-  background-color: rgba(0, 0, 0, 0.25);
-  text-shadow: 0 0 10px white, 0 0 15px #ffc107;
-  box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
-}
-
-/* Scroll Arrow */
-.scroll-arrow {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.5rem;
-  color: #ffc107;
-  animation: bounce 2s infinite;
-  z-index: 2;
-  text-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
-  transition: transform 0.3s ease-in-out;
-}
-
-.scroll-arrow:hover {
-  transform: translateX(-50%) scale(1.2);
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  40% {
-    transform: translateX(-50%) translateY(-12px);
-  }
-  60% {
-    transform: translateX(-50%) translateY(-6px);
-  }
-}
-
-/* ========== Button Styling ========== */
-.btn-gold {
-  background-color: #ffc107;
-  border: none;
-  padding: 12px 28px;
-  font-weight: bold;
-  border-radius: 30px;
-  color: #222;
-  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
-  transition: all 0.3s ease;
-}
-
-.btn-gold:hover {
-  background-color: #ffb300;
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
-}
-
-/* ========== Contact Section ========== */
-.contact-title {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #ffc107;
-  text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
-}
-
-.phone-number,
-.email-link {
-  color: #ffffff !important;
-  font-weight: bold;
-}
-
-.email-link:hover {
-  color: #ffc107 !important;
-  text-decoration: underline;
-}
-
-/* ========== Scroll Animations ========== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ========== Responsive Design ========== */
-@media (max-width: 768px) {
-  .hero-overlay h1.zackies-title {
-    font-size: 2.5rem;
+  /* ========== Base Reset & Typography ========== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-  .carousel-item img {
-    height: 320px;
+  html, body {
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif !important;
+    background-color: #fffdf5; /* Softer cream background */
+    color: #ffffff;
   }
 
-  .glowing-text {
-    font-size: 1.7rem;
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dancing Script', cursive !important;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.5);
+    transition: all 0.3s ease;
   }
 
-  .btn-gold {
-    padding: 10px 22px;
-    font-size: 0.95rem;
+  /* Paragraphs & Text */
+  p, li, span, strong {
+    font-weight: 600;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: #000000;
   }
-}
 
-@media (max-width: 576px) {
+  /* ========== Navbar ========== */
+  .navbar {
+    z-index: 1050;
+    background-color: #fffef7;
+    border-bottom: 2px solid #ffc107;
+    box-shadow: 0 6px 12px rgba(255, 193, 7, 0.2);
+    transition: background-color 0.4s ease;
+  }
+
   .navbar-brand img {
-    width: 32px;
-    height: 32px;
+    width: 45px;
+    height: 45px;
+    margin-right: 12px;
+    filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.2));
+  }
+
+  .navbar-nav .nav-link {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 18px;
+    color: #ffc107;
+    text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.4);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: #ffc107;
+    border-radius: 20px;
+    padding: 12px 20px;
+    text-shadow: 0 0 10px #fff, 0 0 15px #ffc107;
+  }
+
+  /* ========== Hero Section ========== */
+  .Gallary {
+    position: relative;
+    z-index: 1;
   }
 
   .carousel-item img {
-    height: 220px;
+    height: 600px;
+    object-fit: cover;
+    filter: brightness(90%);
+    border-bottom: 6px solid #ffc107;
+    border-radius: 0 0 30px 30px;
   }
 
-  .hero-overlay p {
-    font-size: 0.85rem;
+  /* Overlay & Title */
+  .hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    text-align: center;
+    z-index: 2;
+    color: rgb(65, 63, 63);
   }
 
   .hero-overlay h1.zackies-title {
-    font-size: 2rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.2rem;
+    color: #ffc107;
+    text-shadow: 0 0 15px #fff, 0 0 25px #ffc107;
+    animation: glowUp 2s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 2;
   }
 
-  .scroll-arrow {
-    font-size: 2rem;
+  /* Glowing Animation */
+  @keyframes glowUp {
+    from {
+      text-shadow: 0 0 8px #fff, 0 0 15px #ffc107;
+    }
+    to {
+      text-shadow: 0 0 15px #fff, 0 0 30px #ffc107;
+    }
   }
-}
+
+  /* Glowing Text Box */
+  .glowing-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    padding: 10px 24px;
+    border-radius: 15px;
+    border: 2px solid #ffc107;
+    background-color: rgba(0, 0, 0, 0.25);
+    text-shadow: 0 0 10px white, 0 0 15px #ffc107;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+  }
+
+  /* Scroll Arrow */
+  .scroll-arrow {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #ffc107;
+    animation: bounce 2s infinite;
+    z-index: 2;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .scroll-arrow:hover {
+    transform: translateX(-50%) scale(1.2);
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-12px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-6px);
+    }
+  }
+
+  /* ========== Button Styling ========== */
+  .btn-gold {
+    background-color: #ffc107;
+    border: none;
+    padding: 12px 28px;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #222;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold:hover {
+    background-color: #ffb300;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+  }
+
+  /* ========== Contact Section ========== */
+  .contact-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffc107;
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+  }
+
+  .phone-number,
+  .email-link {
+    color: #ffffff !important;
+    font-weight: bold;
+  }
+
+  .email-link:hover {
+    color: #ffc107 !important;
+    text-decoration: underline;
+  }
+
+  /* ========== Scroll Animations ========== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ========== Responsive Design ========== */
+  @media (max-width: 768px) {
+    .hero-overlay h1.zackies-title {
+      font-size: 2.5rem;
+    }
+
+    .carousel-item img {
+      height: 320px;
+    }
+
+    .glowing-text {
+      font-size: 1.7rem;
+    }
+
+    .btn-gold {
+      padding: 10px 22px;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .navbar-brand img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .carousel-item img {
+      height: 220px;
+    }
+
+    .hero-overlay p {
+      font-size: 0.85rem;
+    }
+
+    .hero-overlay h1.zackies-title {
+      font-size: 2rem;
+    }
+
+    .scroll-arrow {
+      font-size: 2rem;
+    }
+  }
