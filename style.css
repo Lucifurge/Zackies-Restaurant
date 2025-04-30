@@ -45,7 +45,7 @@ p, li, span, strong {
   width: 45px;
   height: 45px;
   margin-right: 12px;
-  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.2));
 }
 
 .navbar-nav .nav-link {
@@ -183,7 +183,7 @@ p, li, span, strong {
 
 .phone-number,
 .email-link {
-  color: #fffdfd !important;
+  color: #ffffff !important;
   font-weight: bold;
 }
 
