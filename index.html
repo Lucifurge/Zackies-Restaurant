@@ -1,8 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
 
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Zackie’s Restaurant in Cabadbaran City – Where every meal is a memory made golden. Reserve a table, order online, or find us easily." />
@@ -14,13 +13,16 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS (only include this once) -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- AOS CSS (Animate On Scroll) -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/a2d0b5e1c4.js" crossorigin="anonymous"></script>
 
     <!-- Custom CSS Files -->
@@ -34,12 +36,14 @@
     <link rel="stylesheet" href="find.css" />
     <link rel="stylesheet" href="map.css" />
     <link rel="stylesheet" href="ani.css" />
+</head>
 
-    <!-- Bootstrap JS (bundle includes Popper) -->
+<body>
+    <!-- Your body content here -->
+
+    <!-- Bootstrap JS and dependencies (optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  </head>
-
-  <body>
+</body>
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow" style="background-color: white; border-bottom: 2px solid #ffc107;">
         <div class="container">
@@ -119,35 +123,43 @@
 
   </section>
   <!-- Reviews Section -->
-  <section id="reviews" class="py-5" data-aos="fade-up">
-      <div class="container">
-          <h2 class="text-center text-warning mb-4">What Our Customers Say</h2>
-          <div class="carousel slide" id="reviewCarousel" data-bs-ride="carousel">
-              <div class="carousel-inner text-center">
-                  <div class="carousel-item active">
-                      <p class="lead">"Gas station with a bar on its grounds. Not such a bad hangout for beer or coffee in the afternoon to evening. They sometimes have live entertainment."</p>
-                      <h5>-Chuck Torres</h5>
+<section id="reviews" class="py-5" data-aos="fade-up">
+  <div class="container">
+      <h2 class="text-center text-warning mb-4">What Our Customers Say</h2>
+      <div class="carousel slide" id="reviewCarousel" data-bs-ride="carousel">
+          <div class="carousel-inner text-center">
+              <div class="carousel-item active">
+                  <p class="lead">"Gas station with a bar on its grounds. Not such a bad hangout for beer or coffee in the afternoon to evening. They sometimes have live entertainment."</p>
+                  <div class="mb-2 text-warning">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                   </div>
-                  <div class="carousel-item">
-                      <p class="lead">"Has a well stocked convenience store and restobar on the side. Comfort room is clean. Price of fuel usually lower than more popular gas stations"</p>
-                      <h5>- 
-                          J Rad Barrientos</h5>
-                  </div>
-                  <div class="carousel-item">
-                      <p class="lead">"Accessible, nice place to chill with friends, convenience store is okay, clean comfort rooms.
-                          "</p>
-                      <h5>- Maria Cristinagil Concha</h5>
-                  </div>
+                  <h5>- Chuck Torres</h5>
               </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-              </button>
+              <div class="carousel-item">
+                  <p class="lead">"Has a well stocked convenience store and restobar on the side. Comfort room is clean. Price of fuel usually lower than more popular gas stations"</p>
+                  <div class="mb-2 text-warning">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <h5>- J Rad Barrientos</h5>
+              </div>
+              <div class="carousel-item">
+                  <p class="lead">"Accessible, nice place to chill with friends, convenience store is okay, clean comfort rooms."</p>
+                  <div class="mb-2 text-warning">
+                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <h5>- Maria Cristinagil Concha</h5>
+              </div>
           </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+          </button>
       </div>
-  </section>
+  </div>
+</section>
+
 
  <!-- Services Section -->
 <section class="py-5 text-center" id="services">
