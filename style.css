@@ -207,7 +207,7 @@ p, li, span, strong {
 .row.mb-5 li,
 .row.mb-5 li i {
   color: #ffffff !important;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+  text-shadow: 0 0 5px #000000, 0 0 10px #ffc107, 0 0 15px #ffc107;
 }
 
 .row.mb-5 {
@@ -217,7 +217,7 @@ p, li, span, strong {
 .email-link:hover {
   text-decoration: underline;
   color: #fff;
-  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+  text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107;
 }
 
 /* ========== Scroll Animations ========== */
