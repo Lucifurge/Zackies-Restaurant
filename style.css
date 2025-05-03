@@ -88,7 +88,6 @@ p, li, span, strong {
   text-align: center;
   z-index: 2;
   color: white; /* Make the text white */
-  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.05);
