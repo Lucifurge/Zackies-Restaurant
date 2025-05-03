@@ -87,7 +87,7 @@ p, li, span, strong {
   padding: 2rem;
   text-align: center;
   z-index: 2;
-  color: #ffffff;
+  color: white; /* Make the text white */
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
   border-radius: 15px;
@@ -129,7 +129,7 @@ p, li, span, strong {
 
 .glowing-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
+  font-size: 3rem; /* Adjust size as needed */
   padding: 10px 24px;
   border-radius: 15px;
   border: 2px solid #ffc107;
@@ -137,6 +137,19 @@ p, li, span, strong {
   color: #2c2c2c;
   text-shadow: 0 0 6px #fff, 0 0 12px #ffc107;
   box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+  }
 }
 
 /* ========== Scroll Arrow ========== */
@@ -223,41 +236,18 @@ p, li, span, strong {
 }
 
 /* ========== Responsive Design ========== */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .hero-overlay h1.zackies-title {
-    font-size: 2.5rem;
+    font-size: 3.2rem;
   }
 
   .carousel-item img {
-    height: 320px;
+    height: 400px;
   }
 
-  .glowing-text {
-    font-size: 1.7rem;
-  }
-
-  .btn-gold {
-    padding: 10px 22px;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar-brand img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .carousel-item img {
-    height: 220px;
-  }
-
-  .hero-overlay p {
-    font-size: 0.85rem;
-  }
-
-  .hero-overlay h1.zackies-title {
-    font-size: 2rem;
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 10px 12px;
   }
 
   .scroll-arrow {
