@@ -12,25 +12,23 @@ html,
 body {
   scroll-behavior: smooth;
   font-family: Arial, sans-serif !important;
-  background-color: #fff8e1; /* Final soft cream background */
-  color: #2c2c2c; /* Default readable text color */
+  background-color: #fff8e1;
+  color: #2c2c2c;
 }
 
-/* ========== Headings ========== */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Dancing Script', cursive !important;
   font-weight: 700;
-  color: #2c2c2c; /* Strong contrast */
-  text-shadow: 1px 1px 4px rgba(255, 193, 7, 0.3); /* Soft golden glow */
+  color: #2c2c2c;
+  text-shadow: 1px 1px 4px rgba(255, 193, 7, 0.3);
   transition: all 0.3s ease;
 }
 
-/* ========== Body Text ========== */
 p, li, span, strong {
   font-weight: 600;
   line-height: 1.7;
   font-size: 1rem;
-  color: #444444; /* Improved legibility */
+  color: #444444;
 }
 
 /* ========== Navbar ========== */
@@ -89,7 +87,27 @@ p, li, span, strong {
   padding: 2rem;
   text-align: center;
   z-index: 2;
-  color: #333; /* Ensure overlay text is readable */
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease-in-out;
+}
+
+.hero-overlay.glow-animate {
+  animation: glowWhite 1.5s infinite alternate;
+}
+
+@keyframes glowWhite {
+  0% {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+  }
 }
 
 .hero-overlay h1.zackies-title {
@@ -115,7 +133,7 @@ p, li, span, strong {
   padding: 10px 24px;
   border-radius: 15px;
   border: 2px solid #ffc107;
-  background-color: rgba(255, 255, 255, 0.25); /* Soft light-glow */
+  background-color: rgba(255, 255, 255, 0.25);
   color: #2c2c2c;
   text-shadow: 0 0 6px #fff, 0 0 12px #ffc107;
   box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
@@ -170,23 +188,24 @@ p, li, span, strong {
 }
 
 /* ========== Contact Section ========== */
-.contact-title {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #ffc107;
-  text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+.contact-title,
+.phone-number,
+.gold-text,
+.email-link,
+.row.mb-5 li,
+.row.mb-5 li i {
+  color: #ffffff !important;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
 }
 
-.phone-number,
-.email-link {
-  color: #2c2c2c !important;
-  font-weight: bold;
+.row.mb-5 {
+  color: #ffffff;
 }
 
 .email-link:hover {
-  color: #ffc107 !important;
   text-decoration: underline;
+  color: #fff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
 }
 
 /* ========== Scroll Animations ========== */
@@ -244,25 +263,4 @@ p, li, span, strong {
   .scroll-arrow {
     font-size: 2rem;
   }
-}
-/* ========== Base ========== */
-body {
-  scroll-behavior: smooth;
-  font-family: Arial, sans-serif;
-  background-color: #fff8e1;
-  color: #2c2c2c;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 700;
-  color: #2c2c2c;
-  text-shadow: 1px 1px 4px rgba(255, 193, 7, 0.3);
-}
-
-p, li, span, strong {
-  font-weight: 600;
-  line-height: 1.7;
-  font-size: 1rem;
-  color: #444444;
 }
