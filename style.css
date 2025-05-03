@@ -132,8 +132,8 @@ p, li, span, strong {
   padding: 10px 24px;
   border-radius: 15px;
   border: 2px solid #ffc107;
-  background-color: rgb(255, 254, 254);
-  color: #ffffff;
+  background-color: rgb(255, 254, 254); 
+  color: #3b3b3b;
   text-shadow: 0 0 6px #fff, 0 0 12px #ffc107;
   box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
   animation: glow 1.5s ease-in-out infinite;
@@ -145,7 +145,7 @@ p, li, span, strong {
   }
   50% {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffc107, 0 0 40px #ffc107, 0 0 50px #ffc107, 0 0 60px #ffc107, 0 0 70px #ffc107;
-  }
+  } 
   100% {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffc107, 0 0 20px #ffc107, 0 0 25px #ffc107, 0 0 30px #ffc107, 0 0 35px #ffc107;
   }
