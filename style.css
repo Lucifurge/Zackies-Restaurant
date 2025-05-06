@@ -41,17 +41,17 @@ p, li, span, strong {
 }
 
 .navbar-brand img {
-  width: 45px;
-  height: 45px;
-  margin-right: 12px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
   filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.2));
 }
 
 .navbar-nav .nav-link {
   font-family: 'Dancing Script', cursive !important;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  padding: 12px 18px;
+  padding: 10px 16px;
   color: #d89d00;
   text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.4);
   transition: all 0.3s ease-in-out;
@@ -61,7 +61,7 @@ p, li, span, strong {
   color: #fff;
   background-color: #ffc107;
   border-radius: 20px;
-  padding: 12px 20px;
+  padding: 10px 18px;
   text-shadow: 0 0 10px #fff, 0 0 15px #ffc107;
 }
 
@@ -84,13 +84,13 @@ p, li, span, strong {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   z-index: 2;
   color: white;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
   transition: all 0.7s ease-in-out;
 }
 
@@ -100,11 +100,11 @@ p, li, span, strong {
 
 @keyframes glowWhite {
   0% {
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #000000;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
   }
   100% {
-    text-shadow: 0 0 20px hsl(0, 0%, 100%), 0 0 40px #ffffff;
+    text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
   }
 }
@@ -129,8 +129,8 @@ p, li, span, strong {
 .glowing-text {
   font-family: 'Dancing Script', cursive;
   font-size: 3rem;
-  padding: 10px 24px;
-  border-radius: 15px;
+  padding: 8px 20px;
+  border-radius: 10px;
   border: 2px solid #ffc107;
   background-color: rgba(23, 23, 23, 0);
   color: #fffdfd;
@@ -141,13 +141,13 @@ p, li, span, strong {
 
 @keyframes glow {
   0% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cfff11, 0 0 20px #ffc107, 0 0 25px #ffc107, 0 0 30px #ffc107, 0 0 35px #ffc107;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffc107, 0 0 20px #ffc107;
   }
   50% {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffc107, 0 0 40px #ffc107, 0 0 50px #ffc107, 0 0 60px #ffc107, 0 0 70px #ffc107;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffc107, 0 0 40px #ffc107;
   }
   100% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffc107, 0 0 20px #ffc107, 0 0 25px #ffc107, 0 0 30px #ffc107, 0 0 35px #ffc107;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffc107, 0 0 20px #ffc107;
   }
 }
 
@@ -199,41 +199,6 @@ p, li, span, strong {
   box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
 }
 
-/* ========== Contact Section ========== */
-.contact-title,
-.phone-number,
-.gold-text,
-.email-link,
-.row.mb-5 li,
-.row.mb-5 li i {
-  color: #ffffff !important;
-  text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 15px #000000;
-}
-
-.row.mb-5 {
-  color: #ffffff;
-}
-
-.email-link:hover {
-  text-decoration: underline;
-  color: #fff;
-  text-shadow: 0 0 10px #000000, 0 0 20px #000000;
-}
-
-/* ========== Scroll Animations ========== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ========== Responsive Design ========== */
 @media screen and (max-width: 1024px) {
   .carousel-item img {
@@ -242,19 +207,6 @@ p, li, span, strong {
 
   .hero-overlay h1.zackies-title {
     font-size: 3.6rem;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 10px 15px;
-  }
-
-  .scroll-arrow {
-    font-size: 2.2rem;
-  }
-
-  .btn-gold {
-    padding: 10px 20px;
   }
 
   .glowing-text {
@@ -271,19 +223,6 @@ p, li, span, strong {
     font-size: 3.2rem;
   }
 
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 10px 12px;
-  }
-
-  .scroll-arrow {
-    font-size: 2rem;
-  }
-
-  .btn-gold {
-    padding: 10px 18px;
-  }
-
   .glowing-text {
     font-size: 2.2rem;
   }
@@ -295,12 +234,17 @@ p, li, span, strong {
   }
 
   .hero-overlay h1.zackies-title {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+  }
+
+  .glowing-text {
+    font-size: 1.8rem;
+    padding: 6px 14px;
   }
 
   .navbar-nav .nav-link {
-    font-size: 0.9rem;
-    padding: 8px 12px;
+    font-size: 1rem;
+    padding: 8px 10px;
   }
 
   .scroll-arrow {
@@ -308,10 +252,12 @@ p, li, span, strong {
   }
 
   .btn-gold {
-    padding: 8px 16px;
+    padding: 8px 18px;
+    font-size: 0.9rem;
   }
 
-  .glowing-text {
-    font-size: 2rem;
+  .hero-overlay {
+    top: 35%;
+    padding: 0.8rem;
   }
 }
