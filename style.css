@@ -100,12 +100,12 @@ p, li, span, strong {
 
 @keyframes glowWhite {
   0% {
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 10px #000000, 0 0 20px #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   }
   100% {
     text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
   }
 }
 
