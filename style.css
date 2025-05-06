@@ -81,17 +81,17 @@ p, li, span, strong {
 
 .hero-overlay {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   z-index: 2;
   color: white;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.05);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .hero-overlay.glow-animate {
@@ -100,12 +100,12 @@ p, li, span, strong {
 
 @keyframes glowWhite {
   0% {
-    text-shadow: 0 0 10px #000000, 0 0 20px #000000;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #000000;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   }
   100% {
-    text-shadow: 0 0 20px #000000, 0 0 40px #ffffff;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 20px hsl(0, 0%, 100%), 0 0 40px #ffffff;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
   }
 }
 
