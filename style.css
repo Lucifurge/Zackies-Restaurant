@@ -100,11 +100,11 @@ p, li, span, strong {
 
 @keyframes glowWhite {
   0% {
-    text-shadow: 0 0 10px #000000, 0 0 20px #ffffff;
+    text-shadow: 0 0 10px #000000, 0 0 20px #000000;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   }
   100% {
-    text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
+    text-shadow: 0 0 20px #000000, 0 0 40px #ffffff;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
   }
 }
@@ -207,7 +207,7 @@ p, li, span, strong {
 .row.mb-5 li,
 .row.mb-5 li i {
   color: #ffffff !important;
-  text-shadow: 0 0 5px #000000, 0 0 10px #ffc107, 0 0 15px #ffc107;
+  text-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 15px #ffc107;
 }
 
 .row.mb-5 {
@@ -217,7 +217,7 @@ p, li, span, strong {
 .email-link:hover {
   text-decoration: underline;
   color: #fff;
-  text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107;
+  text-shadow: 0 0 10px #000000, 0 0 20px #000000;
 }
 
 /* ========== Scroll Animations ========== */
