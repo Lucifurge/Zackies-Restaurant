@@ -463,7 +463,7 @@ p, li, span, strong {
 }
 
 .slideshow-controls button:hover {
-  background-color: #d89d00;
+  background-color: #d89d00; 
   color: #fff;
   box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
 }
