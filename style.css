@@ -325,6 +325,34 @@ p, li, span, strong {
   }
 
   .hero-overlay {
-    padding: 1rem;
+    padding: 1rem;/* ====== Full Width Fix for All Screens ====== */
+html, body {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Override Bootstrap or custom .container paddings */
+.container, .container-fluid, .row {
+  margin: 0 auto;
+  padding: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Optional: Center your content wrapper if needed */
+.full-width-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure images or large sections don't overflow */
+img, video, iframe, .carousel-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
   }
 }
