@@ -208,7 +208,7 @@ p, li, span, strong {
 .row.mb-5 li,
 .row.mb-5 li i {
   color: #ffffff !important;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+  text-shadow: none; /* Removed glow effect */
 }
 
 .row.mb-5 {
@@ -218,7 +218,7 @@ p, li, span, strong {
 .email-link:hover {
   text-decoration: underline;
   color: #fff;
-  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+  text-shadow: none; /* No glow effect */
 }
 
 /* ========== Scroll Animations ========== */
@@ -280,26 +280,29 @@ p, li, span, strong {
     padding: 1rem;
   }
 
-  /* Contact Section: Remove glow effect except for contact info */
-  footer * {
-    text-shadow: none;
-    color: #ffffff; /* Make text white */
-  }
-
-  /* Keep glowing effect only for contact info */
+  /* Fix Contact Information Layout */
   .contact-title,
   .phone-number,
   .gold-text,
-  .email-link,
-  .row.mb-5 li,
-  .row.mb-5 li i {
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
-    color: #ffffff;
+  .email-link {
+    font-size: 1.1rem; /* Adjust font size for mobile */
+    text-align: center; /* Center text */
   }
 
-  .email-link:hover {
-    text-decoration: underline;
-    color: #fff;
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+  /* Fix Large Text in Contact Info Box */
+  .contact-info {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Contact Information Text Box */
+  .contact-info h3 {
+    font-size: 1.5rem; /* Smaller heading */
+    line-height: 1.4;
+  }
+
+  .contact-info p {
+    font-size: 1rem; /* Adjust paragraph font size */
   }
 }
