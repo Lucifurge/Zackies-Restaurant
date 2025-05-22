@@ -211,7 +211,7 @@ p, li, span, strong {
 
 /* ========== Adjust Text Below Zackies Restaurant ========== */
 .find-us-text {
-  color: white; /* Ensure the text color is white */
+  color: white; /* Ensure the text below the restaurant is white */
   font-size: 1.2rem; /* Adjust font size if needed */
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Light shadow for contrast */
 }
@@ -252,4 +252,3 @@ p, li, span, strong {
     font-size: 2rem;
   }
 }
-
