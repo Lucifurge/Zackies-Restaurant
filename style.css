@@ -87,7 +87,7 @@ p, li, span, strong {
   padding: 2rem;
   text-align: center;
   z-index: 2;
-  color: white; /* Make the text white */
+  color: white;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -123,6 +123,31 @@ p, li, span, strong {
   }
   to {
     text-shadow: 0 0 15px #fff, 0 0 30px #ffc107;
+  }
+}
+
+.glowing-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  padding: 10px 24px;
+  border-radius: 15px;
+  border: 2px solid #ffc107;
+  background-color: rgba(23, 23, 23, 0); 
+  color: #fffdfd;
+  text-shadow: 0 0 6px #fff, 0 0 12px #ffc107;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cfff11, 0 0 20px #ffc107, 0 0 25px #ffc107, 0 0 30px #ffc107, 0 0 35px #ffc107;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffc107, 0 0 40px #ffc107, 0 0 50px #ffc107, 0 0 60px #ffc107, 0 0 70px #ffc107;
+  } 
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffc107, 0 0 20px #ffc107, 0 0 25px #ffc107, 0 0 30px #ffc107, 0 0 35px #ffc107;
   }
 }
 
@@ -174,6 +199,50 @@ p, li, span, strong {
   box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
 }
 
+/* ========== Contact Section (Find Us Box) ========== */
+.contact-info {
+  position: relative;
+  width: 90%; /* Increased width for better use of space */
+  max-width: 800px; /* Make sure it doesn't get too wide */
+  margin: 20px auto; /* Center the box */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.contact-info h3 {
+  font-size: 2rem; /* Adjust heading size */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ========== Contact Box on Mobile Devices ========== */
+@media screen and (max-width: 768px) {
+  /* Move Contact Box Up More */
+  .contact-info {
+    margin-top: -50px; /* Adjust the position to move it upwards */
+    width: 95%; /* Ensure the box is wider on smaller screens */
+  }
+
+  .contact-info h3 {
+    font-size: 1.5rem; /* Smaller heading size for mobile */
+  }
+
+  .contact-info p {
+    font-size: 1rem; /* Adjust paragraph size for mobile */
+  }
+}
+
 /* ========== Contact Section ========== */
 .contact-title,
 .phone-number,
@@ -182,7 +251,7 @@ p, li, span, strong {
 .row.mb-5 li,
 .row.mb-5 li i {
   color: #ffffff !important;
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
 }
 
 .row.mb-5 {
@@ -209,32 +278,8 @@ p, li, span, strong {
   }
 }
 
-/* ========== Adjust Text Below Zackies Restaurant ========== */
-.find-us-text {
-  color: white; /* Ensure the text below the restaurant is white */
-  font-size: 1.2rem; /* Adjust font size if needed */
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff; /* Light shadow for contrast */
-}
-
-/* ========== Adjust Background Below Zackies Restaurant (if needed) ========== */
-.find-us-background {
-  background-color: #2c2c2c; /* Set background to dark color */
-  color: white; /* Make text white for visibility */
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px; /* Space out from the section above */
-}
-
-/* ========== Contact Box on Mobile Devices ========== */
+/* ========== Responsive Design ========== */
 @media screen and (max-width: 768px) {
-  .find-us-text {
-    font-size: 1.1rem; /* Adjust font size for mobile view */
-  }
-
-  .find-us-background {
-    padding: 15px; /* Less padding on smaller screens */
-  }
-
   .hero-overlay h1.zackies-title {
     font-size: 3.2rem;
   }
