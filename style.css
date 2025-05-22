@@ -14,6 +14,7 @@ body {
   font-family: Arial, sans-serif !important;
   background-color: #fff8e1;
   color: #2c2c2c;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -87,7 +88,7 @@ p, li, span, strong {
   padding: 2rem;
   text-align: center;
   z-index: 2;
-  color: white; /* Make the text white */
+  color: white;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -128,11 +129,11 @@ p, li, span, strong {
 
 .glowing-text {
   font-family: 'Dancing Script', cursive;
-  font-size: 3rem; /* Adjust size as needed */
+  font-size: 3rem;
   padding: 10px 24px;
   border-radius: 15px;
   border: 2px solid #ffc107;
-  background-color: rgba(23, 23, 23, 0); 
+  background-color: rgba(23, 23, 23, 0);
   color: #fffdfd;
   text-shadow: 0 0 6px #fff, 0 0 12px #ffc107;
   box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
@@ -236,20 +237,69 @@ p, li, span, strong {
 
 /* ========== Responsive Design ========== */
 @media screen and (max-width: 768px) {
+  /* General Reset for Mobile */
+  html, body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+
+  /* Hero Section Title */
   .hero-overlay h1.zackies-title {
-    font-size: 3.2rem;
+    font-size: 2.5rem; /* Smaller for mobile */
+    text-shadow: 0 0 10px #fff, 0 0 20px #ffc107;
   }
 
+  /* Carousel Image */
   .carousel-item img {
-    height: 400px;
+    height: 300px; /* Reduce size for mobile */
+    object-fit: cover;
+    width: 100%; /* Ensure image scales properly */
   }
 
+  /* Navbar Links */
   .navbar-nav .nav-link {
     font-size: 1rem;
-    padding: 10px 12px;
+    padding: 8px 12px; /* Reduce padding for mobile */
   }
 
+  /* Scroll Arrow */
   .scroll-arrow {
-    font-size: 2rem;
+    font-size: 2rem; /* Smaller size for mobile */
+    bottom: 20px; /* Adjust position */
+  }
+
+  /* Buttons */
+  .btn-gold {
+    padding: 10px 20px; /* Smaller padding */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  /* Hero Section */
+  .hero-overlay {
+    padding: 1rem;
+  }
+
+  /* Contact Section: Remove glow effect except for contact info */
+  footer * {
+    text-shadow: none;
+    color: #ffffff; /* Make text white */
+  }
+
+  /* Keep glowing effect only for contact info */
+  .contact-title,
+  .phone-number,
+  .gold-text,
+  .email-link,
+  .row.mb-5 li,
+  .row.mb-5 li i {
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+    color: #ffffff;
+  }
+
+  .email-link:hover {
+    text-decoration: underline;
+    color: #fff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
   }
 }
