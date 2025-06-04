@@ -308,22 +308,28 @@ p, li, span, strong {
 }
 @media screen and (max-width: 768px) {
   .hero-overlay {
-    top: 30% !important;       /* Move overlay higher */
+    top: 40% !important;           /* Move overlay higher */
+    left: 0 !important;            /* Align left edge */
+    width: 100% !important;        /* Full width */
     padding: 1rem !important;  
-    transform: translate(-50%, -50%) !important; /* Adjust vertical position */
+    transform: translate(0, -50%) !important; /* Only move vertically, no horizontal translate */
+    box-sizing: border-box;        /* Include padding inside width */
   }
 
   .hero-overlay .glowing-text {
     font-size: 2rem !important;
+    text-align: center;            /* Center the text inside */
   }
 
   .hero-overlay p {
     font-size: 0.9rem !important;
+    text-align: center;
   }
 
   .hero-overlay .btn {
     font-size: 0.9rem !important;
     padding: 8px 16px !important;
+    display: block;
+    margin: 1rem auto 0 auto;      /* Center the button */
   }
 }
-
