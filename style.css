@@ -308,7 +308,7 @@ p, li, span, strong {
 }
 @media screen and (max-width: 768px) {
   .hero-overlay {
-    top: 60% !important;       /* Shift it slightly lower */
+    top: 40% !important;       /* Shift it slightly lower */
     padding: 1rem !important;  /* Less padding */
     transform: translate(-50%, -60%) !important; /* Fine-tune position */
   }
