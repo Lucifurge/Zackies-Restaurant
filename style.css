@@ -308,9 +308,9 @@ p, li, span, strong {
 }
 @media screen and (max-width: 768px) {
   .hero-overlay {
-    top: 40% !important;       /* Shift it slightly lower */
-    padding: 1rem !important;  /* Less padding */
-    transform: translate(-50%, -60%) !important; /* Fine-tune position */
+    top: 30% !important;       /* Move overlay higher */
+    padding: 1rem !important;  
+    transform: translate(-50%, -50%) !important; /* Adjust vertical position */
   }
 
   .hero-overlay .glowing-text {
@@ -326,3 +326,4 @@ p, li, span, strong {
     padding: 8px 16px !important;
   }
 }
+
