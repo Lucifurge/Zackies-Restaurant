@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif !important;
   background-color: #fff8e1;
   color: #2c2c2c;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,7 +36,7 @@ p, li, span, strong {
 .navbar {
   z-index: 1050;
   background-color: #fffbe8;
-  border-bottom: 2px solid #ffc107;
+  border-bottom: 2px solid linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   box-shadow: 0 4px 10px rgba(255, 193, 7, 0.1);
   transition: background-color 0.4s ease;
 }
@@ -53,17 +53,17 @@ p, li, span, strong {
   font-size: 1.2rem;
   font-weight: bold;
   padding: 12px 18px;
-  color: #d89d00;
+  color: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.4);
   transition: all 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link:hover {
   color: #fff;
-  background-color: #ffc107;
+  background-color: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   border-radius: 20px;
   padding: 12px 20px;
-  text-shadow: 0 0 10px #fff, 0 0 15px #ffc107;
+  text-shadow: 0 0 10px #fff, 0 0 15px linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
 }
 
 /* ========== Hero Section ========== */
@@ -76,7 +76,7 @@ p, li, span, strong {
   height: 600px;
   object-fit: cover;
   filter: brightness(90%);
-  border-bottom: 6px solid #ffc107;
+  border-bottom: 6px solid linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   border-radius: 0 0 30px 30px;
 }
 
@@ -113,17 +113,17 @@ p, li, span, strong {
 .hero-overlay h1.zackies-title {
   font-family: 'Dancing Script', cursive;
   font-size: 4.2rem;
-  color: #ffc107;
-  text-shadow: 0 0 15px #fff, 0 0 25px #ffc107;
+  color: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
+  text-shadow: 0 0 15px #fff, 0 0 25px linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   animation: glowUp 2s ease-in-out infinite alternate;
 }
 
 @keyframes glowUp {
   from {
-    text-shadow: 0 0 8px #fff, 0 0 15px #ffc107;
+    text-shadow: 0 0 8px #fff, 0 0 15px linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   }
   to {
-    text-shadow: 0 0 15px #fff, 0 0 30px #ffc107;
+    text-shadow: 0 0 15px #fff, 0 0 30px linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   }
 }
 
@@ -132,25 +132,52 @@ p, li, span, strong {
   font-size: 3rem;
   padding: 10px 24px;
   border-radius: 15px;
-  border: 2px solid #ffc107;
+  border: 2px solid linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   background-color: rgba(23, 23, 23, 0);
   color: #fffdfd;
-  text-shadow: 0 0 6px #fff, 0 0 12px #ffc107;
+  text-shadow: 0 0 6px #fff, linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
   animation: glow 1.5s ease-in-out infinite;
 }
 
 @keyframes glow {
   0% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cfff11, 0 0 20px #ffc107, 0 0 25px #ffc107, 0 0 30px #ffc107, 0 0 35px #ffc107;
+    text-shadow:
+      0 0 5px #fff3e0,   /* very light gold */
+      0 0 10px #d2b48c,  /* tan */
+      0 0 15px #b8860b,  /* dark goldenrod */
+      0 0 20px #cd853f,  /* peru (golden brown) */
+      0 0 25px #cd853f,
+      0 0 30px #cd853f,
+      0 0 35px #cd853f;
   }
   50% {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ffc107, 0 0 40px #ffc107, 0 0 50px #ffc107, 0 0 60px #ffc107, 0 0 70px #ffc107;
-  } 
+    text-shadow:
+      0 0 10px #fff3e0,
+      0 0 20px #d2b48c,
+      0 0 30px #b8860b,
+      0 0 40px #cd853f,
+      0 0 50px #cd853f,
+      0 0 60px #cd853f,
+      0 0 70px #cd853f;
+  }
   100% {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ffc107, 0 0 20px #ffc107, 0 0 25px #ffc107, 0 0 30px #ffc107, 0 0 35px #ffc107;
+    text-shadow:
+      0 0 5px #fff3e0,
+      0 0 10px #d2b48c,
+      0 0 15px #cd853f,
+      0 0 20px #cd853f,
+      0 0 25px #cd853f,
+      0 0 30px #cd853f,
+      0 0 35px #cd853f;
   }
 }
+
+/* Apply the animation with linear timing */
+.your-glow-text {
+  animation: glow 2s linear infinite;
+}
+
 
 /* ========== Scroll Arrow ========== */
 .scroll-arrow {
@@ -159,7 +186,7 @@ p, li, span, strong {
   left: 50%;
   transform: translateX(-50%);
   font-size: 2.5rem;
-  color: #ffc107;
+  color: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   animation: bounce 2s infinite;
   z-index: 2;
   text-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
@@ -184,7 +211,7 @@ p, li, span, strong {
 
 /* ========== Buttons ========== */
 .btn-gold {
-  background-color: #ffc107;
+  background-color: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   border: none;
   padding: 12px 28px;
   font-weight: bold;
@@ -195,7 +222,7 @@ p, li, span, strong {
 }
 
 .btn-gold:hover {
-  background-color: #e0a800;
+  background-color: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   color: #fff;
   box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
 }
@@ -208,7 +235,7 @@ p, li, span, strong {
 .row.mb-5 li,
 .row.mb-5 li i {
   color: #ffffff !important;
-  text-shadow: none;
+  text-shadow: none; /* Removed glow effect */
 }
 
 .row.mb-5 {
@@ -218,7 +245,7 @@ p, li, span, strong {
 .email-link:hover {
   text-decoration: underline;
   color: #fff;
-  text-shadow: none;
+  text-shadow: none; /* No glow effect */
 }
 
 /* ========== Scroll Animations ========== */
@@ -237,57 +264,121 @@ p, li, span, strong {
 
 /* ========== Responsive Design ========== */
 @media screen and (max-width: 768px) {
+  /* General Reset for Mobile */
   html, body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal overflow */
   }
 
+  /* Hero Section Title */
   .hero-overlay h1.zackies-title {
-    font-size: 2.5rem;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ffc107;
+    font-size: 2.5rem; /* Smaller for mobile */
+    text-shadow: 0 0 10px #fff,linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
   }
 
+  /* Carousel Image */
   .carousel-item img {
-    height: 300px;
+    height: 300px; /* Reduce size for mobile */
     object-fit: cover;
-    width: 100%;
+    width: 100%; /* Ensure image scales properly */
   }
 
+  /* Navbar Links */
   .navbar-nav .nav-link {
     font-size: 1rem;
-    padding: 8px 12px;
+    padding: 8px 12px; /* Reduce padding for mobile */
   }
 
+  /* Scroll Arrow */
   .scroll-arrow {
-    font-size: 2rem;
-    bottom: 20px;
+    font-size: 2rem; /* Smaller size for mobile */
+    bottom: 20px; /* Adjust position */
   }
 
+  /* Buttons */
   .btn-gold {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 10px 20px; /* Smaller padding */
+    font-size: 1rem; /* Adjust font size */
   }
 
+  /* Hero Section */
   .hero-overlay {
     padding: 1rem;
   }
 
+  /* Fix Contact Information Layout */
   .contact-title,
   .phone-number,
   .gold-text,
   .email-link {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Adjust font size for mobile */
+    text-align: center; /* Center text */
+  }
+
+  /* Fix Large Text in Contact Info Box */
+  .contact-info {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Contact Information Text Box */
+  .contact-info h3 {
+    font-size: 1.5rem; /* Smaller heading */
+    line-height: 1.4;
+  }
+
+  .contact-info p {
+    font-size: 1rem; /* Adjust paragraph font size */
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero-overlay {
+    top: 30% !important;
+    left: 50% !important;
+    width: 75% !important;
+    padding: 0.5rem 1rem !important;   /* Less vertical padding */
+    max-height: 300px !important;      /* Limit height */
+    overflow: auto !important;          /* Allow scrolling if content overflows */
+    transform: translate(-50%, -50%) !important;
+    box-sizing: border-box;
+  }
+
+  .hero-overlay .glowing-text {
+    font-size: 2rem !important;
     text-align: center;
   }
 
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    font-size: 1rem;
-    padding: 1rem;
+  .hero-overlay p {
+    font-size: 0.9rem !important;
     text-align: center;
+    margin: 0.3rem 0 !important;        /* Reduce paragraph vertical margin */
+  }
+
+  .hero-overlay .btn {
+    font-size: 0.9rem !important;
+    padding: 6px 14px !important;
+    display: block;
+    margin: 1rem auto 0 auto;
   }
 }
+.service-btn {
+  background: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(176, 137, 104, 0.4);
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  background: linear-gradient(135deg, #a17451, #c1a072);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(176, 137, 104, 0.6);
+}
+
+
