@@ -1,173 +1,287 @@
-/* General Reset */
+/* ========== Import Fonts ========== */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* ========== Base Reset & Typography ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styling */
+html,
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f4f4f4;
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif !important;
+  background-color: #fff8e1;
+  color: #2c2c2c;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-/* Navbar Styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Dancing Script', cursive !important;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-shadow: 1px 1px 4px rgba(255, 193, 7, 0.3);
+  transition: all 0.3s ease;
+}
+
+p, li, span, strong {
+  font-weight: 600;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #444444;
+}
+
+/* ========== Navbar ========== */
 .navbar {
-  padding: 12px 0;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+  background-color: #fffbe8;
+  /* Can't use border with gradient directly, fix with border-color or use border-image */
+  border-bottom: 2px solid #d2b48c; /* fallback solid color */
+  /* Use border-image for gradient border */
+  border-image: linear-gradient(135deg, #b08968, #d2b48c) 1;
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.1);
+  transition: background-color 0.4s ease;
 }
 
-.navbar-brand {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #F1A10A;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.navbar-brand img {
+  width: 45px;
+  height: 45px;
+  margin-right: 12px;
+  filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.2));
 }
 
 .navbar-nav .nav-link {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #333;
-  text-transform: uppercase;
-  padding: 0.8rem 1rem;
-  transition: color 0.3s ease;
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 18px;
+  /* text color can't be a gradient, use fallback color or tricks */
+  color: #b08968;
+  /* text-shadow can't have gradient as color, so use a fixed color */
+  text-shadow: 1px 1px 3px rgba(255, 193, 7, 0.4);
+  transition: all 0.3s ease-in-out;
 }
 
+/* For gradient background on hover */
 .navbar-nav .nav-link:hover {
-  color: #F1A10A;
-}
-
-.navbar-toggler-icon {
-  background-color: #F1A10A;
-}
-
-/* Hero Section */
-.hero-section {
-  position: relative;
-  background: url('hero-catering.jpg') no-repeat center center/cover;
-  height: 60vh;
   color: #fff;
+  background: linear-gradient(135deg, #b08968, #d2b48c);
+  border-radius: 20px;
+  padding: 12px 20px;
+  /* text-shadow can't have gradient as color, use fixed glow */
+  text-shadow: 0 0 10px #fff, 0 0 15px rgba(176, 132, 62, 0.8);
+}
+
+/* ========== Hero Section ========== */
+.Gallery {
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-item img {
+  height: 600px;
+  object-fit: cover;
+  filter: brightness(90%);
+  /* border can't use gradient directly, fix with border-image */
+  border-bottom: 6px solid #d2b48c; /* fallback */
+  border-image: linear-gradient(135deg, #b08968, #d2b48c) 1;
+  border-radius: 0 0 30px 30px;
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
   text-align: center;
-  flex-direction: column;
+  z-index: 2;
+  color: white;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease-in-out;
 }
 
-.hero-overlay h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+.hero-overlay.glow-animate {
+  animation: glowWhite 1.5s infinite alternate;
 }
 
-.hero-overlay p {
-  font-size: 1.2rem;
+@keyframes glowWhite {
+  0% {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+  }
 }
 
-/* Form Section */
-#booking {
-  background-color: #fff;
-  padding: 60px 20px;
+.hero-overlay h1.zackies-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4.2rem;
+  /* text color can't be gradient, use fallback */
+  color: #b08968;
+  /* text-shadow gradient replaced by fixed colors */
+  text-shadow: 0 0 15px #fff, 0 0 25px rgba(176, 132, 62, 0.8);
+  animation: glowUp 2s ease-in-out infinite alternate;
 }
 
-#booking h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #F1A10A;
-  margin-bottom: 30px;
-}
-
-form .form-label {
-  font-weight: 600;
-  color: #333;
-}
-
-form .form-control {
-  border-radius: 10px;
-  padding: 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  transition: border 0.3s ease;
-}
-
-form .form-control:focus {
-  border-color: #F1A10A;
-  box-shadow: 0 0 5px rgba(241, 161, 10, 0.5);
-}
-
-form .btn {
-  padding: 12px 30px;
-  border-radius: 30px;
-  background-color: #F1A10A;
-  color: #fff;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-  border: none;
-}
-
-form .btn:hover {
-  background-color: #d68b00;
-}
-
-/* Footer */
-footer {
-  background-color: #222;
-  color: #F1A10A;
-  padding: 25px 0;
-  text-align: center;
-}
-
-footer .social-icons a {
-  color: #F1A10A;
-  font-size: 1.5rem;
-  margin: 0 12px;
-  transition: color 0.3s ease;
-}
-
-footer .social-icons a:hover {
-  color: #fff;
-}
-
-/* Scroll Animation */
-@keyframes fadeInUp {
+@keyframes glowUp {
   from {
-    opacity: 0;
-    transform: translateY(50px);
+    text-shadow: 0 0 8px #fff, 0 0 15px rgba(176, 132, 62, 0.8);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    text-shadow: 0 0 15px #fff, 0 0 30px rgba(176, 132, 62, 0.8);
   }
 }
 
-[data-aos] {
-  opacity: 0;
-  animation: fadeInUp 0.6s ease-out forwards;
+.glowing-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  padding: 10px 24px;
+  border-radius: 15px;
+  /* border with gradient fix */
+  border: 2px solid #b08968;
+  background-color: transparent;
+  color: #fffdfd;
+  /* text-shadow gradient replaced by fixed */
+  text-shadow: 0 0 6px #fff, 0 0 10px #b08968;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+  animation: glow 1.5s ease-in-out infinite;
 }
 
-/* Responsive Design */
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 5px #fff3e0,   /* very light gold */
+      0 0 10px #d2b48c,  /* tan */
+      0 0 15px #b8860b,  /* dark goldenrod */
+      0 0 20px #cd853f,  /* peru (golden brown) */
+      0 0 25px #cd853f,
+      0 0 30px #cd853f,
+      0 0 35px #cd853f;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #fff3e0,
+      0 0 20px #d2b48c,
+      0 0 30px #b8860b,
+      0 0 40px #cd853f,
+      0 0 50px #cd853f,
+      0 0 60px #cd853f,
+      0 0 70px #cd853f;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #fff3e0,
+      0 0 10px #d2b48c,
+      0 0 15px #cd853f,
+      0 0 20px #cd853f,
+      0 0 25px #cd853f,
+      0 0 30px #cd853f,
+      0 0 35px #cd853f;
+  }
+}
+
+/* Apply the animation with linear timing */
+.your-glow-text {
+  animation: glow 2s linear infinite;
+}
+
+/* ========== Scroll Arrow ========== */
+.scroll-arrow {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  /* text color can't be gradient, use fallback */
+  color: #b08968;
+  animation: bounce 2s infinite;
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroll-arrow:hover {
+  transform: translateX(-50%) scale(1.2);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-12px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+}
+
+/* ========== Buttons ========== */
+.btn-glow {
+  color: #b08968;
+  border: 2px solid #b08968;
+  padding: 10px 28px;
+  font-weight: 600;
+  border-radius: 15px;
+  background-color: transparent;
+  text-shadow: 0 0 5px #b08968;
+  box-shadow: 0 0 15px rgba(176, 132, 62, 0.6);
+  transition: all 0.4s ease;
+}
+
+.btn-glow:hover {
+  background: linear-gradient(135deg, #b08968, #d2b48c);
+  color: #fff;
+  box-shadow:
+    0 0 20px #d2b48c,
+    0 0 30px #b08968,
+    0 0 40px #d2b48c;
+  text-shadow: 0 0 15px #fff;
+  border-color: transparent;
+}
+
+/* ========== Containers and Layout ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== Responsive Media Queries ========== */
 @media (max-width: 768px) {
-  .hero-overlay h1 {
-    font-size: 2rem;
+  .hero-overlay h1.zackies-title {
+    font-size: 3rem;
   }
-
-  .hero-overlay p {
+  .carousel-item img {
+    height: 400px;
+  }
+  .navbar-nav .nav-link {
     font-size: 1rem;
+    padding: 10px 14px;
   }
+}
 
-  #booking h2 {
-    font-size: 2rem;
+@media (max-width: 480px) {
+  .hero-overlay h1.zackies-title {
+    font-size: 2.4rem;
+  }
+  .carousel-item img {
+    height: 300px;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
 }
