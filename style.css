@@ -310,7 +310,7 @@ p, li, span, strong {
   .hero-overlay {
     top: 40% !important;           /* Move overlay higher */
     left: 0 !important;            /* Align left edge */
-    width: 100% !important;        /* Full width */
+    width: 50% !important;        /* Full width */
     padding: 1rem !important;  
     transform: translate(0, -50%) !important; /* Only move vertically, no horizontal translate */
     box-sizing: border-box;        /* Include padding inside width */
