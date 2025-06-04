@@ -336,4 +336,22 @@ p, li, span, strong {
     margin: 1rem auto 0 auto;
   }
 }
+.service-btn {
+  background: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(176, 137, 104, 0.4);
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  background: linear-gradient(135deg, #a17451, #c1a072);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(176, 137, 104, 0.6);
+}
+
 
