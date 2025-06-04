@@ -306,3 +306,23 @@ p, li, span, strong {
     font-size: 1rem; /* Adjust paragraph font size */
   }
 }
+@media screen and (max-width: 768px) {
+  .hero-overlay {
+    top: 60% !important;       /* Shift it slightly lower */
+    padding: 1rem !important;  /* Less padding */
+    transform: translate(-50%, -60%) !important; /* Fine-tune position */
+  }
+
+  .hero-overlay .glowing-text {
+    font-size: 2rem !important;
+  }
+
+  .hero-overlay p {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-overlay .btn {
+    font-size: 0.9rem !important;
+    padding: 8px 16px !important;
+  }
+}
