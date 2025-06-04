@@ -308,28 +308,32 @@ p, li, span, strong {
 }
 @media screen and (max-width: 768px) {
   .hero-overlay {
-    top: 30% !important;           /* Move overlay higher */
-    left: 50% !important;          /* Center horizontally */
-    width: 75% !important;         /* 75% width */
-    padding: 1rem !important;  
-    transform: translate(-50%, -50%) !important; /* Center horizontally and vertically */
-    box-sizing: border-box;        /* Include padding inside width */
+    top: 30% !important;
+    left: 50% !important;
+    width: 75% !important;
+    padding: 0.5rem 1rem !important;   /* Less vertical padding */
+    max-height: 300px !important;      /* Limit height */
+    overflow: auto !important;          /* Allow scrolling if content overflows */
+    transform: translate(-50%, -50%) !important;
+    box-sizing: border-box;
   }
 
   .hero-overlay .glowing-text {
     font-size: 2rem !important;
-    text-align: center;            /* Center the text inside */
+    text-align: center;
   }
 
   .hero-overlay p {
     font-size: 0.9rem !important;
     text-align: center;
+    margin: 0.3rem 0 !important;        /* Reduce paragraph vertical margin */
   }
 
   .hero-overlay .btn {
     font-size: 0.9rem !important;
     padding: 6px 14px !important;
     display: block;
-    margin: 1rem auto 0 auto;      /* Center the button */
+    margin: 1rem auto 0 auto;
   }
 }
+
