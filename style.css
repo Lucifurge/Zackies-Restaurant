@@ -14,7 +14,7 @@ body {
   font-family: Arial, sans-serif !important;
   background-color: #fff8e1;
   color: #2c2c2c;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -208,7 +208,7 @@ p, li, span, strong {
 .row.mb-5 li,
 .row.mb-5 li i {
   color: #ffffff !important;
-  text-shadow: none; /* Removed glow effect */
+  text-shadow: none;
 }
 
 .row.mb-5 {
@@ -218,7 +218,7 @@ p, li, span, strong {
 .email-link:hover {
   text-decoration: underline;
   color: #fff;
-  text-shadow: none; /* No glow effect */
+  text-shadow: none;
 }
 
 /* ========== Scroll Animations ========== */
@@ -237,121 +237,57 @@ p, li, span, strong {
 
 /* ========== Responsive Design ========== */
 @media screen and (max-width: 768px) {
-  /* General Reset for Mobile */
   html, body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden;
   }
 
-  /* Hero Section Title */
   .hero-overlay h1.zackies-title {
-    font-size: 2.5rem; /* Smaller for mobile */
+    font-size: 2.5rem;
     text-shadow: 0 0 10px #fff, 0 0 20px #ffc107;
   }
 
-  /* Carousel Image */
   .carousel-item img {
-    height: 300px; /* Reduce size for mobile */
+    height: 300px;
     object-fit: cover;
-    width: 100%; /* Ensure image scales properly */
+    width: 100%;
   }
 
-  /* Navbar Links */
   .navbar-nav .nav-link {
     font-size: 1rem;
-    padding: 8px 12px; /* Reduce padding for mobile */
+    padding: 8px 12px;
   }
 
-  /* Scroll Arrow */
   .scroll-arrow {
-    font-size: 2rem; /* Smaller size for mobile */
-    bottom: 20px; /* Adjust position */
+    font-size: 2rem;
+    bottom: 20px;
   }
 
-  /* Buttons */
   .btn-gold {
-    padding: 10px 20px; /* Smaller padding */
-    font-size: 1rem; /* Adjust font size */
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 
-  /* Hero Section */
   .hero-overlay {
     padding: 1rem;
   }
 
-  /* Fix Contact Information Layout */
   .contact-title,
   .phone-number,
   .gold-text,
   .email-link {
-    font-size: 1.1rem; /* Adjust font size for mobile */
-    text-align: center; /* Center text */
+    font-size: 1.1rem;
+    text-align: center;
   }
 
-  /* Fix Large Text in Contact Info Box */
   .contact-info {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
-
-  /* Contact Information Text Box */
-  .contact-info h3 {
-    font-size: 1.5rem; /* Smaller heading */
-    line-height: 1.4;
-  }
-
-  .contact-info p {
-    font-size: 1rem; /* Adjust paragraph font size */
-  }
-}
-@media screen and (max-width: 768px) {
-  .hero-overlay {
-    top: 30% !important;
-    left: 50% !important;
-    width: 75% !important;
-    padding: 0.5rem 1rem !important;   /* Less vertical padding */
-    max-height: 300px !important;      /* Limit height */
-    overflow: auto !important;          /* Allow scrolling if content overflows */
-    transform: translate(-50%, -50%) !important;
-    box-sizing: border-box;
-  }
-
-  .hero-overlay .glowing-text {
-    font-size: 2rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    padding: 1rem;
     text-align: center;
   }
-
-  .hero-overlay p {
-    font-size: 0.9rem !important;
-    text-align: center;
-    margin: 0.3rem 0 !important;        /* Reduce paragraph vertical margin */
-  }
-
-  .hero-overlay .btn {
-    font-size: 0.9rem !important;
-    padding: 6px 14px !important;
-    display: block;
-    margin: 1rem auto 0 auto;
-  }
 }
-.service-btn {
-  background: linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(176, 137, 104, 0.4);
-  transition: all 0.3s ease;
-}
-
-.service-btn:hover {
-  background: linear-gradient(135deg, #a17451, #c1a072);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(176, 137, 104, 0.6);
-}
-
-
