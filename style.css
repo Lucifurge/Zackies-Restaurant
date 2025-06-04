@@ -308,11 +308,11 @@ p, li, span, strong {
 }
 @media screen and (max-width: 768px) {
   .hero-overlay {
-    top: 40% !important;           /* Move overlay higher */
-    left: 4 !important;            /* Align left edge */
-    width: 75% !important;        /* Full width */
+    top: 30% !important;           /* Move overlay higher */
+    left: 50% !important;          /* Center horizontally */
+    width: 75% !important;         /* 75% width */
     padding: 1rem !important;  
-    transform: translate(0, -50%) !important; /* Only move vertically, no horizontal translate */
+    transform: translate(-50%, -50%) !important; /* Center horizontally and vertically */
     box-sizing: border-box;        /* Include padding inside width */
   }
 
