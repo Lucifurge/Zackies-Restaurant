@@ -328,7 +328,7 @@ p, li, span, strong {
 
   .hero-overlay .btn {
     font-size: 0.9rem !important;
-    padding: 8px 16px !important;
+    padding: 6px 14px !important;
     display: block;
     margin: 1rem auto 0 auto;      /* Center the button */
   }
