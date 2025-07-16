@@ -122,37 +122,34 @@
         </div>
       </section>
 
-      <!-- Catering Section (Main Page) -->
-<section class="py-5 bg-light">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center text-warning mb-4">Our Catering Packages</h2>
-    <div id="mainCateringCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner rounded shadow">
-        <div class="carousel-item active"><img src="pax1.jpg" class="d-block w-100" alt="Catering Card 1"></div>
-        <div class="carousel-item"><img src="pax2.jpg" class="d-block w-100" alt="Catering Card 2"></div>
-        <div class="carousel-item"><img src="pax3.jpg" class="d-block w-100" alt="Catering Card 3"></div>
-        <div class="carousel-item"><img src="pax4.jpg" class="d-block w-100" alt="Catering Card 4"></div>
+<!-- Booking Form -->
+<section class="py-5 bg-white" id="booking">
+  <div class="container">
+    <h2 class="text-center text-inasal-green mb-4">Book Our Catering Services</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form onsubmit="sendmail(event)">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Contact Number</label>
+            <input type="text" class="form-control" id="subject" placeholder="09XXXXXXXXX" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="10" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-inasal-green">Submit Booking</button>
+          </div>
+        </form>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#mainCateringCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-      <button class="carousel-control-next" type="button" data-bs-target="#mainCateringCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
-    </div>
-  </div>
-</section>
-
-<!-- Menu Cards Section (Main Page) -->
-<section class="py-5 bg-white">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center text-warning mb-4">Sample Menu Cards</h2>
-    <div id="mainMenuCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner rounded shadow">
-        <div class="carousel-item active"><img src="ca1.jpg" class="d-block w-100" alt="Menu Card 1"></div>
-        <div class="carousel-item"><img src="ca2.jpg" class="d-block w-100" alt="Menu Card 2"></div>
-        <div class="carousel-item"><img src="ca3.jpg" class="d-block w-100" alt="Menu Card 3"></div>
-        <div class="carousel-item"><img src="ca4.jpg" class="d-block w-100" alt="Menu Card 4"></div>
-        <div class="carousel-item"><img src="ca5.jpg" class="d-block w-100" alt="Menu Card 5"></div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#mainMenuCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-      <button class="carousel-control-next" type="button" data-bs-target="#mainMenuCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
     </div>
   </div>
 </section>
@@ -168,11 +165,59 @@
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS -->
 <script>
-  AOS.init();
+  (function() {
+    emailjs.init("SzVEoJYFD3IRfWoj7"); // Your actual EmailJS public key
+  })();
+</script>
+
+<!-- Script to handle booking email -->
+<script>
+  function sendmail(event) {
+    event.preventDefault(); // Prevent page reload
+
+    const form = event.target;
+
+    const name = form.querySelector('input[id$="name"]').value;
+    const email = form.querySelector('input[id$="email"]').value;
+    const subject = form.querySelector('input[id$="subject"]').value; // Still called 'subject' in JS
+    const message = form.querySelector('textarea[id$="message"]').value;
+
+    const params = { name, email, subject, message };
+
+    // Send to business email
+    emailjs.send("service_0zhgt8h", "template_lp1bk3r", params)
+      .then((response) => {
+        console.log("Main email sent!", response.status, response.text);
+        return emailjs.send("service_0zhgt8h", "template_l9aahza", params); // Auto-reply
+      })
+      .then((replyResponse) => {
+        console.log("Auto-reply sent!", replyResponse.status, replyResponse.text);
+        alert("Your booking has been submitted! We'll reply to you shortly.");
+        form.reset(); // Clear the form
+        // Re-insert the message template
+        document.getElementById("message").value =
+`Address: 
+Time: 
+Date: 
+Buffet theme: 
+Menu: 
+Dessert: 
+Rate: 
+Add-on: (e.g., Table & Chairs):
+Request: (e.g., extra table, extra cloth):`;
+      })
+      .catch((error) => {
+        console.error("Error sending email(s):", error);
+        alert("Oops! Something went wrong. Please try again later.");
+      });
+  }
+
+  // Set default message on page load
   document.addEventListener("DOMContentLoaded", function () {
     const messageBox = document.getElementById("message");
     messageBox.value =
@@ -187,6 +232,7 @@ Add-on: (e.g., Table & Chairs):
 Request: (e.g., extra table, extra cloth):`;
   });
 </script>
+
 
       <!-- PARTY TRAY MODAL -->
       <div class="modal fade" id="partyTrayModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body">Party tray info...</div></div></div></div>
