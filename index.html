@@ -1,903 +1,549 @@
-<!DOCTYPE html>
-<html lang="en">
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Jerry's-Inasal</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Zackie’s Restaurant in Cabadbaran City – Where every meal is a memory made golden. Reserve a table, order online, or find us easily." />
-    <meta name="google-site-verification" content="og4zmdw2PbG52gUtRNEbWCN3W4YSkAJK3AebxnCiPWo" />
-    <title>Zackie’s Restaurant</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="logo.ico" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="zack.ico" type="image/x-icon" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+        <!-- AOS Animation -->
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css" />
 
-    <!-- AOS CSS (Animate On Scroll) -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+        <!-- Extra Styles -->
+        <style>
+          .divider { height:4px; width:60px; background:#66bb6a; border-radius:50px; margin:0 auto 1rem; }
+          .hero-pattern {
+            background: url('leaves-pattern.png') no-repeat top right;
+            background-size:contain;
+          }
+          .card, .p-4 { transition: transform .3s, box-shadow .3s; }
+          .card:hover, .p-4:hover { transform: translateY(-8px); box-shadow:0 12px 40px rgba(0,0,0,0.12);}
+          .btn-success:hover { transform: scale(1.05); }
+          .testimonial-img { width:80px; height:80px; object-fit:cover; border-radius:50%; }
+          .whatsapp-float {
+            position:fixed; bottom:20px; left:20px; z-index:9999;
+            background:#25D366; color:white; border-radius:50%; padding:15px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.3);
+          }
+        </style>
+      </head>
+      <body>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Font Awesome Kit -->
-    <script src="https://kit.fontawesome.com/a2d0b5e1c4.js" crossorigin="anonymous"></script>
-
-    <!-- Custom CSS Files -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="menu.css" />
-    <link rel="stylesheet" href="venue.css" />
-    <link rel="stylesheet" href="partytry.css" />
-    <link rel="stylesheet" href="menubar.css" />
-    <link rel="stylesheet" href="sec.css" />
-    <link rel="stylesheet" href="sers.css" />
-    <link rel="stylesheet" href="find.css" />
-    <link rel="stylesheet" href="map.css" />
-    <link rel="stylesheet" href="ani.css" />
-</head>
-
-<body>
-    <!-- Your body content here -->
-
-    <!-- Bootstrap JS and dependencies (optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-</body>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow" style="background-color: white; border-bottom: 2px solid  linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */">
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm" data-aos="fade-down">
         <div class="container">
-          <a class="navbar-brand d-flex align-items-center fw-bold text-uppercase text-warning" href="#" onclick="location.reload(); return false;">
-            <img src="zack.jpg" alt="Zackie’s Logo" style="width: 40px; height: 40px; margin-right: 10px;">
-            Zackie’s
-          </a>
-          <button class="navbar-toggler" type="button" id="navbarTogglerButton" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto text-center">
-              <li class="nav-item"><a class="nav-link text-warning" href="#about">About</a></li>
-              <li class="nav-item"><a class="nav-link text-warning" href="#services">Services</a></li>
-              <li class="nav-item"><a class="nav-link text-warning" href="#gallery">Gallery</a></li>
-              <li class="nav-item"><a class="nav-link text-warning" href="#schedule">schedules</a></li>
+          <a class="navbar-brand text-success fw-bold" href="#"><img src="logo.jpg" alt="Logo" width="30" class="me-2">Jerry's-Inasal</a>
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+          <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link text-success" href="#hero">Home</a></li>
+              <li class="nav-item"><a class="nav-link text-success" href="#dishes">Menu</a></li>
+              <li class="nav-item"><a class="nav-link text-success" href="#services">Services</a></li>
+              <li class="nav-item"><a class="nav-link text-success" href="#testimonials">Reviews</a></li>
             </ul>
           </div>
         </div>
       </nav>
-
-    </body>
-
-
-  <!-- Hero Section with Slideshow -->
-  <section class="Gallary" id="gallery">
-      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <img src="21.jpg" class="d-block w-100" alt="Venue View" loading="lazy">
-              </div>
-              <div class="carousel-item">
-                  <img src="3.jpg" class="d-block w-100" alt="Food Photography" loading="lazy">
-              </div>
-              <div class="carousel-item">
-                  <img src="23.jpg" class="d-block w-100" alt="Buffet Setup" loading="lazy">
-              </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-          </button>
-      </div>
-      <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center text-white glow-animate">
-        <h1 class="display-4 fw-bold glowing-text">Zackie’s Restaurant</h1>      
-          <p class="lead">Where every meal is a memory made golden.</p>
-          <button class="btn map-btn mt-3" data-bs-toggle="modal" data-bs-target="#mapModal">Find Us in Cabadbaran City</button>
-      </div>
-  </section>
-
-  <!-- Modal Map -->
-  <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="modal-header">
-          <h5 class="modal-title" id="mapModalLabel">Our Location</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- SLIDING TEXT TICKER -->
+      <div class="sliding-banner">
+        <div class="sliding-text">
+          Jerry's Inasal the Best&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> > >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Jerry the Best Inasal in the House&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> > >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Sobrang Sarap, Sobrang Laman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> > >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Lasang Fiesta sa Bawat Kagat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> > >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Juicy, Tender, Grilled to Perfection&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> > >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Filipino Pride sa Bawat Pinggan!
         </div>
-        
-        <div class="modal-body">
-          <div class="map-responsive">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.411923450272!2d125.53916757484699!3d9.117214890947686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301bd35c92f6a49%3A0xbef0f5541bde8765!2s2Bilann%20Gas%20Station%20-%20CBR!5e0!3m2!1sen!2sph!4v1744996983473!5m2!1sen!2sph"
-              allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-
       </div>
+
+  <!-- HERO -->
+  <section id="hero" class="text-center text-white hero-pattern d-flex align-items-center justify-content-center"
+    style="background: url('back.jpg') no-repeat center center / cover; height: 50vh;" data-aos="fade-up">
+    <div class="container px-3">
+      <h1 class="display-4 fw-bold neon-border-green">Welcome to Jerry's-Inasal</h1>
+      <div class="divider"></div>
+      <p class="lead neon-border-white">Authentic Filipino food served with heart — kamayan style!</p>
+      <button class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#slideshowModal">Explore Our Gallery</button>
     </div>
-  </div>
-
   </section>
-  <!-- Reviews Section -->
-<section id="reviews" class="py-5" data-aos="fade-up">
-  <div class="container">
-      <h2 class="text-center text-warning mb-4">What Our Customers Say</h2>
-      <div class="carousel slide" id="reviewCarousel" data-bs-ride="carousel">
-          <div class="carousel-inner text-center">
-              <div class="carousel-item active">
-                  <p class="lead">"Gas station with a bar on its grounds. Not such a bad hangout for beer or coffee in the afternoon to evening. They sometimes have live entertainment."</p>
-                  <div class="mb-2 text-warning">
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                  <h5>- Chuck Torres</h5>
+
+
+      <!-- SLIDESHOW MODAL -->
+      <div class="modal fade" id="slideshowModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content" data-aos="zoom-in">
+            <div class="modal-header"><h5 class="modal-title text-success">Gallery</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body">
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img src="1.jpg" class="d-block w-100" /></div>
+                  <div class="carousel-item"><img src="2.jpg" class="d-block w-100" /></div>
+                  <div class="carousel-item"><img src="3.jpg" class="d-block w-100" /></div>
+                </div>
+                <button class="carousel-control-prev" data-bs-target="#carouselExample" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                <button class="carousel-control-next" data-bs-target="#carouselExample" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
               </div>
-              <div class="carousel-item">
-                  <p class="lead">"Has a well stocked convenience store and restobar on the side. Comfort room is clean. Price of fuel usually lower than more popular gas stations"</p>
-                  <div class="mb-2 text-warning">
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                  </div>
-                  <h5>- J Rad Barrientos</h5>
+              <div class="text-center mt-4">
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#mapModal">Find us in Cabadbaran City</button>
               </div>
-              <div class="carousel-item">
-                  <p class="lead">"Accessible, nice place to chill with friends, convenience store is okay, clean comfort rooms."</p>
-                  <div class="mb-2 text-warning">
-                      <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                  <h5>- Maria Cristinagil Concha</h5>
-              </div>
+            </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-          </button>
+        </div>
       </div>
-  </div>
-</section>
 
+      <!-- MAP MODAL -->
+      <div class="modal fade" id="mapModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content" data-aos="zoom-in-down">
+            <div class="modal-header"><h5 class="modal-title text-success">Our Location</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+            <div class="modal-body"><div class="ratio ratio-16x9"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12..." allowfullscreen loading="lazy"></iframe></div></div>
+          </div>
+        </div>
+      </div>
 
- <!-- Services Section -->
-<section class="py-5 text-center" id="services">
-  <div class="container">
-    <h2 class="text-warning mb-5 display-5 fw-bold text-shadow">Our Services</h2>
-    <div class="row g-4 justify-content-center">
-      <!-- Service 1 -->
-      <div class="col-lg-6">
-        <div class="p-4 rounded-4 shadow service-card bg-white text-dark text-start d-flex flex-column justify-content-between h-100">
-          <button class="btn service-btn align-self-start mb-3" data-bs-toggle="modal" data-bs-target="#cateringModal">🍽 Catering Bookings</button>
-          <p>A full-service catering experience for your events, with delicious food and professional service.</p>
+      <!-- SERVICES -->
+      <section id="services" class="py-5 text-center" data-aos="fade-up">
+        <div class="container">
+          <h2 class="text-success">Our Services</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col-md-4 mb-4"><div class="p-4 border rounded text-start shadow-sm"><button class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#cateringModal">Catering Bookings</button><p>A full-service catering experience with delicious food and professional service.</p></div></div>
+            <div class="col-md-4 mb-4"><div class="p-4 border rounded text-start shadow-sm"><button class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#partyTrayModal">Party Tray Bookings</button><p>Delicious party trays for your celebration. Customizable options!</p></div></div>
+            <div class="col-md-4 mb-4"><div class="p-4 border rounded text-start shadow-sm"><button class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#venueModal">Exclusive Venue Rates</button><p>Exclusive venue options for your event with special pricing.</p></div></div>
+          </div>
         </div>
+      </section>
+
+      <!-- Catering Section (Main Page) -->
+<section class="py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    <h2 class="text-center text-warning mb-4">Our Catering Packages</h2>
+    <div id="mainCateringCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active"><img src="pax1.jpg" class="d-block w-100" alt="Catering Card 1"></div>
+        <div class="carousel-item"><img src="pax2.jpg" class="d-block w-100" alt="Catering Card 2"></div>
+        <div class="carousel-item"><img src="pax3.jpg" class="d-block w-100" alt="Catering Card 3"></div>
+        <div class="carousel-item"><img src="pax4.jpg" class="d-block w-100" alt="Catering Card 4"></div>
       </div>
-      <!-- Service 2 -->
-      <div class="col-lg-6">
-        <div class="p-4 rounded-4 shadow service-card bg-white text-dark text-start d-flex flex-column justify-content-between h-100">
-          <button class="btn service-btn align-self-start mb-3" data-bs-toggle="modal" data-bs-target="#partyTrayModal">🥘 Party Tray Bookings</button>
-          <p>Order our delicious party trays for your next celebration or gathering. Customizable options available.</p>
-        </div>
-      </div>
-      <!-- Service 3 -->
-      <div class="col-lg-6">
-        <div class="p-4 rounded-4 shadow service-card bg-white text-dark text-start d-flex flex-column justify-content-between h-100">
-          <button class="btn service-btn align-self-start mb-3" data-bs-toggle="modal" data-bs-target="#venueModal">🏛 Exclusive Venue Rates</button>
-          <p>Exclusive venue options for your events with special pricing. Get in touch for a quote!</p>
-        </div>
-      </div>
-      <!-- Service 4 -->
-      <div class="col-lg-6">
-        <div class="p-4 rounded-4 shadow service-card bg-white text-dark text-start d-flex flex-column justify-content-between h-100">
-          <button class="btn service-btn align-self-start mb-3" data-bs-toggle="modal" data-bs-target="#menuModal">📜 Restaurant Menu</button>
-          <p>Explore our menu with a wide variety of delicious dishes. Available for dine-in and takeout.</p>
-        </div>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCateringCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCateringCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
     </div>
   </div>
 </section>
 
-
-  <!-- Catering Modal -->
-  <div class="modal fade" id="cateringModal" tabindex="-1" aria-labelledby="cateringModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="cateringModalLabel">Catering Bookings</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-
-  <!-- Booking Form -->
-  <section class="py-5 bg-light" id="booking">
+<!-- Menu Cards Section (Main Page) -->
+<section class="py-5 bg-white">
   <div class="container" data-aos="fade-up">
-  <h2 class="text-center text-warning mb-4">Book Our Catering Services</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <form onsubmit="sendmail(event)">
-        <div class="mb-3">
-          <label for="name" class="form-label">Your Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your name" required />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Your Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter your email" required />
-        </div>
-        <div class="mb-3">
-          <label for="subject" class="form-label">Subject</label>
-          <input type="text" class="form-control" id="subject" placeholder="Contact:" required />
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="10" placeholder="Let us know the event details!" required></textarea>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-warning">Submit Booking</button>
-        </div>
-      </form>
+    <h2 class="text-center text-warning mb-4">Sample Menu Cards</h2>
+    <div id="mainMenuCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active"><img src="ca1.jpg" class="d-block w-100" alt="Menu Card 1"></div>
+        <div class="carousel-item"><img src="ca2.jpg" class="d-block w-100" alt="Menu Card 2"></div>
+        <div class="carousel-item"><img src="ca3.jpg" class="d-block w-100" alt="Menu Card 3"></div>
+        <div class="carousel-item"><img src="ca4.jpg" class="d-block w-100" alt="Menu Card 4"></div>
+        <div class="carousel-item"><img src="ca5.jpg" class="d-block w-100" alt="Menu Card 5"></div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainMenuCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainMenuCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
     </div>
   </div>
-  </div>
-  </section>
+</section>
 
-
-  <!-- Catering Cards Slideshow -->
-  <section class="py-5 bg-light">
-  <div class="container" data-aos="fade-up">
-  <h2 class="text-center text-warning mb-4">Our Catering Packages</h2>
-  <div id="cateringCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner rounded shadow">
-      <div class="carousel-item active">
-        <img src="pax1.jpg" class="d-block w-100" alt="Catering Card 1">
-      </div>
-      <div class="carousel-item">
-        <img src="pax2.jpg" class="d-block w-100" alt="Catering Card 2">
-      </div>
-      <div class="carousel-item">
-        <img src="pax3.jpg" class="d-block w-100" alt="Catering Card 3">
-      </div>
-      <div class="carousel-item">
-        <img src="pax4.jpg" class="d-block w-100" alt="Catering Card 4">
-      </div>
+<!-- Footer -->
+<footer class="bg-white text-dark py-3 border-top">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2025 Jerry's Inasal. All rights reserved.</p>
+    <div class="social-icons mt-2">
+      <a href="https://www.facebook.com/ZackiesRestaurant" target="_blank" class="fab fa-facebook-f text-dark me-3"></a>
+      <a href="tel:+639198732936" class="fas fa-phone-alt text-dark"></a>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#cateringCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#cateringCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
   </div>
-  </div>
-  </section>
+</footer>
 
-  <!-- Menu Cards Slideshow -->
-  <section class="py-5 bg-white">
-  <div class="container" data-aos="fade-up">
-  <h2 class="text-center text-warning mb-4">Sample Menu Cards</h2>
-  <div id="menuCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner rounded shadow">
-      <div class="carousel-item active">
-        <img src="ca1.jpg" class="d-block w-100" alt="Menu Card 1">
-      </div>
-      <div class="carousel-item">
-        <img src="ca2.jpg" class="d-block w-100" alt="Menu Card 2">
-      </div>
-      <div class="carousel-item">
-        <img src="ca3.jpg" class="d-block w-100" alt="Menu Card 3">
-      </div>
-      <div class="carousel-item">
-        <img src="ca4.jpg" class="d-block w-100" alt="Menu Card 4">
-      </div>
-      <div class="carousel-item">
-          <img src="ca5.jpg" class="d-block w-100" alt="Menu Card 4">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-  </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white text-dark py-3 border-top">
-    <div class="container text-center">
-      <p class="mb-0">&copy; 2025 Zackie’s Restaurant. All rights reserved.</p>
-      <div class="social-icons mt-2">
-        <a href="https://www.facebook.com/ZackiesRestaurant" target="_blank" class="fab fa-facebook-f text-dark me-3"></a>
-        <a href="tel:+639198732936" class="fas fa-phone-alt text-dark"></a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
   AOS.init();
-
   document.addEventListener("DOMContentLoaded", function () {
-  const messageBox = document.getElementById("message");
-  messageBox.value =
-  `Address: 
-  Time: 
-  Date: 
-  Buffet theme: 
-  Menu: 
-  Dessert: 
-  rate:
-  Add-on: (e.g., Table & Chairs):
-  Request: (e.g., extra table, extra cloth):`;
+    const messageBox = document.getElementById("message");
+    messageBox.value =
+`Address: 
+Time: 
+Date: 
+Buffet theme: 
+Menu: 
+Dessert: 
+Rate: 
+Add-on: (e.g., Table & Chairs):
+Request: (e.g., extra table, extra cloth):`;
   });
-  </script>
-  </body>
-    </div>
-  </div>
-  </div>
-  </div>
+</script>
 
-  <!-- Party Tray Modal -->
-  <div class="modal fade" id="partyTrayModal" tabindex="-1" aria-labelledby="partyTrayModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="partyTrayModalLabel">Party Tray Bookings</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- PARTY TRAY MODAL -->
+      <div class="modal fade" id="partyTrayModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body">Party tray info...</div></div></div></div>
+
+      <!-- VENUE MODAL -->
+      <div class="modal fade" id="venueModal" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body">Venue info...</div></div></div></div>
+
+  <!-- DISHES SECTION -->
+  <section class="py-5 bg-light" id="dishes">
+    <div class="container">
+      <h2 class="text-center text-success mb-5">Featured Dishes of the Day</h2>
+      <div class="row g-4">
+
+        <!-- Dish 1 -->
+        <div class="col-md-4 text-center">
+          <img src="images/dish1.jpg" alt="Dish 1" class="img-fluid rounded shadow-sm mb-3">
+          <h5 class="text-dark">Beef Kaldereta</h5>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="col-md-4 text-center">
+          <img src="images/dish2.jpg" alt="Dish 2" class="img-fluid rounded shadow-sm mb-3">
+          <h5 class="text-dark">Chicken Cordon Bleu</h5>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="col-md-4 text-center">
+          <img src="images/dish3.jpg" alt="Dish 3" class="img-fluid rounded shadow-sm mb-3">
+          <h5 class="text-dark">Pork Humba</h5>
+        </div>
+
+      </div>
     </div>
-    <div class="modal-body">
-  <!-- Party Tray Booking Form -->
-  <section class="py-5 bg-light" id="partytray">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center text-warning mb-4">Book Our Party Tray Services</h2>
+  </section>
+
+      <section class="py-5 bg-light menu-section" id="dishes">
+    <div class="container">
+      <h2 class="text-center menu-title">Featured Dishes</h2>
+      <div class="section-separator"></div>
+
+      <!-- Main Dishes -->
+    <h4 class="text-center text-dark">Choices of Main Dish</h4>
+    <div class="row g-3 mb-5">
+      <div class="col-md-4"><div class="menu-card">Beef Afritada <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Beef Kaldereta <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Beef Steak <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Beef w/ Broccoli <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Beef w/ Mushroom <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Beef Mechado <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Chicken Afritada <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Fried Chicken <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Buttered Chicken <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Garlic Chicken <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Chicken Adobo <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Chicken Curry <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Chicken Cordon Bleu <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Chicken Teriyaki <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Chicken Nuggets <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Sweet and Sour Chicken <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pork Afritada <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pork Bola-bola <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pork Menudo <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pork Steak <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pork Adobo <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pork Humba <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pork Hamonado <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Sweet and Sour Pork <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Fish Fillet w/ Sweet & Sour Sauce (Tuna) <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Fish w/ Escabeche Sauce (Tuna) <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Fish w/ Lemon Sauce <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Kinilaw na Tuna <span class="menu-price">₱20.00</span></div></div>
+    </div>
+
+    <!-- Side Dishes -->
+    <h4 class="text-center text-dark">Choices of Side Dish</h4>
+    <div class="row g-3 mb-5">
+      <div class="col-md-4"><div class="menu-card">Four Season <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Bihon Guisado <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pancit Special <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Mixed Veggies <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Pinakbet <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Ampalaya con Carne <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Bam-e <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Lumpiang Shanghai <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Spaghetti <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Sotanghon Guisado <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Sauteed Beans <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Onion Rings <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Buttered Corn <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Buttered Mixed <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Buttered Mixed Vegetables <span class="menu-price">₱20.00</span></div></div>
+    </div>
+
+    <!-- Desserts -->
+    <h4 class="text-center text-dark">Choices of Desserts</h4>
+    <div class="row g-3">
+      <div class="col-md-4"><div class="menu-card">Buko Pandan <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Macaroni Salad <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Tapioca w/ Mango <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Fresh Fruits <span class="menu-price">₱20.00</span></div></div>
+      <div class="col-md-4"><div class="menu-card">Buko Salad <span class="menu-price">₱20.00</span></div></div>
+    </div>
+
+
+    <section class="py-5 bg-white menu-section" id="section2">
+      <div class="container">
+        <h2 class="text-center menu-title">Section 2 - Special Menu</h2>
+        <div class="section-separator"></div>
+
+        <!-- Main Dish - Beef -->
+        <h4 class="text-center text-dark">Main Dish - Beef</h4>
+        <div class="row g-3 mb-5">
+          <div class="col-md-4"><div class="menu-card">Beef Teriyaki <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef Steak <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef Bulgogi <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef w/ Mushroom Sauce <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef w/ Pepper Sauce <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef Tapa <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef Caldereta <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef Mechado <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef Butter & Garlic <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Beef Stew <span class="menu-price">₱20.00</span></div></div>
+        </div>
+
+        <!-- Main Dish - Pork -->
+        <h4 class="text-center text-dark">Main Dish - Pork</h4>
+        <div class="row g-3 mb-5">
+          <div class="col-md-4"><div class="menu-card">Buttered Pork <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pork Schnitzel <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pork Pillow <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pork Cheese Roll <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pork Sweet & Sour <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pork Fillet <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Stir Fried Sweetened Pork <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pork Steak (Tagalog) <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pork Pinakota <span class="menu-price">₱20.00</span></div></div>
+        </div>
+
+        <!-- Soups -->
+        <h4 class="text-center text-dark">Soups</h4>
+        <div class="row g-3 mb-5">
+          <div class="col-md-4"><div class="menu-card">Island Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pumpkin Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Egg Drop Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Mushroom Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Corn Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Pumpkin & Broccoli Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Broccoli Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Crab and Corn Soup <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Asparagus Soup <span class="menu-price">₱20.00</span></div></div>
+        </div>
+
+        <!-- Pasta Side Dishes -->
+        <h4 class="text-center text-dark">Pasta Side Dishes</h4>
+        <div class="row g-3 mb-5">
+          <div class="col-md-4"><div class="menu-card">Spaghetti Bolognese <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Carbonara <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Marinara (White Sauce) <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Marinara (Red Sauce) <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Spaghetti Arrabiata <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Spaghetti Triple Cheese <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Spaghetti Aglio Olio <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Spaghetti with Calamares <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Spaghetti Ala Chef <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Spaghetti Seafoods <span class="menu-price">₱20.00</span></div></div>
+        </div>
+
+        <!-- Desserts -->
+        <h4 class="text-center text-dark">Desserts</h4>
+        <div class="row g-3">
+          <div class="col-md-4"><div class="menu-card">Macaroni <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Fruit Salad <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Tapioca <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Buko Pandan <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Buko Salad <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Fresh Fruit Salad <span class="menu-price">₱20.00</span></div></div>
+          <div class="col-md-4"><div class="menu-card">Gulaman <span class="menu-price">₱20.00</span></div></div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </section>
+ <!-- ORDER SECTION -->
+<section class="py-5 bg-white" id="order">
+  <div class="container">
+    <h2 class="text-center text-success mb-4">Place Your Order</h2>
+
+    <!-- Feedback Alert -->
+    <div id="order-alert" class="alert d-none text-center" role="alert"></div>
+
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form onsubmit="sendmail(event)">
+        <!-- ✅ OPENING FORM TAG (MISSING BEFORE) -->
+        <form id="orderForm" class="border rounded p-4 shadow-sm bg-light">
+        
+          <!-- Selected Dishes -->
           <div class="mb-3">
-            <label for="party_name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="party_name" placeholder="Enter your name" required />
+            <label class="form-label">Selected Dishes</label>
+            <div id="selectedDishesDisplay" class="p-2 border rounded bg-white mb-2 text-dark" style="min-height: 40px;">
+              <!-- Selected dishes will appear here -->
+            </div>
+            <!-- ✅ Hidden input that your JS script updates -->
+            <input type="hidden" name="dish" id="selectedDishesInput" required>
           </div>
+
+          <!-- Location -->
           <div class="mb-3">
-            <label for="party_email" class="form-label">Your Email</label>
-            <input type="email" class="form-control" id="party_email" placeholder="Enter your email" required />
+            <label class="form-label">Your Location</label>
+            <input type="text" name="location" class="form-control" placeholder="e.g., Brgy. San Pedro, QC" required>
           </div>
+
+          <!-- Contact -->
           <div class="mb-3">
-            <label for="party_subject" class="form-label">Subject</label>
-            <input type="text" class="form-control" id="party_subject" placeholder="Contact:" required />
+            <label class="form-label">Contact Number</label>
+            <input type="tel" name="contact" class="form-control" placeholder="e.g., 09123456789" required>
           </div>
+
+          <!-- Date -->
           <div class="mb-3">
-            <label for="party_message" class="form-label">Message</label>
-            <textarea class="form-control" id="party_message" rows="10" placeholder="Let us know the event details!" required></textarea>
+            <label class="form-label">Date</label>
+            <input type="date" name="date" class="form-control" required>
           </div>
+
+          <!-- Time -->
+          <div class="mb-3">
+            <label class="form-label">Time</label>
+            <input type="time" name="time" class="form-control" required>
+          </div>
+
+          <!-- Submit Button -->
           <div class="text-center">
-            <button type="submit" class="btn btn-warning">Submit Booking</button>
+            <button type="submit" class="btn btn-inasal-green px-5 py-2">Submit Order</button>
           </div>
+
         </form>
       </div>
     </div>
   </div>
-  </section>
-
-          
-          
-
-  <!-- Footer -->
-  <footer>
-  <p>&copy; 2025 Zackie’s Restaurant. All rights reserved.</p>
-  <div class="social-icons">
-  <a href="#"><i class="bi bi-facebook"></i></a>
-  <a href="#"><i class="bi bi-instagram"></i></a>
-  <a href="#"><i class="bi bi-envelope-fill"></i></a>
-  </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-    </div>
-  </div>
-  </div>
-  </div>
-
-  <!-- Venue Modal -->
-  <div class="modal fade" id="venueModal" tabindex="-1" aria-labelledby="venueModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="venueModalLabel">Exclusive Venue Rates</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-    <!-- Hero Section -->
-
-  </section>
-
-  <!-- Footer -->
-  <footer>
-  <div class="container">
-  <p>&copy; 2025 Zackie’s Restaurant. All rights reserved.</p>
-  <div class="social-icons">
-    <a href="#"><i class="bi bi-facebook"></i></a>
-    <a href="#"><i class="bi bi-instagram"></i></a>
-  </div>
-  </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-    </div>
-  </div>
-  </div>
-  </div>
-  </section>
+</section>
 
 
-  <!-- Menu Modal Section With Footer Inside Modal Box -->
-  <section id="menu-modal-section">
-    <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h5 class="modal-title" id="menuModalLabel">Restaurant Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
 
-          <!-- Modal Body -->
-          <div class="modal-body">
-            <div id="menuUnifiedCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-              <div class="carousel-inner text-center">
-                <div class="carousel-item active">
-                  <img src="men1.jpg" class="menu-image zoomable rounded mx-auto d-block" alt="Menu 1">
-                  <p class="view-full-text">Click to view full image</p>
-                </div>
-                <div class="carousel-item">
-                  <img src="men2.jpg" class="menu-image zoomable rounded mx-auto d-block" alt="Menu 2">
-                  <p class="view-full-text">Click to view full image</p>
-                </div>
-              </div>
-
-              <!-- Carousel Controls -->
-              <button class="carousel-control-prev" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#menuUnifiedCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Footer INSIDE Modal -->
-          <div class="modal-footer justify-content-center bg-white" style="border-top: 3px solid  linear-gradient(135deg, #b08968, #d2b48c); /* Goldish-brown gradient */">
-            <div class="text-center w-100">
-              <p class="mb-0 small text-warning">&copy; 2025 Zackie’s Restaurant. All rights reserved.</p>
-              <div class="social-icons mt-2">
-                <a href="https://www.facebook.com/ZackiesRestaurant" target="_blank" class="fab fa-facebook-f text-warning me-3"></a>
-                <a href="tel:+639198732936" class="fas fa-phone-alt text-warning"></a>
-              </div>
-            </div>
-          </div>
-
+    <!-- OWNER SECTION -->
+    <section id="testimonials" class="py-5 text-center bg-light" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-success">Owner</h2>
+        <div class="divider"></div>
+        <div class="d-flex flex-column align-items-center">
+          <img src="owner.jpg" alt="Sir Jerry" class="testimonial-img mb-3">
+          <blockquote class="blockquote">
+            <p class="mb-3">"I built Jerry's-Inasal to bring the true taste of home to every Filipino table. Salamat sa suporta, mga ka-inasal!"</p>
+            <footer class="blockquote-footer fw-bold">Sir Jerry, <cite title="Founder">Founder & Head Grillmaster</cite></footer>
+          </blockquote>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Add spacing or margin at the bottom to prevent footer overlap -->
-  <div class="footer-spacing"></div>
+      <!-- FOOTER -->
+      <footer class="py-5 bg-white border-top" data-aos="fade-up">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-6"><h5 class="text-success">Jerry's Inasal</h5><p>Cababaran City | Open daily 10 AM–10 PM</p></div>
+            <div class="col-md-6"><h5 class="text-success">Follow Us</h5><a class="btn btn-outline-success me-2" href="#">Facebook</a><a class="btn btn-outline-success" href="#">Instagram</a></div>
+          </div>
+          <p class="mt-4 mb-0">&copy; 2025 Jerry's Inasal. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <!-- FLOAT BUTTONS -->
+      <a href="https://www.facebook.com/jerrys.eatery" target="_blank" class="facebook-float">
+        <i class="fab fa-facebook fa-2x"></i>
+      </a>
+      <button onclick="window.scrollTo({top:0, behavior:'smooth'})" class="btn btn-success position-fixed bottom-0 end-0 m-3">↑</button>
 
 
-    
-    
+      <!-- SCRIPTS -->
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <script>
+      AOS.init();
+      document.addEventListener("DOMContentLoaded", function () {
+        const messageBox = document.getElementById("message");
+        if (messageBox) {
+          messageBox.value = `Address:\nTime:\nDate:\nBuffet theme:\nMenu:\nDessert:\nrate:\nAdd-on: (e.g., Table & Chairs):\nRequest: (e.g., extra table, extra cloth):`;
+        }
+      });
+      </script>
+      <script src="script.js"></script>
+<script>
+  const selectedDishes = [];
+  const selectedDishesInput = document.getElementById('selectedDishesInput');
+  const selectedDishesDisplay = document.getElementById('selectedDishesDisplay');
+  const alertBox = document.getElementById('order-alert');
+  const form = document.getElementById('orderForm');
 
-
-  <!-- Bootstrap JavaScript (Optional, for Carousel functionality) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-  // Intersection Observer for Fade-in effect
-  const observerOptions = {
-    root: null, // Use the viewport as the root
-    threshold: 0.5 // Trigger when 50% of the element is visible
-  };
-
-  const menuItems = document.querySelectorAll('.menu-item');
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+  document.querySelectorAll('.menu-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const dishName = card.cloneNode(true);
+      dishName.querySelector('.menu-price')?.remove();
+      const name = dishName.textContent.trim();
+      const priceText = card.querySelector('.menu-price')?.textContent.replace(/[₱\s]/g, '') || '0';
+      const price = parseFloat(priceText);
+      const formatted = `${name} - ${price}`;
+      if (selectedDishes.includes(formatted)) {
+        selectedDishes.splice(selectedDishes.indexOf(formatted), 1);
+        card.classList.remove('bg-success', 'text-white');
+      } else {
+        selectedDishes.push(formatted);
+        card.classList.add('bg-success', 'text-white');
       }
+      selectedDishesInput.value = selectedDishes.join(', ');
+      selectedDishesDisplay.textContent = selectedDishes.join(', ');
     });
-  }, observerOptions);
-
-  menuItems.forEach(item => {
-    observer.observe(item);
   });
-  </script>
 
-  </body>
-    </div>
-  </div>
-  </div>
-  </div>
-
-  <!-- Section 1: Image Left, Text Right -->
-  <section class="py-5 bg-light animated-section from-left">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <img src="de.jpg" class="img-fluid rounded shadow" alt="Image 1">
-        </div>
-        <div class="col-md-6">
-          <h3>Delicious Starters</h3>
-          <p>Try our mouth-watering starters prepared with the freshest ingredients to kick off your meal.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 2: Image Right, Text Left -->
-  <section class="py-5 bg-white animated-section from-right">
-    <div class="container">
-      <div class="row align-items-center flex-md-row-reverse">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <img src="sig.jpg" class="img-fluid rounded shadow" alt="Image 2">
-        </div>
-        <div class="col-md-6">
-          <h3>Signature Dishes</h3>
-          <p>Our chef’s special creations will leave your taste buds craving for more.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Image Left, Text Right -->
-  <section class="py-5 bg-light animated-section from-left">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-3 mb-md-0">
-          <img src="serts.jpg" class="img-fluid rounded shadow" alt="Image 3">
-        </div>
-        <div class="col-md-6">
-          <h3>Delectable Desserts</h3>
-          <p>Finish your meal with our irresistible desserts — sweet, satisfying, and made with love.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About Us Section -->
-  <section id="about" class="py-5 bg-light" data-aos="fade-up">
-  <div class="container">
-  <h2 class="text-center text-warning mb-4">About Us</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <p class="lead text-center">
-        At <strong>Zackie’s Restaurant</strong>, we offer a delightful culinary experience where comfort, culture, and flavor meet. Established in the heart of <strong>Cabadbaran City</strong>, our family-owned restaurant has grown from a simple eatery into a local favorite—serving hearty meals, irresistible party trays, and authentic Filipino dishes made with love.
-      </p>
-      <p class="text-center mb-0">
-        Come and discover why Zackie’s Restaurant is the perfect place for every gathering. Let’s eat, enjoy, and create memories together!
-      </p>
-    </div>
-  </div>
-  </div>
-  </section>
-  <!-- Gallery Section -->
-  <section class="py-5 bg-light text-center" id="gallery">
-  <div class="container">
-    <h2 class="text-warning mb-4">Zackie’s Restaurant & Coffee House Gallery </h2>
-    <div class="row g-3">
-      <div class="col-md-4">
-        <img src="lol1.png" class="img-fluid rounded shadow" alt="Gallery Image 1">
-      </div>
-      <div class="col-md-4">
-        <img src="lol2.jpg" class="img-fluid rounded shadow" alt="Gallery Image 2">
-      </div>
-      <div class="col-md-4">
-        <img src="lol3.png" class="img-fluid rounded shadow" alt="Gallery Image 3">
-      </div>
-    </div>
-  </div>
-  </section>
-
-  <!-- Weekly Schedule Section -->
-  <section class="py-5 text-center bg-white" id="schedule">
-  <div class="container">
-    <h2 class="text-warning mb-4">Zackie's Restaurant Weekly Schedule </h2>
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover shadow">
-        <thead class="table-warning">
-          <tr>
-            <th>Day</th>
-            <th>Opening Time</th>
-            <th>Closing Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Monday</td>
-            <td>11:00 AM</td>
-            <td>8:00 PM</td>
-          </tr>
-          <tr>
-            <td>Tuesday</td>
-            <td>11:00 AM</td>
-            <td>8:00 PM</td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td>11:00 AM</td>
-            <td>8:00 PM</td>
-          </tr>
-          <tr>
-            <td>Thursday</td>
-            <td>11:00 AM</td>
-            <td>8:00 PM</td>
-          </tr>
-          <tr>
-            <td>Friday</td>
-            <td>11:00 AM</td>
-            <td>9:00 PM</td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td>11:00 AM</td>
-            <td>9:00 PM</td>
-          </tr>
-          <tr>
-            <td>Sunday</td>
-            <td>11:00 AM</td>
-            <td>7:00 PM</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>  
-  </section>
-
-  <!-- Weekly Schedule Section -->
-  <section class="py-5 text-center bg-white" id="schedule">
-    <div class="container">
-      <h2 class="text-warning mb-4">Zackie's Coffee House Weekly Schedule </h2>
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover shadow">
-          <thead class="table-warning">
-            <tr>
-              <th>Day</th>
-              <th>Opening Time</th>
-              <th>Closing Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Monday</td>
-              <td>2:00 PM</td>
-              <td>10:00 PM</td>
-            </tr>
-            <tr>
-              <td>Tuesday</td>
-              <td>9:00 AM</td>
-              <td>10:00 PM</td>
-            </tr>
-            <tr>
-              <td>Wednesday</td>
-              <td>9:00 AM</td>
-              <td>10:00 PM</td>
-            </tr>
-            <tr>
-              <td>Thursday</td>
-              <td>9:00 AM</td>
-              <td>10:00 PM</td>
-            </tr>
-            <tr>
-              <td>Friday</td>
-              <td>9:00 AM</td>
-              <td>10:00 PM</td>
-            </tr>
-            <tr>
-              <td>Saturday</td>
-              <td>9:00 AM</td>
-              <td>10:00 PM</td>
-            </tr>
-            <tr>
-              <td>Sunday</td>
-              <td>2:00 PM</td>
-              <td>10:00 PM</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  <!-- Location Section -->
-  <section id="location" class="text-center py-5">
-    <div class="container">
-      
-      <!-- Title -->
-      <h2 class="mb-4">Zackie's Coffee House Location</h2>
-
-      <!-- Image or Slideshow -->
-      <div class="mb-4">
-        <img src="lol3.png" alt="Zackie's Coffee House" class="img-fluid rounded">
-        <!-- If you want slideshow instead, we can replace this with a Bootstrap carousel later -->
-      </div>
-
-      <!-- Button -->
-      <button class="btn btn-warning mt-3" data-bs-toggle="modal" data-bs-target="#mapModal">
-        Find Us in Cabadbaran City
-      </button>
-
-    </div>
-  </section>
-
-  <!-- Modal Map -->
-  <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="modal-header">
-          <h5 class="modal-title" id="mapModalLabel">Our Location</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        
-        <div class="modal-body">
-          <div class="map-responsive">
-            <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3795.7118623708507!2d125.53141557484703!3d9.124329290940842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301a38638aae211%3A0x2df91607ec15668!2sZackie&#39;s%20Coffee%20House!5e1!3m2!1sen!2sph!4v1745773165670!5m2!1sen!2sph" 
-              width="600" 
-              height="450" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <footer class="bg-dark text-white pt-5">
-    <div class="container">
-  <!-- Top Branding Section -->
-  <div class="row">
-  <div class="col-lg-12 text-center mb-4">
-    <img src="zack.jpg" alt="Zackie’s Restaurant Logo" class="img-fluid mb-3" style="max-width: 200px;">
-    <h4 class="text-warning">Zackie’s Restaurant</h4>
-    <p class="text-muted">Serving delicious meals with love and care, located in the heart of Cabadbaran City.</p>
-  </div>
-
-  <!-- Branches Row -->
-  <div class="col-lg-12">
-    <div class="container text-center my-5">
-      <div class="row justify-content-center align-items-center">
-        <!-- First Branch -->
-        <div class="col-6 col-md-4 d-flex flex-column align-items-center">
-          <h5 class="text-warning mb-2">Other Branch - Zackie's Coffee House</h5>
-          <img src="11.png" alt="Zackie's Coffee House" class="img-fluid mb-3" style="max-width: 80px; height: auto;">
-        </div>
-
-        <!-- Second Branch -->
-        <div class="col-6 col-md-4 d-flex flex-column align-items-center">
-          <h5 class="text-warning mb-2">Partnered by 2Bilan Gas Station</h5>
-          <img src="12.png" alt="2Bilan Station" class="img-fluid mb-3" style="max-width: 80px; height: auto;">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Logo Section -->
-  <div class="col-lg-12 text-center mt-4">
-    <img src="luj.png" class="img-fluid rounded shadow mb-3" alt="Image 4" style="max-width: 330px;">
-  </div>
-  </div>
-
-      <!-- Mission & Vision Section -->
-      <div class="row mb-5">
-        <!-- Mission Left -->
-        <div class="col-md-6 text-center">
-          <h5 class="text-warning">Our Vision</h5>
-          <img src="misow.png" alt="Restaurant Mission" class="img-fluid mb-3" style="max-width: 100px; height: auto;">
-          <p class="text-white px-3">
-            Our mission is to provide a family-friendly environment where people can enjoy freshly prepared meals 
-            made from locally sourced ingredients, with a commitment to excellence in every dish we serve.
-          </p>
-        </div>
-
-        <!-- Vision Right -->
-        <div class="col-md-6 text-center">
-          <h5 class="text-warning">Our Mission</h5>
-          <img src="viso.png" alt="Restaurant Vision" class="img-fluid mb-3" style="max-width: 100px; height: auto;">
-          <p class="text-white px-3">
-            To be the leading restaurant in Cabadbaran City, serving quality food with exceptional service, 
-            providing a memorable dining experience for every guest.
-          </p>
-        </div>
-      </div>
-
-    <!-- Contact Info Section -->
-    <div class="row mb-5">
-      <div class="col-md-12 text-center">
-        <h5 class="contact-title">Contact Information</h5> <!-- Add the class here -->
-        <ul class="list-unstyled">
-          <li><i class="fas fa-phone-alt"></i> 📞 <strong class="phone-number">0919 873 2936</strong></li>
-          <li class="gold-text">
-            <i class="fas fa-map-marker-alt"></i> 📍 We're located beside 2bilann Gas Station at Mabini, National Highway, 8605 Cabadbaran, Philippines.
-          </li>
-          <li>
-            <i class="fas fa-envelope"></i> 
-            <a href="mailto:contact@zackiesrestaurant2020gmail.com" class="email-link">contact@zackiesrestaurant2020gmail.com</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-
-
-      <!-- Social Media Section -->
-      <div class="row mb-4">
-        <div class="col-12 text-center">
-          <h5 class="text-warning">Follow Us</h5>
-          <div class="d-flex justify-content-center align-items-center gap-4">
-            <a href="https://www.facebook.com/ZackiesRestaurant" class="text-white" target="_blank" aria-label="Facebook">
-              <img src="f.png" alt="Facebook" style="height: 40px;">
-            </a>
-            <a href="https://www.instagram.com/ZackiesRestaurant" class="text-white" target="_blank" aria-label="Instagram">
-              <img src="ins.png" alt="Instagram" style="height: 40px;">
-            </a>
-            <a href="mailto:contact@zackiesrestaurant2020gmail.com" class="text-white" aria-label="Gmail">
-              <img src="g.png" alt="Gmail" style="height: 40px;">
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer Bottom Section -->
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="mb-0">&copy; 2025 Zackie’s Restaurant. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <script>
-  // Initialize AOS (Animate on Scroll)
-  AOS.init();
-  </script>
-
-  <script>
-  // Collapse navbar after clicking a link (on mobile)
-  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('#mainNavbar');
-
-    if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
-      navbarToggler.click();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const orderData = {
+      dish: selectedDishes,
+      location: formData.get('location'),
+      contact: formData.get('contact'),
+      date: formData.get('date'),
+      time: formData.get('time'),
+    };
+    console.log('Order data:', orderData);
+    try {
+      const response = await fetch('https://jerry-inasal.onrender.com/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orderData)
+      });
+      const result = await response.json();
+      if (result.url) {
+        window.location.href = result.url;
+      } else {
+        alertBox.textContent = 'Something went wrong.';
+        alertBox.classList.remove('d-none');
+        alertBox.classList.add('alert-danger');
+      }
+    } catch (err) {
+      console.error(err);
+      alertBox.textContent = 'Submission failed. Try again.';
+      alertBox.classList.remove('d-none');
+      alertBox.classList.add('alert-danger');
     }
   });
-  });
-  </script>
-
+</script>
   <!-- Load EmailJS Library -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <!-- Initialize EmailJS -->
   <script>
   (function() {
-  emailjs.init("q-dVzKas8Z816VUWQ"); // Your public key
+  emailjs.init("SzVEoJYFD3IRfWoj7"); // Your public key
   })();
   </script>
   <!-- JavaScript to ensure navbar collapses on link click -->
@@ -918,12 +564,6 @@
 
 
 
-  <script src="script.js"></script>
-  <script src="menu.js"></script>
-  <script src="nav.js"></script>
-  <script src="int.js"></script>
-  <script src="sec.js"></script>
-  <script src="ani.js"></script>
 
-  </body>
-  </html>
+    </body>
+      </html>
